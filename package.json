@@ -1,0 +1,21 @@
+{
+  "name": "inquisition",
+  "version": "0.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndlib/marble-website-starter"
+  },
+  "starter-name": "gatsby-starter-marble",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop -p 8001",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@ndlib/gatsby-theme-marble": "*",
+    "gatsby": "^2.20.10",
+    "react": "16.11",
+    "react-dom": "16.11"
+  }
+}
