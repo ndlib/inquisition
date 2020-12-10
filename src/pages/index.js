@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '@ndlib/gatsby-theme-marble/src/components/Layout'
@@ -16,7 +16,7 @@ const Home = ({ data, location }) => {
         location={location}
       />
       <I18nextProvider i18n={i18next}>
-        <div>Hello MARBLE</div>
+        <Link to='/item/MSHLAT0090_EAD'>Here is stuff</Link>
       </I18nextProvider>
 
     </Layout>
