@@ -10,11 +10,13 @@ require('dotenv').config({
 const searchUrl = process.env.SEARCH_URL || ''
 const searchIndex = process.env.SEARCH_INDEX || ''
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
+const skipMetadataPrune = process.env.SKIP_METADATA_PRUNE || ''
 
 console.table([
   { variable: 'SEARCH_INDEX:', value: searchIndex },
   { variable: 'SEARCH_URL:', value: searchUrl },
   { variable: 'S3_DEST_BUCKET:', value: s3BucketName },
+  { variable: 'SKIP_METADATA_PRUNE:', value: skipMetadataPrune },
 ])
 
 const themeColor = '#ae9142'
