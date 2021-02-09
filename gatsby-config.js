@@ -5,6 +5,12 @@ module.exports = {
   siteMetadata: configuration.siteMetadata,
   plugins: [
     {
+      resolve: 'gatsby-transformer-marbleitem',
+      options: {
+        skipMetadataPrune: true,
+      },
+    },
+    {
       resolve: '@ndlib/gatsby-theme-marble',
     },
     {
@@ -43,6 +49,13 @@ module.exports = {
           'https://static.nd.edu',
           'https://image-iiif.library.nd.edu',
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'standard',
+        path: 'content/json/standard',
       },
     },
   ],
