@@ -3,12 +3,9 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
-import Layout from '@ndlib/gatsby-theme-marble/src/components/Layout'
+import Layout from '../layouts/HomePage'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import SearchBox from 'components/Shared/SearchBox'
-import HeroBox from 'components/Shared/HeroBox'
 import Column from 'components/Shared/Column'
-import MiniCard from 'components/Shared/MiniCard'
 import MultiColumn from 'components/Shared/MultiColumn'
 
 const Home = ({ data, location }) => {
@@ -22,9 +19,6 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <h1>Inquisitio</h1>
-        <HeroBox backgroundColor='gray.0'>
-          <SearchBox location={location} />
-        </HeroBox>
         <MultiColumn columns='2'>
           <Column>
             <p>
