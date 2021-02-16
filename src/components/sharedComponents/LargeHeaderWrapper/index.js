@@ -3,8 +3,7 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import LoginButton from '@ndlib/gatsby-theme-marble/src/components/Layout/PageWrapper/NavigationHeader/LoginButton'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import ndLogo from 'assets/images/ND_mark_white.svg'
 import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 import sx from './sx'
@@ -12,7 +11,7 @@ import theme from '../../../gatsby-plugin-theme-ui'
 
 export const LargeHeaderWrapper = ({ location, children }) => {
   return (
-    <header sx={theme.header}>
+    <header sx={theme.styles.Header}>
       <WordMark />
       <div sx={sx.wrapper}>
         {children}
@@ -22,14 +21,7 @@ export const LargeHeaderWrapper = ({ location, children }) => {
         <div sx={sx.rightOfTriangle} />
       </div>
       <div sx={sx.topBar}>
-        <Link
-          to='/exhibits'
-          sx={sx.exhibitsLink}
-        >Digital Exhibits
-        </Link>
-        <div sx={sx.loginWrapper}>
-          <LoginButton location={location} />
-        </div>
+        <Menu menu='top' />
       </div>
       <div className='logo'>
         <a href='https://nd.edu' className='desktop'>
@@ -48,4 +40,5 @@ LargeHeaderWrapper.propTpyes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
 }
+
 export default LargeHeaderWrapper

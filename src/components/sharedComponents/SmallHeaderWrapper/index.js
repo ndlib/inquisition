@@ -3,16 +3,15 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import LoginButton from '@ndlib/gatsby-theme-marble/src/components/Layout/PageWrapper/NavigationHeader/LoginButton'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import ndLogo from 'assets/images/ND_mark_white.svg'
 import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
 
-export const SmallHeaderWrapper = ({ location, children }) => {
+export const SmallHeaderWrapper = ({ location, children, menu }) => {
   return (
-    <header sx={theme.header}>
+    <header sx={theme.styles.Header}>
       <WordMark />
       <div sx={sx.wrapper}>
         {children}
@@ -23,19 +22,7 @@ export const SmallHeaderWrapper = ({ location, children }) => {
       </div>
       <div sx={sx.topBar}>
         <div sx={sx.extraTriangle} />
-        <Link
-          to='/exhibits'
-          sx={sx.exhibitsLink}
-        >Digital Exhibits
-        </Link>
-        <Link
-          to='/browse'
-          sx={sx.browseLink}
-        >Browse
-        </Link>
-        <div sx={sx.loginWrapper}>
-          <LoginButton location={location} />
-        </div>
+        <Menu menu='top' />
       </div>
       <div className='logo'>
         <a href='https://nd.edu' className='desktop'>
@@ -53,5 +40,10 @@ export const SmallHeaderWrapper = ({ location, children }) => {
 SmallHeaderWrapper.propTypes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
+  menu: PropTypes.object,
+}
+
+SmallHeaderWrapper.defaultProps = {
+  menu: null,
 }
 export default SmallHeaderWrapper

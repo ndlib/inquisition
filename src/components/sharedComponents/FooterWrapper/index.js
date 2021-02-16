@@ -9,7 +9,7 @@ import theme from '../../../gatsby-plugin-theme-ui'
 
 export const FooterWrapper = ({ location, children }) => {
   return (
-    <footer sx={theme.footer}>
+    <footer sx={theme.styles.Footer}>
       <div sx={sx.flexWrapper}>
         <div sx={sx.textWrapper}>
           {children}

@@ -1,0 +1,16 @@
+{
+  "id": "footer",
+  "label": "",
+  "items": [
+    {
+      "id": "footer-visit",
+      "label": "Visit RBSC",
+      "link": "/visit"
+    },
+    {
+      "id": "footer-collection",
+      "label": "About the Collection",
+      "link": "/collection"
+    }
+  ]
+}

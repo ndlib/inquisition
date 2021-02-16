@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
 import SearchBox from 'components/Shared/SearchBox'
-import Menu from 'components/Shared/Menu'
 import { Link } from 'gatsby'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
@@ -17,15 +16,15 @@ export const Layout = ({
   location,
 }) => {
   return (
-    <div sx={theme.layout}>
+    <div sx={theme.styles.Layout}>
       <App location={location}>
-        <LargeHeaderWrapper location={location} menuObject={Menu}>
+        <LargeHeaderWrapper location={location}>
           <div>
             <h1><Link to='/'>Inquisitio</Link></h1>
             <SearchBox />
           </div>
         </LargeHeaderWrapper>
-        <main>
+        <main sx={theme.styles.Main}>
           {children}
         </main>
         <FooterWrapper location={location}>
