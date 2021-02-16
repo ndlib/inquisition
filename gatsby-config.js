@@ -1,9 +1,26 @@
+const path = require('path')
 const configuration = require('./content/configuration')
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
 
 module.exports = {
   siteMetadata: configuration.siteMetadata,
   plugins: [
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        assets: path.join(__dirname, 'src/assets'),
+        context: path.join(__dirname, 'src/context'),
+        components: path.join(__dirname, 'src/components'),
+        i18n: path.join(__dirname, 'src/i18n'),
+        layouts: path.join(__dirname, 'src/layouts'),
+        pages: path.join(__dirname, 'src/pages'),
+        store: path.join(__dirname, 'src/store'),
+        styles: path.join(__dirname, 'src/styles'),
+        templates: path.join(__dirname, 'src/templates'),
+        utils: path.join(__dirname, 'src/utils'),
+      },
+    },
     {
       resolve: 'gatsby-transformer-marbleitem',
       options: {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import MarbleItem from 'components/Pages/MarbleItem'
 import queryString from 'query-string'
-import Layout from '../layouts/Default'
+import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 
 export const MarbleItemPage = ({ data, location }) => {

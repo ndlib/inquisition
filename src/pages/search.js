@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SearchBase from 'components/Shared/SearchBase'
 import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
 import SearchResults from 'components/Shared/SearchTools/SearchResults'
@@ -6,7 +7,7 @@ import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefi
 import MultiColumn from 'components/Shared/MultiColumn'
 import Column from 'components/Shared/Column'
 import { TagFilterConfig } from 'searchkit'
-import Layout from '../layouts/Default'
+import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 
 const Search = ({ location }) => {
@@ -64,4 +65,7 @@ const Search = ({ location }) => {
   )
 }
 
+Search.propTypes = {
+  location: PropTypes.object.isRequired,
+}
 export default Search
