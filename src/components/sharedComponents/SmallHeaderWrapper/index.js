@@ -1,17 +1,18 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { Header, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import LoginButton from '@ndlib/gatsby-theme-marble/src/components/Layout/PageWrapper/NavigationHeader/LoginButton'
 import ndLogo from 'assets/images/ND_mark_white.svg'
-import sx from './sx'
 import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
+import sx from './sx'
+import theme from '../../../gatsby-plugin-theme-ui'
 
 export const SmallHeaderWrapper = ({ location, children }) => {
   return (
-    <Header>
+    <header sx={theme.header}>
       <WordMark />
       <div sx={sx.wrapper}>
         {children}
@@ -45,7 +46,7 @@ export const SmallHeaderWrapper = ({ location, children }) => {
           />
         </a>
       </div>
-    </Header>
+    </header>
   )
 }
 

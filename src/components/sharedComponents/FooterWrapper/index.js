@@ -2,13 +2,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Footer as ThemeFooter, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import Menu from 'components/Shared/Menu'
 import sx from './sx'
+import theme from '../../../gatsby-plugin-theme-ui'
 
 export const FooterWrapper = ({ location, children }) => {
   return (
-    <ThemeFooter>
+    <footer sx={theme.footer}>
       <div sx={sx.flexWrapper}>
         <div sx={sx.textWrapper}>
           {children}
@@ -17,7 +18,7 @@ export const FooterWrapper = ({ location, children }) => {
           <Menu menu='footer' />
         </div>
       </div>
-    </ThemeFooter>
+    </footer>
   )
 }
 

@@ -1,13 +1,16 @@
+/** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { Layout as ThemeLayout } from 'theme-ui'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import SmallHeaderWrapper from '../../sharedComponents/SmallHeaderWrapper'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import Menu from 'components/Shared/Menu'
 import { Link } from 'gatsby'
 import App from '../../siteapp'
-import ArticleContentWrapper from '../../sharedComponents/ArticleContentWrapper'
+import ReturnToSearch from 'components/Internal/ReturnToSearch'
+import theme from '../../../gatsby-plugin-theme-ui'
 
 export const Layout = ({
   title, // page title to be placed inside main
@@ -15,7 +18,7 @@ export const Layout = ({
   location,
 }) => {
   return (
-    <ThemeLayout>
+    <div sx={theme.layout}>
       <App location={location}>
         <SmallHeaderWrapper location={location} menuObject={Menu}>
           <div>
@@ -23,17 +26,19 @@ export const Layout = ({
           </div>
         </SmallHeaderWrapper>
 
-        <ArticleContentWrapper
-          title={title}
-          location={location}
-        >
-          {children}
-        </ArticleContentWrapper>
+        <main id='mainContent' sx={theme.main}>
+          <ReturnToSearch location={location} />
+          <article>
+            {title ? <BaseStyles><h1>{title}</h1></BaseStyles> : null}
+            {children}
+          </article>
+        </main>
+
         <FooterWrapper location={location}>
           <div>Footer!</div>
         </FooterWrapper>
       </App>
-    </ThemeLayout>
+    </div>
   )
 }
 

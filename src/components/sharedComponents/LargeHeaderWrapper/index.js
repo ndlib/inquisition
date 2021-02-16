@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import LoginButton from '@ndlib/gatsby-theme-marble/src/components/Layout/PageWrapper/NavigationHeader/LoginButton'
 import ndLogo from 'assets/images/ND_mark_white.svg'
+import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
-import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 
 export const LargeHeaderWrapper = ({ location, children }) => {
   return (
