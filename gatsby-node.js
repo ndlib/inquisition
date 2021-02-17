@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     if (node.id) {
       createPage({
         path: node.slug,
-        component: path.resolve('./src/templates/marbleItem.js'),
+        component: path.resolve('./src/templates/marble-item.js'),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
