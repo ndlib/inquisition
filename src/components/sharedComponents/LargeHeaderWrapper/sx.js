@@ -4,7 +4,7 @@ module.exports = {
     position: 'relative',
     height: ['290px', '380px', '380px'],
     overflow: 'hidden',
-    top: '15px',
+    top: '25px',
   },
   topBar: {
     width: '100vw',

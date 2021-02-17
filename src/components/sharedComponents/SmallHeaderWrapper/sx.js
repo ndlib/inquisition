@@ -2,7 +2,8 @@ module.exports = {
   wrapper: {
     position: 'relative',
     height: ['170px', '105px', '105px'],
-    zIndex: '1',
+    overflow: 'hidden',
+    top: '15px',
   },
   backgroundWrapper: {
     position: 'absolute',
