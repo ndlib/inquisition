@@ -1,11 +1,10 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const essayTemplate = path.resolve(`./src/templates/essay.js`)
+  const essayTemplate = path.resolve(`src/templates/essay.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
