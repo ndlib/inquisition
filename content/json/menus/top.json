@@ -1,0 +1,26 @@
+{
+  "id": "top",
+  "label": "",
+  "items": [
+    {
+      "id": "top-home",
+      "label": "Home",
+      "link": "/"
+    },
+    {
+      "id": "top-browse",
+      "label": "Browse",
+      "link": "/browse"
+    },
+    {
+      "id": "top-essays",
+      "label": "Essays",
+      "link": "/essays"
+    },
+    {
+      "id": "top-about",
+      "label": "About",
+      "link": "/about"
+    }
+  ]
+}

@@ -18,12 +18,15 @@
   },
   "dependencies": {
     "@ndlib/gatsby-theme-marble": "*",
-    "gatsby-transformer-marbleitem": "*",
     "gatsby": "^2.20.10",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-s3": "^0.3.8",
+    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-transformer-json": "^2.11.0",
+    "gatsby-transformer-marbleitem": "*",
+    "gatsby-transformer-remark": "^2.16.0",
     "react": "16.11",
     "react-dom": "16.11"
   },
