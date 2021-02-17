@@ -71,9 +71,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const marbleItems = marbleResult.data && marbleResult.data.allMarbleItem ? marbleResult.data.allMarbleItem.nodes : []
   marbleItems.forEach(node => {
     if (node.id) {
-      // item page
-      console.log(require.resolve('./src/templates/marbleItem.js'))
-      console.log('Change ME!  ^^ VV ')
       createPage({
         path: node.slug,
         component: require.resolve('./src/templates/marbleItem.js'),
