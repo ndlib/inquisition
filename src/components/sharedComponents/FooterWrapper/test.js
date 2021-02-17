@@ -1,13 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { useStaticQuery } from 'gatsby'
-import { Footer as ThemeFooter } from 'theme-ui'
 import Footer from './'
-import Menu from 'components/Shared/Menu'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 test('Footer renders some divs with markdown text', () => {
-  const wrapper = shallow(<Footer />)
+  const wrapper = shallow(<Footer location={{ location: '' }}><div id='test'>Children</div></Footer>)
 
-  expect(wrapper.find(ThemeFooter).exists()).toBeTruthy()
+  // test the children.
+  //
   expect(wrapper.find(Menu).props().menu).toEqual('footer')
 })

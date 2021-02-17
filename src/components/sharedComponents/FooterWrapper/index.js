@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { jsx } from 'theme-ui'
-import Menu from 'components/Shared/Menu'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
 
