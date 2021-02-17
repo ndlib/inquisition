@@ -1,4 +1,3 @@
-const path = require('path')
 const configuration = require('./content/configuration')
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
 const contentPath = 'content'
