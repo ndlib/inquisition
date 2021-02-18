@@ -22,11 +22,18 @@ export const Layout = ({
       <App location={location}>
         <LargeHeaderWrapper location={location}>
           <HeroBackground />
-          <div sx={sx.titleBox}>
-            <h1><Link to='/'>Inquisitio</Link></h1>
+          <div sx={sx.searchContainer}>
+            <div sx={sx.searchBox}>
+              <SearchBox />
+            </div>
           </div>
-          <div sx={sx.searchBox}>
-            <SearchBox />
+          <div sx={sx.titleContainer}>
+            <div sx={sx.titleBox}>
+              <h1><Link to='/'>Inquisitio</Link></h1>
+              <blockquote sx={sx.headingBlockquote}>
+              manuscript and print sources for the study of Inquisition history
+              </blockquote>
+            </div>
           </div>
         </LargeHeaderWrapper>
         <main sx={theme.styles.Main}>
