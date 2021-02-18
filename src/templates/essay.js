@@ -14,7 +14,21 @@ export const MarbleItemPage = ({ data, location }) => {
         data={data}
         location={location}
       />
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <section>
+        <div>{data.markdownRemark.frontmatter.summary}</div>
+      </section>
+      <section>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      </section>
+      <section>
+        <hr />
+        <p>To cite this essay: </p>
+        <p>
+          {data.markdownRemark.frontmatter.author}. &quot;{data.markdownRemark.frontmatter.title}.&quot;
+          <em>Hesburgh Libraries of Notre Dame, Department of Rare Books and Special Collections</em>. University of Notre Dame,
+          {data.markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{data.markdownRemark.frontmatter.slug}&gt;
+        </p>
+      </section>
       {
         debug ? (
           <pre>{JSON.stringify(data, null, 2)}</pre>
@@ -39,6 +53,10 @@ export const query = graphql`
       frontmatter {
         title
         slug
+        summary
+        author
+        featuredItems
+        citationYear
       }
     }
   }

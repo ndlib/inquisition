@@ -10,6 +10,8 @@ import { Link } from 'gatsby'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import theme from '../../../gatsby-plugin-theme-ui'
+import HeroBackground from '../HeroBackground'
+import sx from './sx'
 
 export const Layout = ({
   children,
@@ -19,8 +21,11 @@ export const Layout = ({
     <div sx={theme.styles.Layout}>
       <App location={location}>
         <LargeHeaderWrapper location={location}>
-          <div>
+          <HeroBackground />
+          <div sx={sx.titleBox}>
             <h1><Link to='/'>Inquisitio</Link></h1>
+          </div>
+          <div sx={sx.searchBox}>
             <SearchBox />
           </div>
         </LargeHeaderWrapper>
