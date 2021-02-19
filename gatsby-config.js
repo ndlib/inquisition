@@ -1,6 +1,6 @@
+const path = require('path')
 const configuration = require('./content/configuration')
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
-const contentPath = 'content'
 
 module.exports = {
   siteMetadata: configuration.siteMetadata,
@@ -12,14 +12,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/essays`,
-        name: `essay`,
+        path: path.join(__dirname, '/content/essays'),
+        name: 'essay',
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
       // CommonMark mode (default: true)
         commonmark: true,
@@ -38,7 +38,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'menu',
-        path: `${contentPath}/json/menus`,
+        path: 'content/json/menus',
       },
     },
     {
@@ -48,7 +48,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: configuration.siteMetadata.siteUrl,
-        sitemap: `${configuration.siteMetadata.siteUrl}/sitemap.xml`,
+        sitemap: configuration.siteMetadata.siteUrl + '/sitemap.xml',
         env: {
           development: {
             policy: [
@@ -64,11 +64,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: configuration.manifest,
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Inquisitio',
+        short_name: 'Inquisitio',
+        description: 'Manuscript and print sources for the study of Inquisition history.',
+        start_url: '/',
+        background_color: '#ae9142',
+        theme_color: '#ae9142',
+        display: 'minimal-ui',
+        icon: path.join(__dirname, 'content/images/manifestLogo.png'),
+      },
     },
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: 'gatsby-plugin-s3',
       options: {
         bucketName: s3BucketName,
       },
