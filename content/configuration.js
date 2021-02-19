@@ -19,28 +19,15 @@ console.table([
   { variable: 'SKIP_METADATA_PRUNE:', value: skipMetadataPrune },
 ])
 
-const themeColor = '#ae9142'
-const languages = {
-  default: 'en',
-  allowed: ['en'],
-}
-
 module.exports = {
   siteMetadata: {
     title: 'Inquisitio',
     author: 'University of Notre Dame Hesburgh Libraries Rare Books & Special Collections',
     description: 'Manuscript and print sources for the study of Inquisition history.',
     siteUrl: 'https://inquisition.library.nd.edu/',
-    languages: languages,
-  },
-  manifest: {
-    name: 'Inquisitio',
-    short_name: 'Inquisitio',
-    description: 'Manuscript and print sources for the study of Inquisition history.',
-    start_url: '/',
-    background_color: themeColor,
-    theme_color: themeColor,
-    display: 'minimal-ui',
-    icon: 'content/images/manifestLogo.png',
+    languages: {
+      default: 'en',
+      allowed: ['en'],
+    },
   },
 }
