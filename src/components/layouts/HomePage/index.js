@@ -10,21 +10,36 @@ import { Link } from 'gatsby'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import theme from '../../../gatsby-plugin-theme-ui'
+import HeroBackground from '../HeroBackground'
+import sx from './sx'
 
 export const Layout = ({
   children,
   location,
 }) => {
+  const homeMainStyles = theme.styles.Main
+  homeMainStyles['marginTop'] = '40px'
+
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
         <LargeHeaderWrapper location={location}>
-          <div>
-            <h1><Link to='/'>Inquisitio</Link></h1>
-            <SearchBox />
+          <HeroBackground />
+          <div sx={sx.searchContainer}>
+            <div sx={sx.searchBox}>
+              <SearchBox />
+            </div>
+          </div>
+          <div sx={sx.titleContainer}>
+            <div sx={sx.titleBox}>
+              <h1 sx={sx.title}>Inquisito</h1>
+              <blockquote sx={sx.headingBlockquote}>
+                manuscript and print sources for the study of Inquisition history
+              </blockquote>
+            </div>
           </div>
         </LargeHeaderWrapper>
-        <main sx={theme.styles.Main}>
+        <main sx={homeMainStyles}>
           {children}
         </main>
         <FooterWrapper location={location}>

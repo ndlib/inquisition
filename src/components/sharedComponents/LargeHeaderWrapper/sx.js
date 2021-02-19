@@ -4,12 +4,12 @@ module.exports = {
     position: 'relative',
     height: ['290px', '380px', '380px'],
     overflow: 'hidden',
-    top: '25px',
+    background: 'white',
   },
   topBar: {
     width: '100vw',
     height: '50px',
-    backgroundColor: '#0C2340dd',
+    backgroundColor: 'brandBar',
     backdropFilter: 'blur(0px)',
     position: 'absolute',
     top: '0',
@@ -25,11 +25,6 @@ module.exports = {
     lineHeight: '50px',
     display: ['none', 'block', 'block'],
   },
-  loginWrapper: {
-    position: 'absolute',
-    right: ['auto', '320px', '320px'],
-    left: ['0', 'auto', 'auto'],
-  },
   secondRow: {
     position: 'absolute',
     top: '50px',
@@ -38,7 +33,9 @@ module.exports = {
   triangleTopright: {
     width: '0',
     height: '0',
-    borderTop: '50px solid #0C2340dd',
+    borderTopWidth: '50px',
+    borderTopColor: 'brandBar',
+    borderTopStyle: 'solid',
     borderLeft: '50px solid transparent',
     position: 'absolute',
     display: ['none', 'block', 'block'],
@@ -48,7 +45,7 @@ module.exports = {
   rightOfTriangle: {
     width: '270px',
     height: '50px',
-    backgroundColor: '#0C2340dd',
+    backgroundColor: 'brandBar',
     position: 'absolute',
     display: ['none', 'block', 'block'],
     right: '0',
