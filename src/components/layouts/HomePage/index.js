@@ -17,6 +17,9 @@ export const Layout = ({
   children,
   location,
 }) => {
+  const homeMainStyles = theme.styles.Main
+  homeMainStyles['marginTop'] = '40px'
+
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
@@ -29,14 +32,14 @@ export const Layout = ({
           </div>
           <div sx={sx.titleContainer}>
             <div sx={sx.titleBox}>
-              <h1><Link to='/'>Inquisitio</Link></h1>
+              <h1 sx={sx.title}>Inquisito</h1>
               <blockquote sx={sx.headingBlockquote}>
-              manuscript and print sources for the study of Inquisition history
+                manuscript and print sources for the study of Inquisition history
               </blockquote>
             </div>
           </div>
         </LargeHeaderWrapper>
-        <main sx={theme.styles.Main}>
+        <main sx={homeMainStyles}>
           {children}
         </main>
         <FooterWrapper location={location}>

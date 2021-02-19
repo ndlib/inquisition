@@ -5,10 +5,9 @@ module.exports = {
     borderStyle: 'solid',
     fontSize: '1.4rem',
     display: 'inline-block',
-    top: '100px',
+    top: '200px',
     position: 'relative',
     backgroundColor: 'white',
-    color: 'primary',
   },
   searchBox: {
     display: 'inline-block',
@@ -28,6 +27,18 @@ module.exports = {
     justifyContent: 'center',
   },
   headingBlockquote: {
-    color: 'red',
+    color: 'attention',
+    marginTop: '0px',
+    marginBottom: '0px',
+    marginLeft: '115px',
+    fontFamily: 'serif',
+    fontSize: '1rem',
+    top: '-15px',
+    position: 'relative',
+  },
+  title: {
+    margin: '1px 20px',
+    fontFamily: 'title',
+    color: 'primary',
   },
 }

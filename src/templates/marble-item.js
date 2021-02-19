@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import MarbleItem from 'components/Pages/MarbleItem'
+import CollectionLayout from '@ndlib/gatsby-theme-marble/src/components/Pages/MarbleItem/CollectionLayout'
+import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Pages/MarbleItem/ItemLayout'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
@@ -9,16 +10,28 @@ import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
+  const { marbleItem, allMarbleFile } = data
+
   return (
-    <Layout location={location}>
+    <Layout location={location} title={marbleItem.title}>
       <Seo
         data={data}
         location={location}
       />
-      <MarbleItem
-        data={data}
-        location={location}
-      />
+      {
+        marbleItem.display === 'collection' ? (
+          <CollectionLayout
+            location={location}
+            marbleItem={marbleItem}
+          />
+        ) : (
+          <ItemLayout
+            location={location}
+            marbleItem={marbleItem}
+            allMarbleFile={allMarbleFile}
+          />
+        )
+      }
       {
         debug ? (
           <pre>{JSON.stringify(data, null, 2)}</pre>
