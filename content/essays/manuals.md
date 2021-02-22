@@ -3,6 +3,7 @@ title: "Introduction to inquisitorial manuals"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
 slug: "item/aspace_93b838c49d595bd0e9a87bcab723def2"
 summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
+date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
 featuredItems:
