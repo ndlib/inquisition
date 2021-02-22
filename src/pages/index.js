@@ -45,7 +45,6 @@ const Home = ({ data, location }) => {
                 key={allMarbleItem.nodes[0]}
                 target='/item/MSHLAT0090_EAD'
                 image={typy(allMarbleItem.nodes[0], 'childrenMarbleFile[0].iiif.thumbnail').safeString}
-                type={allMarbleItem.nodes[0].display}
               >
                 <Link to='/item/MSHLAT0090_EAD'>Browse the Collection</Link>
               </Card>

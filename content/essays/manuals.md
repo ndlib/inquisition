@@ -1,15 +1,22 @@
 ---
 title: "Introduction to inquisitorial manuals"
-slug: "essays/inquisition-manuals"
+marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
+slug: "item/aspace_93b838c49d595bd0e9a87bcab723def2"
 summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
 author: "Vose, Robin"
 citationYear: "2010"
 featuredItems:
-  - 1
-  - 2
-  - 3
+  - title: "Card #1"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
+  - title: "Card #2"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg  
+  - title: "Card #3"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
 ---
-
+# Introduction to inquisitorial manuals
 ##Latin treatises on heresy and inquisition
 Conducting an inquisition was a complicated business. First inquisitors had to have some sense of their underlying theological justification and legal authority, both of which might well be challenged by hostile local forces. Then they had to be able to identify the various and often subtle types of heretical or otherwise sinful behavior which fell under their jurisdiction. Finally they had to know how to proceed in the practical exercise of their functions, from initial denunciation and arrest to questioning (including torture), judgment and punishment—all ideally subject to formal documentation. Inquisitors also had to manage a staff of underlings, each with their own particular duties and restrictions. Written instructions or policy statements were therefore important resources to ensure that established inquisitorial procedure was duly followed; these were sometimes collected into more or less comprehensive inquisitorial manuals and eventually they could be distributed in a variety of printed formats. The story of how and why these manuals appeared and changed over time is significant, suggesting much about how the inquisition’s institutional history intersected with broader histories of the book and histories of religious thought. Such documents also provide modern researchers with important primary source evidence for the history of medieval and early modern anti-heretical persecutions, by revealing how inquisitors were at least theoretically intended to function in a given time and place.
 
