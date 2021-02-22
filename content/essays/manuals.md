@@ -1,13 +1,20 @@
 ---
 title: "Introduction to inquisitorial manuals"
-slug: "essays/inquisition-manuals"
+marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
+slug: "item/aspace_93b838c49d595bd0e9a87bcab723def2"
 summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
 author: "Vose, Robin"
 citationYear: "2010"
 featuredItems:
-  - 1
-  - 2
-  - 3
+  - title: "Card #1"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
+  - title: "Card #2"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg  
+  - title: "Card #3"
+    link: "/item/MSHLAT0090_EAD"
+    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
 ---
 
 ##Latin treatises on heresy and inquisition
