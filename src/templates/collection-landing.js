@@ -19,7 +19,6 @@ export const EssayPage = ({ data, location }) => {
   const { allMarkdownRemark, markdownRemark } = data
 
   const browseLinks = allMarkdownRemark.edges.map(item => {
-    console.log(item)
     return (<li key={item.node.frontmatter.marbleId}><Link to={item.node.frontmatter.slug}>{item.node.frontmatter.title}</Link></li>)
   })
   return (
