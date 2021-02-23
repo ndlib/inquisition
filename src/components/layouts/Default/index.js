@@ -11,6 +11,7 @@ import App from '../../siteapp'
 import ReturnToSearch from 'components/Internal/ReturnToSearch'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
+import HeroBackground from '../HeroBackground'
 
 export const Layout = ({
   title, // page title to be placed inside main
@@ -22,10 +23,10 @@ export const Layout = ({
       <BaseStyles>
         <App location={location}>
           <SmallHeaderWrapper location={location}>
+            <HeroBackground />
             <div>
               <h1><Link to='/'>Inquisitio</Link></h1>
               <SearchBox boxLabel='Search the Collection' />
-
             </div>
           </SmallHeaderWrapper>
 

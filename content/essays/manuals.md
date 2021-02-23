@@ -10,6 +10,7 @@ summary: "Inquisition practice through the ages was supposed to be governed by r
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
+sort: 1
 ---
 ## Introduction to inquisitorial manuals
 ###Latin treatises on heresy and inquisition

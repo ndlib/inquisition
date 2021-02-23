@@ -16,9 +16,14 @@ import ButtonLink from '../components/ButtonLink'
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  console.log(data)
+  const { allMarkdownRemark, markdownRemark } = data
+
+  const browseLinks = allMarkdownRemark.edges.map(item => {
+    console.log(item)
+    return (<li key={item.node.frontmatter.marbleId}><Link to={item.node.frontmatter.slug}>{item.node.frontmatter.title}</Link></li>)
+  })
   return (
-    <Layout location={location} title={data.markdownRemark.frontmatter.title}>
+    <Layout location={location} title={markdownRemark.frontmatter.title}>
       <Seo
         data={data}
         location={location}
@@ -31,22 +36,27 @@ export const EssayPage = ({ data, location }) => {
       <MultiColumn columns='3'>
         <Column colSpan='2'>
           <section>
-            <div>{data.markdownRemark.frontmatter.summary}</div>
-            <Link to={data.markdownRemark.frontmatter.slug + '/essay'}>Read More</Link>
+            <div>{markdownRemark.frontmatter.summary}</div>
+            <ButtonLink
+              target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}
+              title={`See all ${markdownRemark.frontmatter.title} in the collection.`} />
           </section>
           <section>
             <h2>Featured Sources</h2>
-            <SearchBase defaultSearch={customQueryBuilder(data.markdownRemark.frontmatter.marbleTitle)}>
+            <SearchBase defaultSearch={customQueryBuilder(markdownRemark.frontmatter.marbleTitle)}>
               <SearchResults defaultDisplay='list' hitsPerPage={3} showPagination={false} showHeader={false} />
             </SearchBase>
-            <Link to={`/search?documentcategory[0]=${data.markdownRemark.frontmatter.marbleTitle}`}>See all {data.markdownRemark.frontmatter.title} in the collection.</Link>
           </section>
         </Column>
         <Column>
-          <ButtonLink
-            target={`/search?documentcategory[0]=${data.markdownRemark.frontmatter.marbleTitle}`}
-            title={`See all ${data.markdownRemark.frontmatter.title} in the collection.`} />
-
+          <img src={markdownRemark.frontmatter.thumbnail} alt='' />
+          <ButtonLink target={markdownRemark.frontmatter.slug + '/essay'} title={`Essay: "${markdownRemark.frontmatter.essayTitle}"`} />
+          <nav>
+            <h3>Browse</h3>
+            <ul>
+              {browseLinks}
+            </ul>
+          </nav>
         </Column>
       </MultiColumn>
     </Layout>
@@ -66,6 +76,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        essayTitle
         slug
         thumbnail
         marbleId
@@ -73,6 +84,18 @@ export const query = graphql`
         summary
         author
         citationYear
+      }
+    }
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            marbleId
+            slug
+          }
+        }
       }
     }
   }

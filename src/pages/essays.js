@@ -54,7 +54,7 @@ export const query = graphql`
         author
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
       edges {
         node {
           id

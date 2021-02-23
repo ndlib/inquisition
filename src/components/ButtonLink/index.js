@@ -11,7 +11,7 @@ export const ButtonLink = ({
   target,
 }) => {
   return (
-    <MaterialButton primary wide>
+    <MaterialButton primary wide onClick={() => {}}>
       <Link to={target}>
         <span sx={{ color: 'white' }}>{title}</span>
       </Link>

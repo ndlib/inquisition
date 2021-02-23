@@ -3,7 +3,7 @@ module.exports = {
     position: 'relative',
     height: ['170px', '105px', '105px'],
     overflow: 'hidden',
-    top: '15px',
+    top: '0',
   },
   backgroundWrapper: {
     position: 'absolute',
