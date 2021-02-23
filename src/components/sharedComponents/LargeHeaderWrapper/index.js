@@ -9,7 +9,7 @@ import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
 
-export const LargeHeaderWrapper = ({ location, children }) => {
+export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
   return (
     <header sx={theme.styles.Header}>
       <WordMark />
@@ -21,6 +21,11 @@ export const LargeHeaderWrapper = ({ location, children }) => {
         <div sx={sx.rightOfTriangle} />
       </div>
       <div sx={sx.topBar}>
+        <img
+          src={logoTop}
+          sx={{}}
+          alt='Rare Books & Special Collections, Hesburgh Libraries'
+        />
         <Menu menu='top' />
       </div>
       <div className='logo'>
@@ -39,6 +44,7 @@ export const LargeHeaderWrapper = ({ location, children }) => {
 LargeHeaderWrapper.propTpyes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
+  logoTop: PropTypes.string,
 }
 
 export default LargeHeaderWrapper

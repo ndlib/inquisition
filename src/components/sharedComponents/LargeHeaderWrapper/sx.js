@@ -14,6 +14,12 @@ module.exports = {
     position: 'absolute',
     top: '0',
     left: '0',
+    opacity: '0.9',
+    '& > a': {
+      color: 'white !important',
+      fontWeight: 200,
+    },
+
   },
   exhibitsLink: {
     color: 'background',
@@ -40,6 +46,7 @@ module.exports = {
     position: 'absolute',
     display: ['none', 'block', 'block'],
     right: '270px',
+    opacity: '0.9',
     backdropFilter: 'blur(0px)',
   },
   rightOfTriangle: {
@@ -49,6 +56,7 @@ module.exports = {
     position: 'absolute',
     display: ['none', 'block', 'block'],
     right: '0',
+    opacity: '0.9',
     backdropFilter: 'blur(0px)',
   },
   ndLogo: {

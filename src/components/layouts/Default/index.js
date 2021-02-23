@@ -10,6 +10,9 @@ import { Link } from 'gatsby'
 import App from '../../siteapp'
 import ReturnToSearch from 'components/Internal/ReturnToSearch'
 import theme from '../../../gatsby-plugin-theme-ui'
+import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
+import HeroBackground from '../HeroBackground'
+import sx from './sx'
 
 export const Layout = ({
   title, // page title to be placed inside main
@@ -18,25 +21,33 @@ export const Layout = ({
 }) => {
   return (
     <div sx={theme.styles.Layout}>
-      <App location={location}>
-        <SmallHeaderWrapper location={location}>
-          <div>
-            <h1><Link to='/'>Inquisitio</Link></h1>
-          </div>
-        </SmallHeaderWrapper>
+      <BaseStyles>
+        <App location={location}>
+          <SmallHeaderWrapper location={location}>
+            <HeroBackground />
+            <div>
+              <h1><Link to='/'>Inquisitio</Link></h1>
+              <div sx={sx.searchContainer}>
+                <div sx={sx.searchBox}>
+                  <SearchBox boxLabel='Search the Collection' />
+                </div>
+              </div>
+            </div>
+          </SmallHeaderWrapper>
 
-        <main id='mainContent' sx={theme.styles.Main}>
-          <ReturnToSearch location={location} />
-          <article>
-            {title ? <BaseStyles><h1>{title}</h1></BaseStyles> : null}
-            {children}
-          </article>
-        </main>
+          <main id='mainContent' sx={theme.styles.Main}>
+            <ReturnToSearch location={location} />
+            <article>
+              {title ? <BaseStyles><h1>{title}</h1></BaseStyles> : null}
+              {children}
+            </article>
+          </main>
 
-        <FooterWrapper location={location}>
-          <div>Footer!</div>
-        </FooterWrapper>
-      </App>
+          <FooterWrapper location={location}>
+            <div>Footer!</div>
+          </FooterWrapper>
+        </App>
+      </BaseStyles>
     </div>
   )
 }

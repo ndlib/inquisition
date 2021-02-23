@@ -1,14 +1,14 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
-import SearchBox from 'components/Shared/SearchBox'
-import { Link } from 'gatsby'
+import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
+import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/RBSC.logo.svg'
 import theme from '../../../gatsby-plugin-theme-ui'
 import HeroBackground from '../HeroBackground'
 import sx from './sx'
@@ -16,6 +16,7 @@ import sx from './sx'
 export const Layout = ({
   children,
   location,
+  title,
 }) => {
   const homeMainStyles = theme.styles.Main
   homeMainStyles['marginTop'] = '40px'
@@ -23,16 +24,16 @@ export const Layout = ({
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <LargeHeaderWrapper location={location}>
+        <LargeHeaderWrapper location={location} logoTop={headerLogo}>
           <HeroBackground />
           <div sx={sx.searchContainer}>
             <div sx={sx.searchBox}>
-              <SearchBox />
+              <SearchBox boxLabel='Search the Collection' />
             </div>
           </div>
           <div sx={sx.titleContainer}>
             <div sx={sx.titleBox}>
-              <h1 sx={sx.title}>Inquisito</h1>
+              <h1 sx={sx.title}>{title}</h1>
               <blockquote sx={sx.headingBlockquote}>
                 manuscript and print sources for the study of Inquisition history
               </blockquote>

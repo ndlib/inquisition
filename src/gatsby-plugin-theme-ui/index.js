@@ -2,10 +2,9 @@ import merge from 'lodash.merge'
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 export default merge({}, theme, {
   colors: {
-    primary: '#6A4422',
-    secondary: 'gray',
-    attention: '#981B1E',
-    brandBar: '#302205',
+    primary: '#981B1E',
+    secondary: '#6A4422',
+    brandBar: '#6A4422',
   },
   // ae9142
   styles: {
@@ -14,6 +13,18 @@ export default merge({}, theme, {
       backgroundColor: 'white',
       minHeight: 'calc(100vh - 50px - 70px - 64px - 1.8rem*2)',
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
+    },
+    h1: {
+      color: 'secondary',
+      fontWeight: '200',
+    },
+    h2: {
+      color: 'secondary',
+      fontWeight: '200',
+    },
+    h3: {
+      color: 'secondary',
+      fontWeight: '200',
     },
   },
   fonts: {

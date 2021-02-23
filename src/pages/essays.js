@@ -4,28 +4,27 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import typy from 'typy'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/Default'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 
-const Browse = ({ data, location }) => {
+const Essays = ({ data, location }) => {
   const { allMarkdownRemark } = data
   const browseLinks = allMarkdownRemark.edges.map(item => {
     return (<Card
       key={item.node.frontmatter.marbleId}
-      label={item.node.frontmatter.title}
+      label={item.node.frontmatter.essayTitle}
       image={item.node.frontmatter.thumbnail}
       wide
-      target={item.node.frontmatter.slug}
+      target={item.node.frontmatter.slug + '/essay'}
     >{item.node.frontmatter.summary}</Card>)
   })
   return (
     <Layout
       location={location}
-      title='Browse'
+      title='Essays'
     >
       <Seo
         data={data}
@@ -40,11 +39,11 @@ const Browse = ({ data, location }) => {
   )
 }
 
-Browse.propTypes = {
+Essays.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
-export default Browse
+export default Essays
 
 export const query = graphql`
   query {
@@ -61,7 +60,7 @@ export const query = graphql`
           id
           html
           frontmatter {
-            title
+            essayTitle
             thumbnail
             slug
             summary

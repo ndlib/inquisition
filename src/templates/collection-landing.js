@@ -1,4 +1,7 @@
+/** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
@@ -6,9 +9,9 @@ import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 import Column from 'components/Shared/Column'
 import MultiColumn from 'components/Shared/MultiColumn'
-import ButtonLink from '../components/ButtonLink'
 import SearchBase from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBase'
 import SearchResults from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchTools/SearchResults'
+import ButtonLink from '../components/ButtonLink'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -16,11 +19,11 @@ export const EssayPage = ({ data, location }) => {
   const { allMarkdownRemark, markdownRemark } = data
 
   const browseLinks = allMarkdownRemark.edges.map(item => {
-    return (<li key={item.node.frontmatter.marbleId}><Link to={item.node.frontmatter.slug}>{item.node.frontmatter.essayTitle}</Link></li>)
+    console.log(item)
+    return (<li key={item.node.frontmatter.marbleId}><Link to={item.node.frontmatter.slug}>{item.node.frontmatter.title}</Link></li>)
   })
-
   return (
-    <Layout location={location} title={markdownRemark.frontmatter.essayTitle}>
+    <Layout location={location} title={markdownRemark.frontmatter.title}>
       <Seo
         data={data}
         location={location}
@@ -33,38 +36,27 @@ export const EssayPage = ({ data, location }) => {
       <MultiColumn columns='3'>
         <Column colSpan='2'>
           <section>
-            <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-          </section>
-          <section>
-            <hr />
-            <p>To cite this essay: </p>
-            <p>
-              {markdownRemark.frontmatter.author}. &quot;{markdownRemark.frontmatter.title}.&quot;
-              <em>Hesburgh Libraries of Notre Dame, Department of Rare Books and Special Collections</em>. University of Notre Dame,
-              {markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{markdownRemark.frontmatter.slug}&gt;
-            </p>
-          </section>
-        </Column>
-        <Column>
-          <section>
+            <div>{markdownRemark.frontmatter.summary}</div>
             <ButtonLink
               target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}
-              title={`See all ${markdownRemark.frontmatter.title} sources in the collection.`} />
-          </section>
-          <section>
-            <nav>
-              <h2>More Essays</h2>
-              <ul>
-                {browseLinks}
-              </ul>
-            </nav>
+              title={`See all ${markdownRemark.frontmatter.title} in the collection.`} />
           </section>
           <section>
             <h2>Featured Sources</h2>
             <SearchBase defaultSearch={customQueryBuilder(markdownRemark.frontmatter.marbleTitle)}>
-              <SearchResults defaultDisplay='grid' hitsPerPage={3} showPagination={false} showHeader={false} />
+              <SearchResults defaultDisplay='list' hitsPerPage={3} showPagination={false} showHeader={false} />
             </SearchBase>
           </section>
+        </Column>
+        <Column>
+          <img src={markdownRemark.frontmatter.thumbnail} alt='' />
+          <ButtonLink target={markdownRemark.frontmatter.slug + '/essay'} title={`Essay: "${markdownRemark.frontmatter.essayTitle}"`} />
+          <nav>
+            <h3>Browse</h3>
+            <ul>
+              {browseLinks}
+            </ul>
+          </nav>
         </Column>
       </MultiColumn>
     </Layout>
@@ -84,10 +76,11 @@ export const query = graphql`
       html
       frontmatter {
         title
-        marbleTitle
         essayTitle
-        thumbnail
         slug
+        thumbnail
+        marbleId
+        marbleTitle
         summary
         author
         citationYear
@@ -98,7 +91,7 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            essayTitle
+            title
             marbleId
             slug
           }
@@ -107,6 +100,7 @@ export const query = graphql`
     }
   }
 `
+
 const customQueryBuilder = (keyword) => {
   return {
     term: {

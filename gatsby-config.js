@@ -19,6 +19,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: path.join(__dirname, '/content/pages'),
+        name: 'pages',
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
       // CommonMark mode (default: true)

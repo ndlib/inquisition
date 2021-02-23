@@ -31,9 +31,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
-  // Define a template for blog post
-  const essayTemplate = path.resolve(`src/templates/essay.js`)
-
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
@@ -46,6 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             frontmatter {
               slug
+              template
             }
           }
         }
@@ -71,16 +69,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     essays.forEach((essay, index) => {
       const previousPostId = index === 0 ? null : essays[index - 1].id
       const nextPostId = index === essays.length - 1 ? null : essays[index + 1].id
+      // Define a template for blog post
+      if (!essay.frontmatter.template) {
+        essay.frontmatter.template = 'collection-landing.js'
+      }
+      const essayTemplate = path.resolve(`./src/templates/${essay.frontmatter.template}`)
 
       createPage({
         path: essay.frontmatter.slug,
         component: essayTemplate,
         context: {
           id: essay.id,
+          slug: essay.frontmatter.slug,
           previousPostId,
           nextPostId,
         },
       })
+
+      if (essay.frontmatter.template === 'collection-landing.js') {
+        // add an essay route
+        createPage({
+          path: essay.frontmatter.slug + '/essay',
+          component: path.resolve(`./src/templates/essay.js`),
+          context: {
+            id: essay.id,
+            slug: essay.frontmatter.slug + '/essay',
+            previousPostId,
+            nextPostId,
+          },
+        })
+      }
     })
   }
 }

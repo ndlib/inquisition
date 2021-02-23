@@ -1,23 +1,17 @@
 ---
-title: "Introduction to inquisitorial manuals"
+title: "I. Inquisitorial Manuals"
+type: "essay"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
-slug: "item/aspace_93b838c49d595bd0e9a87bcab723def2"
+marbleTitle: "I. Inquisitorial Manuals"
+essayTitle: "Introduction to inquisitorial manuals"
+thumbnail: "https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg"
+slug: "inquisition-manuals"
 summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
-featuredItems:
-  - title: "Card #1"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
-  - title: "Card #2"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg  
-  - title: "Card #3"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
+sort: 1
 ---
-# Introduction to inquisitorial manuals
 ##Latin treatises on heresy and inquisition
 Conducting an inquisition was a complicated business. First inquisitors had to have some sense of their underlying theological justification and legal authority, both of which might well be challenged by hostile local forces. Then they had to be able to identify the various and often subtle types of heretical or otherwise sinful behavior which fell under their jurisdiction. Finally they had to know how to proceed in the practical exercise of their functions, from initial denunciation and arrest to questioning (including torture), judgment and punishment—all ideally subject to formal documentation. Inquisitors also had to manage a staff of underlings, each with their own particular duties and restrictions. Written instructions or policy statements were therefore important resources to ensure that established inquisitorial procedure was duly followed; these were sometimes collected into more or less comprehensive inquisitorial manuals and eventually they could be distributed in a variety of printed formats. The story of how and why these manuals appeared and changed over time is significant, suggesting much about how the inquisition’s institutional history intersected with broader histories of the book and histories of religious thought. Such documents also provide modern researchers with important primary source evidence for the history of medieval and early modern anti-heretical persecutions, by revealing how inquisitors were at least theoretically intended to function in a given time and place.
 
@@ -125,7 +119,7 @@ INQ 41. 1821 abridged Spanish translation of Eymeric, Directorium.
 
 INQ 193. 1843 edition of García, Orden (1568).
 
-### Endnotes
+## Endnotes
 [1](#ftn1) On the foundational documents of early Roman and Christian anti-heresy legislation, see inter alia E. Peters,\ Inquisition (New York 1988); various sources are translated in ibid., Heresy and authority in medieval Europe (Philadelphia 1980).
 
 2 This work, according to G. Mollat, enjoyed some success in the thirteenth and fourteenth centuries and was used by Bernard Gui as the basis of the fourth part of his inquisitorial manual (see below). Still it has never been printed, and Mollat could only identify three medieval MSS (one at Florence and two in the Vatican, each covering only about 10-20 ff.) as well as a couple of seventeenth-century versions. See his introduction to Bernard Gui, Manuel de l’inquisiteur (2 vols. Paris 1926-7, repr. 1964), vol. 1, p. xvii. Further information on the wide variety of extant medieval inquisition manuals can be found in A. Dondaine, “Le manuel de l’inquisiteur (1230-1330)” in Archivum Fratrum Praedicatorum 17 (1947), pp. 85-194.
