@@ -1,7 +1,7 @@
 module.exports = {
   titleBox: {
     borderWidth: '2px',
-    borderColor: 'primary',
+    borderColor: 'secondary',
     borderStyle: 'solid',
     fontSize: '1.4rem',
     display: 'inline-block',
@@ -39,6 +39,6 @@ module.exports = {
   title: {
     margin: '1px 20px',
     fontFamily: 'title',
-    color: 'primary',
+    color: 'secondary',
   },
 }

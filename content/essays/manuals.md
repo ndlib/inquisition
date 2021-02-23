@@ -1,24 +1,18 @@
 ---
-title: "Introduction to inquisitorial manuals"
+title: "I. Inquisitorial Manuals"
+type: "essay"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
-slug: "item/aspace_93b838c49d595bd0e9a87bcab723def2"
+marbleTitle: "I. Inquisitorial Manuals"
+essayTitle: "Introduction to inquisitorial manuals"
+thumbnail: "https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg"
+slug: "inquisition-manuals"
 summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
-featuredItems:
-  - title: "Card #1"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
-  - title: "Card #2"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg  
-  - title: "Card #3"
-    link: "/item/MSHLAT0090_EAD"
-    image: https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg
 ---
-# Introduction to inquisitorial manuals
-##Latin treatises on heresy and inquisition
+## Introduction to inquisitorial manuals
+###Latin treatises on heresy and inquisition
 Conducting an inquisition was a complicated business. First inquisitors had to have some sense of their underlying theological justification and legal authority, both of which might well be challenged by hostile local forces. Then they had to be able to identify the various and often subtle types of heretical or otherwise sinful behavior which fell under their jurisdiction. Finally they had to know how to proceed in the practical exercise of their functions, from initial denunciation and arrest to questioning (including torture), judgment and punishment—all ideally subject to formal documentation. Inquisitors also had to manage a staff of underlings, each with their own particular duties and restrictions. Written instructions or policy statements were therefore important resources to ensure that established inquisitorial procedure was duly followed; these were sometimes collected into more or less comprehensive inquisitorial manuals and eventually they could be distributed in a variety of printed formats. The story of how and why these manuals appeared and changed over time is significant, suggesting much about how the inquisition’s institutional history intersected with broader histories of the book and histories of religious thought. Such documents also provide modern researchers with important primary source evidence for the history of medieval and early modern anti-heretical persecutions, by revealing how inquisitors were at least theoretically intended to function in a given time and place.
 
 The key is to know which manual or other set of documents should be consulted as the most relevant historical witness to inquisitorial procedure in a particular setting. The fact is that there was no standard manual for inquisitors in the Middle Ages, and standardization remained an elusive goal throughout the history of Spanish and other early modern inquisitions. Nor was there a standard training regime or course specifically designed for would-be inquisitors. Inquisitors were in many cases drawn either from the ranks of the mendicant Orders or from the secular clergy, if they did not simply fall into their role ex officio (as with local bishops or their delegates, especially in the medieval period); in any case they would ideally be expected to have a foundational background in theology and/or canon law. Once in office, individual inquisitors in different regions might be able to obtain any number of texts for consultation in case of difficulty, or they might compose their own. In all cases inquisitorial work depended mightily on the contingencies of time, place and the personalities involved. This variability must obviously be taken into account if misleading anachronism or overgeneralization is to be avoided. The following overview of inquisitorial manuals as a genre is therefore intended to serve as a preliminary guide to this complex subject; it is far from complete.
@@ -41,7 +35,7 @@ At no time did any one inquisitorial manual emerge as the “official” guidebo
 
 Such eclectic mixing, matching and pruning of earlier compilations continued well into the later seventeenth century, perhaps reaching a high point of convenience, sophistication and intertextual complexity with the publication of Giovanni Alberghini’s relatively slim Manuale Qualificatorum S. Inquisitionis at Zaragoza, 1671 [INQ 35]. This text was reprinted in 1740 (Cologne [INQ 39]) and 1754 (Venice), evidence of its ongoing interest even to non-inquisitorial pastors long after Nicholas Eymeric’s Directorium had once more become a rarity.21
 
-## Instrucciones and cartas acordadas of the Spanish inquisition
+### Instrucciones and cartas acordadas of the Spanish inquisition
 Quite apart from the medieval tradition, and apparently not much if at all indebted to it, is a series of documents generated by Spanish inquisitorial officials and circulated in the vernacular to guide the efforts of their newly-created institution. Whatever links the Spanish inquisition may have had to medieval precedent, these were not seen as determinative by its first inquisitor-general Tomás de Torquemada in 1484. Spanish inquisitors might consult copies of Eymeric or Castro when they wanted to drink deeply from the well of theological tradition, but for day-to-day inquisitorial business much more concise and practical manuals were required. This was all the more true in the early years as Iberian inquisitors dealt with an unheard-of volume of trials in a short period of time; later in the sixteenth and seventeenth centuries the urgency of that early and rather haphazard period in the history of the Spanish inquisition seems to have given way to more of a steady emphasis on centralization and standardization. Still, right to the end of the Spanish inquisition’s long history details continued to be worked out on a case-by-case basis. There is even evidence in surviving manuals to show that individual inquisitors continued to devise their own personal versions of inquisitorial practice, as required to serve the dictates of their particular characters and situations.
 
 Strikingly, the Spanish inquisition does not seem to have begun with anything like a well thought-out or comprehensive set of procedural guidelines. Seeing the need for some sort of policy statement, Torquemada drafted a set of Instrucciones in 1484 and followed them up with addenda in 1485, 1488 and 1498. These were remarkably brief, however, with the original 1484 document covering only about six folios in a printed edition. 22 Nor were they immediately available for broad distribution; Torquemada’s text did not appear in print during his or his immediate successors’ lifetimes. Still, they provided basic instructions to guide the actions of inquisitors who were otherwise expected to draw upon their pre-existing knowledge of law, theology and good sense.
@@ -72,7 +66,7 @@ Inquisitorial manuals, with their many varieties of form and content, their chan
 
 Robin Vose
 
-## Appendix: Inventory of inquisitorial manuals at Notre Dame
+### Appendix: Inventory of inquisitorial manuals at Notre Dame
 The Inquisition Collection at the University of Notre Dame contains at least 23 items which can serve to illustrate the richness and variety of the inquisitorial manual tradition; this is in addition to the Simancas volume which is part of the larger Rare Book collection. Many other exemplars are listed in van der Vekene. A number of important items not listed in van der Vekene are also available at the Lea library, University of Pennsylvania (Philadelphia).
 
 INQ 29. 1503 edition of Eymeric, Directorium inquisitorum (original 1370s).

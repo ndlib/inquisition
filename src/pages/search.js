@@ -26,15 +26,16 @@ const Search = ({ location }) => {
             <TagFilterConfig field='collection.keyword' title='Collection' id='collection' />
 
             <SearchRefinementListFilter
-              field='centuryTag.keyword'
-              label='Time Period'
+              field='parent.keyword'
+              label='Document Category'
               operator='OR'
               sort='a-z'
             />
             <SearchRefinementListFilter
-              field='repository.keyword'
-              label='Campus Location'
+              field='centuryTag.keyword'
+              label='Date Range'
               operator='OR'
+              sort='a-z'
             />
             <SearchRefinementListFilter
               field='formatTag.keyword'
@@ -42,18 +43,17 @@ const Search = ({ location }) => {
               operator='OR'
             />
             <SearchRefinementListFilter
-              field='themeTag.keyword'
-              label='Keywords'
-              operator='OR'
-              sort='default'
-              size='10'
-            />
-            <SearchRefinementListFilter
               field='language.keyword'
               label='Language'
               operator='OR'
               sort='default'
               size='4'
+            />
+            <SearchRefinementListFilter
+              field='geographicLocation.keyword'
+              label='Geogrpahic Location'
+              operator='OR'
+              sort='default'
             />
           </Column>
           <Column colSpan='3'>
