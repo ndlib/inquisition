@@ -14,6 +14,18 @@ export default merge({}, theme, {
       minHeight: 'calc(100vh - 50px - 70px - 64px - 1.8rem*2)',
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
     },
+    h1: {
+      color: 'secondary',
+      fontWeight: '200',
+    },
+    h2: {
+      color: 'secondary',
+      fontWeight: '200',
+    },
+    h3: {
+      color: 'secondary',
+      fontWeight: '200',
+    },
   },
   fonts: {
     title: `
