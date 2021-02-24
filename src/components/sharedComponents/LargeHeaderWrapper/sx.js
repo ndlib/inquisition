@@ -1,6 +1,5 @@
 module.exports = {
   wrapper: {
-    borderTop: '5px solid #D39F10',
     position: 'relative',
     height: ['290px', '380px', '380px'],
     overflow: 'hidden',
@@ -21,16 +20,6 @@ module.exports = {
     },
 
   },
-  exhibitsLink: {
-    color: 'background',
-    fontFamily: 'menu',
-    fontSize: '18px',
-    textDecoration: 'none',
-    position: 'absolute',
-    right: '400px',
-    lineHeight: '50px',
-    display: ['none', 'block', 'block'],
-  },
   secondRow: {
     position: 'absolute',
     top: '50px',
@@ -45,12 +34,12 @@ module.exports = {
     borderLeft: '50px solid transparent',
     position: 'absolute',
     display: ['none', 'block', 'block'],
-    right: '270px',
+    right: '340px',
     opacity: '0.9',
     backdropFilter: 'blur(0px)',
   },
   rightOfTriangle: {
-    width: '270px',
+    width: '340px',
     height: '50px',
     backgroundColor: 'brandBar',
     position: 'absolute',
@@ -74,4 +63,15 @@ module.exports = {
     top: '0',
     display: ['block', 'none', 'none'],
   },
+  exhibitsLink: {
+    color: 'background',
+    fontFamily: 'menu',
+    fontSize: '18px',
+    textDecoration: 'none',
+    position: 'absolute',
+    right: '400px',
+    lineHeight: '50px',
+    display: ['none', 'block', 'block'],
+  },
+
 }

@@ -8,7 +8,7 @@ import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
-import headerLogo from '../../../assets/images/rbsc-logo.svg'
+import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
 import theme from '../../../gatsby-plugin-theme-ui'
 import HeroBackground from '../HeroBackground'
 import sx from './sx'
@@ -28,7 +28,7 @@ export const Layout = ({
           <HeroBackground />
           <div sx={sx.searchContainer}>
             <div sx={sx.searchBox}>
-              <SearchBox boxLabel='Search the Collection' />
+              <SearchBox location={location} boxLabel='Search Complete Collection' />
             </div>
           </div>
           <div sx={sx.titleContainer}>
@@ -40,9 +40,11 @@ export const Layout = ({
             </div>
           </div>
         </LargeHeaderWrapper>
-        <main sx={homeMainStyles}>
-          {children}
-        </main>
+        <BaseStyles>
+          <main sx={homeMainStyles}>
+            {children}
+          </main>
+        </BaseStyles>
         <FooterWrapper location={location}>
           <div>Footer!</div>
         </FooterWrapper>

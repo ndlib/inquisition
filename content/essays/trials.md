@@ -4,14 +4,23 @@ type: "essay"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
 marbleTitle: "II. Trials and Sentencing"
 essayTitle: "Introduction to inquisition trial transcripts and records"
-thumbnail: "https://image-iiif.library.nd.edu/iiif/2/BPP1001_EAD%2FBPP_1001-001-F2/full/!250,250/0/default.jpg"
+thumbnail: "https://image-iiif.library.nd.edu/iiif/2/MSNCW8007_EAD%2F8007-000a.150/full/!250,250/0/default.webp"
 slug: "trails-sentencing"
 summary: "Thousands of trial transcripts and related documents have been preserved to record the day-to-day judicial work of the various inquisition tribunals. Though most remain in unique manuscript copies held by major national or ecclesiastical collections in countries of origin as Spain, Portugal, Italy and Mexico, exemplars of several documentary types are also available in the McDevitt Collection."
+pullQuote: "Among the most fascinating and disquieting episodes in inquisition history are the tens of thousands of trials in which accused individuals or reos faced questioning, sometimes torture, and ultimately sentencing (when found guilty) at the hands of inquisitorial functionaries."
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
 sort: 2
+featuredItems:
+  - title: "Relación de los méritos del proceso de Ana Méndez, doncella portuguesa, hija de Jorge Rodriguez. Requerida por el Santo Oficio de la Ynquisición de Cuenca."
+    link: /item/aspace_7e85bf4e9549b2a635169a95403e573a
+    thumbnail: https://image-iiif.library.nd.edu/iiif/2/001591353%2FINQ_001591353-a/full/!250,250/0/default.webp
+  - title: "Diligencias contra el Reo Atanacio de la Crus, por haver echo pacto, con el Diablo: Yndio de este Pueblo de Santiago Coparando de oficio."
+    link: /item/aspace_7e85bf4e9549b2a635169a95403e573a
+    thumbnail: https://image-iiif.library.nd.edu/iiif/2/MSNCW2013_EAD%2F2013-01.a.150/full/!250,250/0/default.webp
 ---
+
 ##Trial transcripts
 Among the most fascinating and disquieting episodes in inquisition history are the tens of thousands of trials in which accused individuals or reos faced questioning, sometimes torture, and ultimately sentencing (when found guilty) at the hands of inquisitorial functionaries.1 Such exercises in the judgment of heretical behavior were after all the inquisitors’ raison d’être, and their notorious policies of secrecy combined with equally notorious outcomes to inspire fear and fantasy from medieval times right up to the present day. Defendants ranged from the extremely high profile to complete unknowns, and the resulting wide diversity of cases generated an extremely diverse documentary record across tribunals and through the centuries. Given the sheer number of recorded trials, and their often ad hoc manner of transcription and preservation, research in this area is frequently a hit-or-miss affair. Nevertheless, scholars have devoted more attention to analysis of trial records than to any other inquisitorial source. Whether in close readings of individual trials, or in deriving qualitative and/or quantitative data from whole (sometimes quite enormous) series of proceedings, these documents provide modern researchers with crucial evidence regarding the inquisitions’ actual exercise of power and their impact on targeted segments of society. Given the levels of detail that can emerge from the more extensive testimonial records, these sources have also proved valuable to social, religious and intellectual historians with an interest in the everyday lives and beliefs of deponents—quite apart from their status as collaborators with or victims of the inquisition per se.2
 

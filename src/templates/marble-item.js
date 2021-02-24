@@ -6,6 +6,7 @@ import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Pages/MarbleIt
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
+import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Internal/ReturnToSearch'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -13,11 +14,13 @@ export const MarbleItemPage = ({ data, location }) => {
   const { marbleItem, allMarbleFile } = data
 
   return (
-    <Layout location={location} title={marbleItem.title}>
+    <Layout location={location}>
       <Seo
         data={data}
         location={location}
       />
+      <ReturnToSearch location={location} />
+      <h1>{marbleItem.title}</h1>
       {
         marbleItem.display === 'collection' ? (
           <CollectionLayout

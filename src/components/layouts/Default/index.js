@@ -8,10 +8,10 @@ import SmallHeaderWrapper from '../../sharedComponents/SmallHeaderWrapper'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import { Link } from 'gatsby'
 import App from '../../siteapp'
-import ReturnToSearch from 'components/Internal/ReturnToSearch'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import HeroBackground from '../HeroBackground'
+import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
 import sx from './sx'
 
 export const Layout = ({
@@ -21,33 +21,40 @@ export const Layout = ({
 }) => {
   return (
     <div sx={theme.styles.Layout}>
-      <BaseStyles>
-        <App location={location}>
-          <SmallHeaderWrapper location={location}>
-            <HeroBackground />
-            <div>
-              <h1><Link to='/'>Inquisitio</Link></h1>
-              <div sx={sx.searchContainer}>
-                <div sx={sx.searchBox}>
-                  <SearchBox boxLabel='Search the Collection' />
-                </div>
+      <App location={location}>
+        <SmallHeaderWrapper location={location} logoTop={headerLogo}>
+          <HeroBackground />
+          <div>
+            <div sx={sx.titleContainer}>
+              <div sx={sx.titleBox}>
+                <h1 sx={sx.title}>Inquisitio</h1>
+                <blockquote sx={sx.headingBlockquote}>
+                manuscript and print sources for the study of Inquisition history
+                </blockquote>
               </div>
             </div>
-          </SmallHeaderWrapper>
+            <div sx={sx.searchContainer}>
+              <div sx={sx.searchBox}>
+                <SearchBox location={location} boxLabel='Search Complete Collection' />
+              </div>
+            </div>
 
-          <main id='mainContent' sx={theme.styles.Main}>
-            <ReturnToSearch location={location} />
+          </div>
+        </SmallHeaderWrapper>
+        <main id='mainContent' sx={theme.styles.Main}>
+          <BaseStyles>
+            <h1>{title}</h1>
             <article>
-              {title ? <BaseStyles><h1>{title}</h1></BaseStyles> : null}
               {children}
             </article>
-          </main>
+          </BaseStyles>
+        </main>
 
-          <FooterWrapper location={location}>
-            <div>Footer!</div>
-          </FooterWrapper>
-        </App>
-      </BaseStyles>
+        <FooterWrapper location={location}>
+          <div>Footer!</div>
+        </FooterWrapper>
+      </App>
+
     </div>
   )
 }

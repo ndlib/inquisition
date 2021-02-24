@@ -23,7 +23,7 @@ const sx = {
 
 const Home = ({ data, location }) => {
   const { markdownRemark } = data
-  console.log(markdownRemark)
+
   return (
     <Layout
       location={location}

@@ -6,6 +6,17 @@ export default merge({}, theme, {
     secondary: '#6A4422',
     brandBar: '#6A4422',
   },
+  layout: {
+    titleBox: {
+      backgroundColor: 'red',
+      font: 'title',
+    },
+  },
+  card: {
+    label: {
+      color: 'blue',
+    },
+  },
   // ae9142
   styles: {
     Main: {
