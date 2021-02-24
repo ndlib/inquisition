@@ -11,8 +11,7 @@ import Column from 'components/Shared/Column'
 import MultiColumn from 'components/Shared/MultiColumn'
 import Card from 'components/Shared/Card'
 import ButtonLink from '../components/ButtonLink'
-import SearchBase from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBase'
-import SearchResults from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchTools/SearchResults'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -67,12 +66,8 @@ export const EssayPage = ({ data, location }) => {
         </Column>
         <Column>
           <section>
-            <nav>
-              <h2>More Essays</h2>
-              <ul>
-                {browseLinks}
-              </ul>
-            </nav>
+            <Menu menu='essays' />
+
           </section>
           <section>
             <h2>Featured Sources</h2>

@@ -12,6 +12,7 @@ import MultiColumn from 'components/Shared/MultiColumn'
 import Card from 'components/Shared/Card'
 import ButtonLink from '../components/ButtonLink'
 import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Internal/DisplayViewToggle'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -70,12 +71,7 @@ export const EssayPage = ({ data, location }) => {
 
         </Column>
         <Column>
-          <nav>
-            <h3>Browse</h3>
-            <ul>
-              {browseLinks}
-            </ul>
-          </nav>
+          <Menu menu='browse' />
         </Column>
       </MultiColumn>
     </Layout>

@@ -1,0 +1,16 @@
+{
+  "id": "essays",
+  "label": "More Essays",
+  "items": [
+    {
+      "id": "essay-1",
+      "label": "Introduction to inquisitorial manuals",
+      "link": "/inquisition-manuals/essay"
+    },
+    {
+      "id": "essay-2",
+      "label": "Introduction to inquisition trial transcripts and records",
+      "link": "/trials-sentencing/essay"
+    }
+  ]
+}
