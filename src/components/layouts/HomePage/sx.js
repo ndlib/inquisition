@@ -9,22 +9,14 @@ module.exports = {
     position: 'relative',
     backgroundColor: 'white',
   },
-  searchBox: {
-    display: 'inline-block',
-    position: 'relative',
-    width: '300px',
-  },
-  searchContainer: {
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    top: '100px',
-    width: '100vw',
-    right: '30px',
-  },
   titleContainer: {
     display: 'flex',
     justifyContent: 'center',
+  },
+  title: {
+    margin: '1px 20px',
+    fontFamily: 'title',
+    color: 'secondary',
   },
   headingBlockquote: {
     color: 'attention',
@@ -36,9 +28,17 @@ module.exports = {
     top: '-15px',
     position: 'relative',
   },
-  title: {
-    margin: '1px 20px',
-    fontFamily: 'title',
-    color: 'secondary',
+  searchBox: {
+    display: 'inline-block',
+    position: 'relative',
+    width: '320px',
+  },
+  searchContainer: {
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    top: '113px',
+    width: '100vw',
+    right: '10px',
   },
 }

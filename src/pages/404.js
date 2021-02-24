@@ -18,7 +18,8 @@ const NotFoundPage = ({ location }) => {
         description='The requested page could not be found.'
       />
       <I18nextProvider i18n={i18next}>
-        <div>Amoungst our weaponry are such diverse elements as ... I will come in again.</div>
+        <p>Amoungst our weaponry are such diverse elements as ... </p>
+        <p>I will come in again.</p>
       </I18nextProvider>
     </Layout>
 
