@@ -47,12 +47,12 @@ export const Layout = ({
           </main>
         </BaseStyles>
         <FooterWrapper location={location}>
-          <Link to='https://rarebooks.library.nd.edu'>
+          <a href='https://rarebooks.library.nd.edu'>
             <img
               src={headerLogo}
               sx={{}}
               alt='Rare Books & Special Collections, Hesburgh Libraries'
-            /></Link>
+            /></a>
           <p>
             © 2020 University of Notre Dame
             Notre Dame, IN 46556 USA

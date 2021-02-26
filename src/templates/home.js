@@ -82,7 +82,7 @@ const Home = ({ data, location }) => {
           <MultiColumn columns='2'>
             <Column>
               <div sx={sx.topContentContainer}>
-                <p sx={sx.topContent} dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+                <div sx={sx.topContent} dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
               </div>
             </Column>
             <Column>
