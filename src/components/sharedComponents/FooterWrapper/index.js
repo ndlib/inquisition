@@ -6,18 +6,30 @@ import { jsx } from 'theme-ui'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
+import Column from 'components/Shared/Column'
+import MultiColumn from 'components/Shared/MultiColumn'
+import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.svg'
 
 export const FooterWrapper = ({ location, children }) => {
   return (
     <footer sx={theme.styles.Footer}>
-      <div sx={sx.flexWrapper}>
-        <div sx={sx.textWrapper}>
+      <MultiColumn columns='3'>
+        <Column>
           {children}
-        </div>
-        <div sx={sx.menuWrapper}>
+        </Column>
+        <Column>
           <Menu menu='footer' />
-        </div>
-      </div>
+        </Column>
+        <Column>
+          <a href='https://nd.edu' className='desktop'>
+            <img
+              src={ndLogo}
+              sx={sx.ndLogo}
+              alt='University of Notre Dame'
+            />
+          </a>
+        </Column>
+      </MultiColumn>
     </footer>
   )
 }
