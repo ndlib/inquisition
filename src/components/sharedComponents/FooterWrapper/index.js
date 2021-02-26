@@ -6,8 +6,8 @@ import { jsx } from 'theme-ui'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
-import Column from 'components/Shared/Column'
-import MultiColumn from 'components/Shared/MultiColumn'
+import Column from '@ndlib/gatsby-theme-marble/src/components/Shared/Column'
+import MultiColumn from '@ndlib/gatsby-theme-marble/src/components/Shared/MultiColumn'
 import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.svg'
 
 export const FooterWrapper = ({ location, children }) => {
