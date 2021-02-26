@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import SmallHeaderWrapper from '../../sharedComponents/SmallHeaderWrapper'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
-import { Link } from 'gatsby'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
@@ -18,6 +17,7 @@ export const Layout = ({
   title, // page title to be placed inside main
   children,
   location,
+  hideSearch,
 }) => {
   return (
     <div sx={theme.styles.Layout}>
@@ -35,7 +35,7 @@ export const Layout = ({
             </div>
             <div sx={sx.searchContainer}>
               <div sx={sx.searchBox}>
-                <SearchBox location={location} boxLabel='Search Complete Collection' />
+                {(!hideSearch) ? (<SearchBox location={location} boxLabel='Search Complete Collection' />) : null }
               </div>
             </div>
 
@@ -63,10 +63,12 @@ Layout.propTypes = {
   title: PropTypes.node,
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
+  hideSearch: PropTypes.bool,
 }
 
 Layout.defaultProps = {
   title: null,
+  hideSearch: false,
 }
 
 export default withI18nTranslation(Layout)

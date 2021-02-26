@@ -19,6 +19,9 @@ export default merge({}, theme, {
   },
   // ae9142
   styles: {
+    Footer: {
+      backgroundColor: 'gray.3',
+    },
     Main: {
       margin: ['1rem', '1rem auto', '1rem auto'],
       backgroundColor: 'white',
@@ -27,15 +30,15 @@ export default merge({}, theme, {
     },
     h1: {
       color: 'secondary',
-      fontWeight: '200',
+      fontWeight: '400',
     },
     h2: {
       color: 'secondary',
-      fontWeight: '200',
+      fontWeight: '400',
     },
     h3: {
       color: 'secondary',
-      fontWeight: '200',
+      fontWeight: '400',
     },
   },
   fonts: {
@@ -48,6 +51,14 @@ export default merge({}, theme, {
       serif
     `,
     serif: `
+      Garamond,
+      Hoefler Text,
+      Times New Roman,
+      Times,
+      serif
+    `,
+    heading:
+    `
       Garamond,
       Hoefler Text,
       Times New Roman,

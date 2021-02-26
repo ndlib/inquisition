@@ -12,7 +12,7 @@ import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 
 const Search = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} hideSearch>
       <Seo
         data={{}}
         location={location}

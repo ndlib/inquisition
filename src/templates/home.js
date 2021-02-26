@@ -8,21 +8,65 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/HomePage'
 import ButtonLink from '../components/ButtonLink'
-import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 import Column from 'components/Shared/Column'
 import MultiColumn from 'components/Shared/MultiColumn'
+import collectionImage from '../assets/images/collection.jpg'
+import essayImage from '../assets/images/essays.jpg'
+
 const sx = {
   topContent: {
+    display: 'inline-block',
+    textAlign: 'center',
+    width: '80%',
+    margin: 'auto',
+  },
+  topContentContainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignContent: 'center',
-    height: '300px',
+    alignItems: 'center',
+    height: '400px',
   },
 }
 
 const Home = ({ data, location }) => {
   const { markdownRemark } = data
+  const topSx = {
+    backgroundImage: `url(${collectionImage})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    height: '400px',
+    display: 'flex',
+    justifyContent: 'baseline',
+    textAlign: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  }
+  const bottomSx = {
+    backgroundImage: `url(${essayImage})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    height: '400px',
+    display: 'flex',
+    justifyContent: 'baseline',
+    textAlign: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  }
+  const buttonSx = {
+    position: 'absolute',
+    bottom: '20px',
+    margin: '0 auto',
+    width: '100%',
+  }
+
+  const additionalResourcesHeader = {
+    backgroundColor: '#BA6A71',
+    color: 'white !important',
+    padding: '10px',
+  }
 
   return (
     <Layout
@@ -37,29 +81,25 @@ const Home = ({ data, location }) => {
         <section>
           <MultiColumn columns='2'>
             <Column>
-              <div sx={sx.topContent}>
-                <div dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+              <div sx={sx.topContentContainer}>
+                <div sx={sx.topContent} dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
               </div>
             </Column>
             <Column>
-              <Card
-                key={markdownRemark.frontmatter.contentTopCard.link}
-                target={markdownRemark.frontmatter.contentTopCard.link}
-                image={markdownRemark.frontmatter.contentTopCard.image}
-              >
-                <ButtonLink target='/browse' title='Browse the Collection' />
-              </Card>
+              <div sx={topSx}>
+                <div sx={buttonSx}>
+                  <ButtonLink target='/browse' title='Browse the Collection' />
+                </div>
+              </div>
             </Column>
           </MultiColumn>
           <MultiColumn columns='3'>
             <Column colSpan='1'>
-              <Card
-                key={markdownRemark.frontmatter.contentMiddleCard.link}
-                target={markdownRemark.frontmatter.contentMiddleCard.link}
-                image={markdownRemark.frontmatter.contentMiddleCard.image}
-              >
-                <ButtonLink target='/essays' title='Essays' />
-              </Card>
+              <div sx={bottomSx}>
+                <div sx={buttonSx}>
+                  <ButtonLink target='/essays' title='Essays' />
+                </div>
+              </div>
             </Column>
             <Column colSpan='2'>
               <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
@@ -67,7 +107,7 @@ const Home = ({ data, location }) => {
           </MultiColumn>
         </section>
         <section>
-          <h2>Additional Resources</h2>
+          <h2 sx={additionalResourcesHeader}>Additional Resources</h2>
           <p>The bibliographic descriptions and essays found on this site were prepared by Robin Vose, Associate Professor, Department of History at St. Thomas University, Fredericton, New Brunswick, Canada.</p>
           <Link to='/about'>About the Collection and this Digital Project</Link>
           <h3>Additional Resources about the Inquisition</h3>
