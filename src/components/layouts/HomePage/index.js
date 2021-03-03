@@ -23,7 +23,7 @@ export const query = graphql`
         gatsbyImageData(
           width: 1600
           height: 330
-          placeholder: BLURRED
+          placeholder: DOMINANT_COLOR
           formats: [AUTO, WEBP, AVIF]
         )      }
     }
@@ -42,7 +42,7 @@ export const Layout = ({
       <App location={location}>
         <LargeHeaderWrapper location={location} logoTop={headerLogo}>
           <div sx={sx.headerWrapper}>
-            <GatsbyImage image={image} alt='' />
+            <GatsbyImage image={image} alt='' loading='eager' />
             <div sx={sx.searchContainer}>
               <div sx={sx.searchBox}>
                 <SearchBox location={location} boxLabel='Search Complete Collection' />
