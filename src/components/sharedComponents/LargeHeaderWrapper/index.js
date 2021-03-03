@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { jsx, NavLink, Box, Grid, Image, Flex } from 'theme-ui'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import typy from 'typy'
 import PropTypes from 'prop-types'
 import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.svg'
@@ -47,15 +47,12 @@ export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
             <Flex as='nav' sx={{ alignItems: 'end', height: '50px', justifyContent: 'end' }}>
               {menu.map(l => {
                 return (
-                  <NavLink
-                    variant='topnav'
-                    sx={{ variant: 'links.nav' }}
-                    href={l.link}
+                  <Link
+                    sx={{ variant: 'links.topnav' }}
+                    to={l.link}
                     key={l.id}
-                    px={3}
-                    py={3}
                   >{l.label}
-                  </NavLink>)
+                  </Link>)
               })}
             </Flex>
           </Grid>

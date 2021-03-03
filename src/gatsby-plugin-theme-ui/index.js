@@ -11,6 +11,16 @@ export default merge({}, theme, {
       bg: 'primary',
     },
   },
+  links: {
+    topnav: {
+      color: 'white',
+      py: '15px',
+      px: '25px',
+      textDecoration: 'none',
+      fontWeight: '600',
+      fontFamily: 'heading',
+    },
+  },
   // ae9142
   styles: {
     NDBrandNavigationBar: {
