@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, Box, Grid, Flex } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
@@ -9,55 +9,16 @@ import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/HomePage'
 import ButtonLink from '../components/ButtonLink'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import Column from 'components/Shared/Column'
-import MultiColumn from 'components/Shared/MultiColumn'
-import collectionImage from '../assets/images/collection.jpg'
-import essayImage from '../assets/images/essays.jpg'
-
-const sx = {
-  topContent: {
-    display: 'inline-block',
-    textAlign: 'center',
-    width: '80%',
-    margin: 'auto',
-  },
-  topContentContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '400px',
-  },
-}
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Home = ({ data, location }) => {
-  const { markdownRemark } = data
-  const topSx = {
-    backgroundImage: `url(${collectionImage})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    height: '400px',
-    display: 'flex',
-    justifyContent: 'baseline',
-    textAlign: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  }
-  const bottomSx = {
-    backgroundImage: `url(${essayImage})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    height: '400px',
-    display: 'flex',
-    justifyContent: 'baseline',
-    textAlign: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  }
+  const { markdownRemark, collectionFile, essaysFile } = data
+  const collectionImage = getImage(collectionFile)
+  const essaysImage = getImage(essaysFile)
+
   const buttonSx = {
-    position: 'absolute',
-    bottom: '20px',
+    position: 'relative',
+    bottom: '60px',
     margin: '0 auto',
     width: '100%',
   }
@@ -79,32 +40,28 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <section>
-          <MultiColumn columns='2'>
-            <Column>
-              <div sx={sx.topContentContainer}>
-                <div sx={sx.topContent} dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+          <Grid columns={[2, '40% 60%']} gap={0} sx={{ }}>
+            <Flex sx={{ alignItems: 'center', textAlign: 'center' }}>
+              <div dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+            </Flex>
+            <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
+              <GatsbyImage image={collectionImage} />
+              <div sx={buttonSx}>
+                <ButtonLink target='/browse' title='Browse the Collection' />
               </div>
-            </Column>
-            <Column>
-              <div sx={topSx}>
-                <div sx={buttonSx}>
-                  <ButtonLink target='/browse' title='Browse the Collection' />
-                </div>
+            </Box >
+          </Grid>
+          <Grid columns={[2, '34% 66%']} gap={0} sx={{ }}>
+            <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
+              <GatsbyImage image={essaysImage} />
+              <div sx={buttonSx}>
+                <ButtonLink target='/essays' title='Essays' />
               </div>
-            </Column>
-          </MultiColumn>
-          <MultiColumn columns='3'>
-            <Column colSpan='1'>
-              <div sx={bottomSx}>
-                <div sx={buttonSx}>
-                  <ButtonLink target='/essays' title='Essays' />
-                </div>
-              </div>
-            </Column>
-            <Column colSpan='2'>
+            </Box >
+            <Box>
               <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-            </Column>
-          </MultiColumn>
+            </Box>
+          </Grid>
         </section>
         <section>
           <h2 sx={additionalResourcesHeader}>Additional Resources</h2>
@@ -161,6 +118,26 @@ export const query = graphql`
           image
         }
       }
+    }
+    collectionFile: file(relativePath: { eq: "collection.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 300
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )      }
+    }
+    essaysFile: file(relativePath: { eq: "essays.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 300
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )      }
     }
   }
 `

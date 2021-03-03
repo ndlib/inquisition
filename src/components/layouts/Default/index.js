@@ -3,28 +3,47 @@
 import React from 'react'
 import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
+import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
-import HeroBackground from '../HeroBackground'
 import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import sx from './sx'
 
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "banner.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 1600
+          height: 200
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )      }
+    }
+  }
+`
 export const Layout = ({
   title, // page title to be placed inside main
   children,
   location,
   hideSearch,
 }) => {
+  const { file } = useStaticQuery(query)
+  const image = getImage(file)
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
         <LargeHeaderWrapper location={location} logoTop={headerLogo}>
           <div sx={sx.headerWrapper}>
-            <HeroBackground />
+            <GatsbyImage image={image} alt='' />
+
             <div>
               <div sx={sx.titleContainer}>
                 <div sx={sx.titleBox}>
@@ -42,14 +61,14 @@ export const Layout = ({
             </div>
           </div>
         </LargeHeaderWrapper>
-        <main id='mainContent' sx={theme.styles.Main}>
-          <BaseStyles>
+        <BaseStyles>
+          <main id='mainContent' sx={theme.styles.Main}>
             <h1>{title}</h1>
             <article>
               {children}
             </article>
-          </BaseStyles>
-        </main>
+          </main>
+        </BaseStyles>
 
         <FooterWrapper location={location}>
           <div>Footer!</div>

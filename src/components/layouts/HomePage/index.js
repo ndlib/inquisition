@@ -1,33 +1,48 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, BaseStyles } from 'theme-ui'
+import { jsx, BaseStyles, NavLink, Box, Grid, Image, Flex, Container } from 'theme-ui'
 import PropTypes from 'prop-types'
+import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import App from '../../siteapp'
-import { Link } from 'gatsby'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
 import theme from '../../../gatsby-plugin-theme-ui'
-import HeroBackground from '../HeroBackground'
 import sx from './sx'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "banner.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 1600
+          height: 330
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )      }
+    }
+  }
+`
 
 export const Layout = ({
   children,
   location,
   title,
 }) => {
-  const homeMainStyles = theme.styles.Main
-  homeMainStyles['marginTop'] = '40px'
-
+  const { file } = useStaticQuery(query)
+  const image = getImage(file)
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
         <LargeHeaderWrapper location={location} logoTop={headerLogo}>
           <div sx={sx.headerWrapper}>
-            <HeroBackground />
+            <GatsbyImage image={image} alt='' />
             <div sx={sx.searchContainer}>
               <div sx={sx.searchBox}>
                 <SearchBox location={location} boxLabel='Search Complete Collection' />
@@ -44,7 +59,7 @@ export const Layout = ({
           </div>
         </LargeHeaderWrapper>
         <BaseStyles>
-          <main sx={homeMainStyles}>
+          <main sx={theme.styles.Main}>
             {children}
           </main>
         </BaseStyles>

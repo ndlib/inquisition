@@ -31,22 +31,25 @@ export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
     sx.triangleTopright.borderTopColor = theme.styles.NDBrandNavigationBar.backgroundColor
   }
   return (
-    <header sx={theme.styles.Header}>
+    <header sx={{}}>
       <WordMark />
       {children}
       <div sx={{ display: ['none', 'block', 'block'] }} >
         <Grid columns={[2, '80% 20%']} gap={0} sx={{ height: '100px', position: 'absolute', top: 0, width: '100%' }}>
           <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', ...theme.styles.NDBrandNavigationBar }}>
-            <Flex sx={{ alignItems: 'center', height: '50px', justifyContent: 'center' }}>
+            <Flex sx={{ alignItems: 'center', height: '50px', paddingLeft: '10px' }}>
               <Image
+                sx={{ width: '180px' }}
                 src={logoTop}
                 alt='Rare Books & Special Collections, Hesburgh Libraries'
               />
             </Flex>
-            <Box as='nav'>
+            <Flex as='nav' sx={{ alignItems: 'end', height: '50px', justifyContent: 'end' }}>
               {menu.map(l => {
                 return (
                   <NavLink
+                    variant='topnav'
+                    sx={{ variant: 'links.nav' }}
                     href={l.link}
                     key={l.id}
                     px={3}
@@ -54,7 +57,7 @@ export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
                   >{l.label}
                   </NavLink>)
               })}
-            </Box>
+            </Flex>
           </Grid>
           <Flex sx={{ justifyContent: 'center', alignItems: 'center', ...theme.styles.NDBrandNavigationBar }}>
             <a href='https://nd.edu'>
