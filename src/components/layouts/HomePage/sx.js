@@ -1,4 +1,8 @@
 module.exports = {
+  headerWrapper: {
+    height: ['290px', '380px', '380px'],
+    overflow: 'hidden',
+  },
   titleBox: {
     borderWidth: '2px',
     borderColor: 'secondary',

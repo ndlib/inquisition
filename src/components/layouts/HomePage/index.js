@@ -26,18 +26,20 @@ export const Layout = ({
     <div sx={theme.styles.Layout}>
       <App location={location}>
         <LargeHeaderWrapper location={location} logoTop={headerLogo}>
-          <HeroBackground />
-          <div sx={sx.searchContainer}>
-            <div sx={sx.searchBox}>
-              <SearchBox location={location} boxLabel='Search Complete Collection' />
+          <div sx={sx.headerWrapper}>
+            <HeroBackground />
+            <div sx={sx.searchContainer}>
+              <div sx={sx.searchBox}>
+                <SearchBox location={location} boxLabel='Search Complete Collection' />
+              </div>
             </div>
-          </div>
-          <div sx={sx.titleContainer}>
-            <div sx={sx.titleBox}>
-              <h1 sx={sx.title}>{title}</h1>
-              <blockquote sx={sx.headingBlockquote}>
-                manuscript and print sources for the study of Inquisition history
-              </blockquote>
+            <div sx={sx.titleContainer}>
+              <div sx={sx.titleBox}>
+                <h1 sx={sx.title}>{title}</h1>
+                <blockquote sx={sx.headingBlockquote}>
+                  manuscript and print sources for the study of Inquisition history
+                </blockquote>
+              </div>
             </div>
           </div>
         </LargeHeaderWrapper>

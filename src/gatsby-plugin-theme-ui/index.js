@@ -6,19 +6,23 @@ export default merge({}, theme, {
     secondary: '#6A4422',
     brandBar: '#6A4422',
   },
-  layout: {
-    titleBox: {
-      backgroundColor: 'red',
-      font: 'title',
+  links: {
+    NDBrandingBarLink: {
+      color: 'red',
     },
-  },
-  card: {
-    label: {
+    nav: {
       color: 'blue',
     },
   },
   // ae9142
   styles: {
+    NDBrandNavigationBar: {
+      backgroundColor: 'brandBar',
+      opacity: '0.9',
+    },
+    Header: {
+      color: 'white',
+    },
     Footer: {
       backgroundColor: 'gray.3',
     },
@@ -27,6 +31,17 @@ export default merge({}, theme, {
       backgroundColor: 'white',
       minHeight: 'calc(100vh - 50px - 70px - 64px - 1.8rem*2)',
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
+    },
+    Card: {
+      '& a': {
+        color: 'secondary',
+      },
+      '& h2': {
+        font: 'title',
+      },
+    },
+    a: {
+      wordBreak: 'break-word',
     },
     h1: {
       color: 'secondary',
@@ -66,5 +81,4 @@ export default merge({}, theme, {
       serif
     `,
   },
-
 })

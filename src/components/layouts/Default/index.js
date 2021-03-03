@@ -4,7 +4,7 @@ import React from 'react'
 import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
-import SmallHeaderWrapper from '../../sharedComponents/SmallHeaderWrapper'
+import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
@@ -22,25 +22,26 @@ export const Layout = ({
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <SmallHeaderWrapper location={location} logoTop={headerLogo}>
-          <HeroBackground />
-          <div>
-            <div sx={sx.titleContainer}>
-              <div sx={sx.titleBox}>
-                <h1 sx={sx.title}>Inquisitio</h1>
-                <blockquote sx={sx.headingBlockquote}>
+        <LargeHeaderWrapper location={location} logoTop={headerLogo}>
+          <div sx={sx.headerWrapper}>
+            <HeroBackground />
+            <div>
+              <div sx={sx.titleContainer}>
+                <div sx={sx.titleBox}>
+                  <h1 sx={sx.title}>Inquisitio</h1>
+                  <blockquote sx={sx.headingBlockquote}>
                 manuscript and print sources for the study of Inquisition history
-                </blockquote>
+                  </blockquote>
+                </div>
+              </div>
+              <div sx={sx.searchContainer}>
+                <div sx={sx.searchBox}>
+                  {(!hideSearch) ? (<SearchBox location={location} boxLabel='Search Complete Collection' />) : null }
+                </div>
               </div>
             </div>
-            <div sx={sx.searchContainer}>
-              <div sx={sx.searchBox}>
-                {(!hideSearch) ? (<SearchBox location={location} boxLabel='Search Complete Collection' />) : null }
-              </div>
-            </div>
-
           </div>
-        </SmallHeaderWrapper>
+        </LargeHeaderWrapper>
         <main id='mainContent' sx={theme.styles.Main}>
           <BaseStyles>
             <h1>{title}</h1>
