@@ -19,9 +19,7 @@ export const FooterWrapper = ({ location, children }) => {
         <Box>
           <Menu menu='footer' />
         </Box>
-        <Box>
-          <ClickableNDLogo />
-        </Box>
+        <Box />
       </Grid>
     </footer>
   )
