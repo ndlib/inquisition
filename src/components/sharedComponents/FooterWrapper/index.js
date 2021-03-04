@@ -7,7 +7,7 @@ import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
 import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.svg'
-import ClickableNDLogo from '../ClickableNDLogo'
+// import ClickableNDLogo from '../ClickableNDLogo'
 
 export const FooterWrapper = ({ location, children }) => {
   return (
