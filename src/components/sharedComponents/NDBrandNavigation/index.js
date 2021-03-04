@@ -9,6 +9,7 @@ import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.sv
 import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
 import sx from './sx'
 import theme from '../../../gatsby-plugin-theme-ui'
+import { StaticImage } from 'gatsby-plugin-image'
 
 export const menuQuery = graphql`
   query {
@@ -24,19 +25,19 @@ export const menuQuery = graphql`
   }
 `
 
-export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
+export const NDBrandNavigation = ({ location, children, logoTop, variant }) => {
   const { menusJson } = useStaticQuery(menuQuery)
   const menu = typy(menusJson, 'items').safeArray
   if (theme.styles.NDBrandNavigationBar.backgroundColor) {
     sx.triangleTopright.borderTopColor = theme.styles.NDBrandNavigationBar.backgroundColor
   }
   return (
-    <header sx={{}}>
+    <header sx={{ variant: variant }}>
       <WordMark />
       {children}
       <div sx={{ display: ['none', 'block', 'block'] }} >
         <Grid columns={[2, '80% 20%']} gap={0} sx={{ height: '100px', position: 'absolute', top: 0, width: '100%' }}>
-          <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', ...theme.styles.NDBrandNavigationBar }}>
+          <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.9', color: 'white' }}>
             <Flex sx={{ alignItems: 'center', height: '50px', paddingLeft: '10px' }}>
               <Image
                 sx={{ width: '180px' }}
@@ -56,7 +57,7 @@ export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
               })}
             </Flex>
           </Grid>
-          <Flex sx={{ justifyContent: 'center', alignItems: 'center', ...theme.styles.NDBrandNavigationBar }}>
+          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.9' }}>
             <a href='https://nd.edu'>
               <Image
                 src={ndLogo}
@@ -72,10 +73,15 @@ export const LargeHeaderWrapper = ({ location, children, logoTop }) => {
   )
 }
 
-LargeHeaderWrapper.propTpyes = {
+NDBrandNavigation.propTpyes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
   logoTop: PropTypes.string,
+  variant: PropTypes.string,
 }
 
-export default LargeHeaderWrapper
+NDBrandNavigation.defaultProps = {
+  variant: 'NDBrandNavigation.primary',
+}
+
+export default NDBrandNavigation

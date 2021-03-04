@@ -7,7 +7,7 @@ import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/HomePage'
-import ButtonLink from '../components/ButtonLink'
+import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
@@ -40,22 +40,22 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <section>
-          <Grid columns={[2, '40% 60%']} gap={0} sx={{ }}>
+          <Grid columns={[2, '40% 60%']} gap={0}>
             <Flex sx={{ alignItems: 'center', textAlign: 'center' }}>
               <div dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
             </Flex>
             <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
-              <GatsbyImage image={collectionImage} />
+              <GatsbyImage image={collectionImage} alt='' loading='eager' />
               <div sx={buttonSx}>
-                <ButtonLink target='/browse' title='Browse the Collection' />
+                <InquisitionButtonLink target='/browse' title='Browse the Collection' />
               </div>
             </Box >
           </Grid>
-          <Grid columns={[2, '34% 66%']} gap={0} sx={{ }}>
+          <Grid columns={[2, '34% 66%']} gap={0}>
             <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
-              <GatsbyImage image={essaysImage} />
+              <GatsbyImage image={essaysImage} alt='' loading='lazy' />
               <div sx={buttonSx}>
-                <ButtonLink target='/essays' title='Essays' />
+                <InquisitionButtonLink target='/essays' title='Essays' />
               </div>
             </Box >
             <Box>

@@ -1,11 +1,12 @@
+/** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { jsx, Grid, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
 import SearchBase from 'components/Shared/SearchBase'
 import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
 import SearchResults from 'components/Shared/SearchTools/SearchResults'
 import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefinementListFilter'
-import MultiColumn from 'components/Shared/MultiColumn'
-import Column from 'components/Shared/Column'
 import { TagFilterConfig } from 'searchkit'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
@@ -20,8 +21,8 @@ const Search = ({ location }) => {
       />
       <SearchBase>
         <SearchFilterBox />
-        <MultiColumn columns='4'>
-          <Column>
+        <Grid columns={[2, '25% 75%']}>
+          <Box>
             <TagFilterConfig field='creator.keyword' title='Creator' id='creator' />
             <TagFilterConfig field='collection.keyword' title='Collection' id='collection' />
 
@@ -55,11 +56,11 @@ const Search = ({ location }) => {
               operator='OR'
               sort='default'
             />
-          </Column>
-          <Column colSpan='3'>
+          </Box>
+          <Box>
             <SearchResults defaultDisplay='list' />
-          </Column>
-        </MultiColumn>
+          </Box>
+        </Grid>
       </SearchBase>
     </Layout>
   )

@@ -1,40 +1,29 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, Box, Grid, Flex } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import Column from 'components/Shared/Column'
-import MultiColumn from 'components/Shared/MultiColumn'
 import Card from 'components/Shared/Card'
-import ButtonLink from '../components/ButtonLink'
+import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  const { allMarkdownRemark, markdownRemark } = data
-  const sx = {
-    searchAllButtonContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: '25px',
-    },
-  }
-
-  const browseLinks = allMarkdownRemark.edges.map(item => {
-    return (<li key={item.node.frontmatter.marbleId}><Link to={item.node.frontmatter.slug}>{item.node.frontmatter.essayTitle}</Link></li>)
-  })
+  const { markdownRemark } = data
 
   const featuredItems = markdownRemark.frontmatter.featuredItems.map((item) => {
     return (<Card
       key={item.link}
       label={item.title}
       image={item.thumbnail}
-      target={item.link} />
+      target={item.link}
+      variant='card.secondary'
+    />
     )
   })
 
@@ -49,8 +38,8 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <MultiColumn columns='3'>
-        <Column colSpan='2'>
+      <Grid columns={[2, '67% 33%']}>
+        <Box>
           <section>
             <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
           </section>
@@ -63,26 +52,25 @@ export const EssayPage = ({ data, location }) => {
               {markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{markdownRemark.frontmatter.slug}&gt;
             </p>
           </section>
-        </Column>
-        <Column>
+        </Box>
+        <Box>
           <section>
             <Menu menu='essays' />
-
           </section>
           <section>
             <h2>Featured Sources</h2>
             {featuredItems}
           </section>
           <section>
-            <div sx={sx.searchAllButtonContainer}>
-              <ButtonLink
+            <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
+              <InquisitionButtonLink
                 target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}
                 title={`View all sources`} />
-            </div>
+            </Flex>
           </section>
 
-        </Column>
-      </MultiColumn>
+        </Box>
+      </Grid>
     </Layout>
   )
 }
@@ -114,24 +102,5 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            essayTitle
-            marbleId
-            slug
-          }
-        }
-      }
-    }
   }
 `
-const customQueryBuilder = (keyword) => {
-  return {
-    term: {
-      'parent.keyword': keyword,
-    },
-  }
-}

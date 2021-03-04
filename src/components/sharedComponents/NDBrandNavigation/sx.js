@@ -6,7 +6,6 @@ module.exports = {
     borderTopColor: 'brandBar',
     borderTopStyle: 'solid',
     borderLeft: '50px solid transparent',
-    display: ['none', 'block', 'block'],
     opacity: '0.9',
     right: '20%',
     top: '50px',

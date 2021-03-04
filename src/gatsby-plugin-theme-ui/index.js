@@ -21,6 +21,18 @@ export default merge({}, theme, {
       fontFamily: 'heading',
     },
   },
+  card: {
+    primary: {
+      '& h2': {
+        color: 'primary',
+        fontFamily: 'title',
+      },
+      '& figcaption div': {
+        color: 'gray.4',
+      },
+    },
+  },
+
   // ae9142
   styles: {
     NDBrandNavigationBar: {
@@ -57,15 +69,15 @@ export default merge({}, theme, {
     title: `
       'IM Fell English SC',
       Garamond,
-      Hoefler Text,
-      Times New Roman,
+      'Hoefler Text',
+      'Times New Roman',
       Times,
       serif
     `,
     serif: `
       Garamond,
-      Hoefler Text,
-      Times New Roman,
+      'Hoefler Text',
+      'Times New Roman',
       Times,
       serif
     `,

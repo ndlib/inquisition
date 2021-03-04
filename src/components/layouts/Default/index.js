@@ -5,7 +5,7 @@ import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
-import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
+import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
@@ -40,10 +40,9 @@ export const Layout = ({
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <LargeHeaderWrapper location={location} logoTop={headerLogo}>
+        <NDBrandNavigation location={location} logoTop={headerLogo}>
           <div sx={sx.headerWrapper}>
             <GatsbyImage image={image} alt='' loading='eager' />
-
             <div>
               <div sx={sx.titleContainer}>
                 <div sx={sx.titleBox}>
@@ -60,7 +59,7 @@ export const Layout = ({
               </div>
             </div>
           </div>
-        </LargeHeaderWrapper>
+        </NDBrandNavigation>
         <BaseStyles>
           <main id='mainContent' sx={theme.styles.Main}>
             <h1>{title}</h1>
@@ -69,7 +68,6 @@ export const Layout = ({
             </article>
           </main>
         </BaseStyles>
-
         <FooterWrapper location={location}>
           <div>Footer!</div>
         </FooterWrapper>

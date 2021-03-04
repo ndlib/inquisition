@@ -5,7 +5,7 @@ import { jsx, BaseStyles, NavLink, Box, Grid, Image, Flex, Container } from 'the
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
-import LargeHeaderWrapper from '../../sharedComponents/LargeHeaderWrapper'
+import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import App from '../../siteapp'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
@@ -40,9 +40,9 @@ export const Layout = ({
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <LargeHeaderWrapper location={location} logoTop={headerLogo}>
+        <NDBrandNavigation location={location} logoTop={headerLogo}>
           <div sx={sx.headerWrapper}>
-            <GatsbyImage image={image} alt='' loading='eager' />
+            <GatsbyImage image={image} alt=''loading='eager' />
             <div sx={sx.searchContainer}>
               <div sx={sx.searchBox}>
                 <SearchBox location={location} boxLabel='Search Complete Collection' />
@@ -57,7 +57,7 @@ export const Layout = ({
               </div>
             </div>
           </div>
-        </LargeHeaderWrapper>
+        </NDBrandNavigation>
         <BaseStyles>
           <main sx={theme.styles.Main}>
             {children}
