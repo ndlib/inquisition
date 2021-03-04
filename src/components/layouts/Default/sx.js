@@ -1,11 +1,17 @@
 module.exports = {
+  headerWrapper: {
+    position: 'relative',
+    height: ['200px', '200px', '200px'],
+    overflow: 'hidden',
+    top: '0',
+  },
   titleBox: {
     borderWidth: '2px',
     borderColor: 'secondary',
     borderStyle: 'solid',
     fontSize: '1.4rem',
     display: 'inline-block',
-    top: '75px',
+    top: '-125px',
     position: 'relative',
     backgroundColor: 'white',
   },
@@ -32,13 +38,13 @@ module.exports = {
   searchBox: {
     display: 'inline-block',
     position: 'relative',
-    width: '320px',
+    width: '20%',
   },
   searchContainer: {
     position: 'relative',
     display: 'flex',
     justifyContent: 'flex-end',
-    top: '20px',
+    top: '-185px',
     width: '100vw',
     right: '10px',
   },

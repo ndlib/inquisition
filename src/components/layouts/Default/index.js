@@ -3,53 +3,71 @@
 import React from 'react'
 import { jsx, BaseStyles } from 'theme-ui'
 import PropTypes from 'prop-types'
+import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
-import SmallHeaderWrapper from '../../sharedComponents/SmallHeaderWrapper'
+import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
-import HeroBackground from '../HeroBackground'
 import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import sx from './sx'
 
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "banner.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 1600
+          height: 200
+          placeholder: DOMINANT_COLOR
+          formats: [AUTO, WEBP, AVIF]
+        )      }
+    }
+  }
+`
 export const Layout = ({
   title, // page title to be placed inside main
   children,
   location,
   hideSearch,
 }) => {
+  const { file } = useStaticQuery(query)
+  const image = getImage(file)
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <SmallHeaderWrapper location={location} logoTop={headerLogo}>
-          <HeroBackground />
-          <div>
-            <div sx={sx.titleContainer}>
-              <div sx={sx.titleBox}>
-                <h1 sx={sx.title}>Inquisitio</h1>
-                <blockquote sx={sx.headingBlockquote}>
+        <NDBrandNavigation location={location} logoTop={headerLogo}>
+          <div sx={sx.headerWrapper}>
+            <GatsbyImage image={image} alt='' loading='eager' />
+            <div>
+              <div sx={sx.titleContainer}>
+                <div sx={sx.titleBox}>
+                  <h1 sx={sx.title}>Inquisitio</h1>
+                  <blockquote sx={sx.headingBlockquote}>
                 manuscript and print sources for the study of Inquisition history
-                </blockquote>
+                  </blockquote>
+                </div>
+              </div>
+              <div sx={sx.searchContainer}>
+                <div sx={sx.searchBox}>
+                  {(!hideSearch) ? (<SearchBox location={location} boxLabel='Search Complete Collection' />) : null }
+                </div>
               </div>
             </div>
-            <div sx={sx.searchContainer}>
-              <div sx={sx.searchBox}>
-                {(!hideSearch) ? (<SearchBox location={location} boxLabel='Search Complete Collection' />) : null }
-              </div>
-            </div>
-
           </div>
-        </SmallHeaderWrapper>
-        <main id='mainContent' sx={theme.styles.Main}>
-          <BaseStyles>
+        </NDBrandNavigation>
+        <BaseStyles>
+          <main id='mainContent' sx={theme.styles.Main}>
             <h1>{title}</h1>
             <article>
               {children}
             </article>
-          </BaseStyles>
-        </main>
-
+          </main>
+        </BaseStyles>
         <FooterWrapper location={location}>
           <div>Footer!</div>
         </FooterWrapper>

@@ -6,19 +6,40 @@ export default merge({}, theme, {
     secondary: '#6A4422',
     brandBar: '#6A4422',
   },
-  layout: {
-    titleBox: {
-      backgroundColor: 'red',
-      font: 'title',
+  buttons: {
+    primary: {
+      bg: 'primary',
+    },
+  },
+  links: {
+    topnav: {
+      color: 'white',
+      py: '15px',
+      px: '25px',
+      textDecoration: 'none',
+      fontWeight: '600',
+      fontFamily: 'heading',
     },
   },
   card: {
-    label: {
-      color: 'blue',
+    primary: {
+      '& h2': {
+        color: 'primary',
+        fontFamily: 'title',
+      },
+      '& figcaption div': {
+        color: 'gray.4',
+      },
     },
   },
+
   // ae9142
   styles: {
+    NDBrandNavigationBar: {
+      backgroundColor: 'brandBar',
+      opacity: '0.9',
+      color: 'white',
+    },
     Footer: {
       backgroundColor: 'gray.3',
     },
@@ -27,6 +48,9 @@ export default merge({}, theme, {
       backgroundColor: 'white',
       minHeight: 'calc(100vh - 50px - 70px - 64px - 1.8rem*2)',
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
+    },
+    a: {
+      wordBreak: 'break-word',
     },
     h1: {
       color: 'secondary',
@@ -45,15 +69,15 @@ export default merge({}, theme, {
     title: `
       'IM Fell English SC',
       Garamond,
-      Hoefler Text,
-      Times New Roman,
+      'Hoefler Text',
+      'Times New Roman',
       Times,
       serif
     `,
     serif: `
       Garamond,
-      Hoefler Text,
-      Times New Roman,
+      'Hoefler Text',
+      'Times New Roman',
       Times,
       serif
     `,
@@ -66,5 +90,4 @@ export default merge({}, theme, {
       serif
     `,
   },
-
 })
