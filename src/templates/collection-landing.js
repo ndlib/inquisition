@@ -6,11 +6,11 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import Card from 'components/Internal/Card'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
+import Card from 'components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
-import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Internal/DisplayViewToggle'
-import Menu from '@ndlib/gatsby-theme-marble/src/components/Internal/Menu'
+import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Shared/DisplayViewToggle'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page

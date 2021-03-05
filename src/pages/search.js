@@ -3,13 +3,13 @@
 import React from 'react'
 import { jsx, Grid, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
-import SearchBase from 'components/Internal/SearchBase'
-import SearchFilterBox from 'components/Internal/SearchTools/SearchFilterBox'
-import SearchResults from 'components/Internal/SearchTools/SearchResults'
-import SearchRefinementListFilter from 'components/Internal/SearchTools/SearchRefinementListFilter'
+import SearchBase from 'components/Shared/SearchBase'
+import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
+import SearchResults from 'components/Shared/SearchTools/SearchResults'
+import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefinementListFilter'
 import { TagFilterConfig } from 'searchkit'
 import Layout from '../components/layouts/Default'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 const Search = ({ location }) => {
   return (

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
