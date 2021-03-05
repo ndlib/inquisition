@@ -8,7 +8,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/HomePage'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Home = ({ data, location }) => {

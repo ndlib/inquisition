@@ -9,7 +9,7 @@ import SearchResults from 'components/Shared/SearchTools/SearchResults'
 import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefinementListFilter'
 import { TagFilterConfig } from 'searchkit'
 import Layout from '../components/layouts/Default'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 const Search = ({ location }) => {
   return (

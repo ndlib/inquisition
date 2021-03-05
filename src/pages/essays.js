@@ -8,8 +8,8 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/Default'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Internal/DisplayViewToggle'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
+import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Shared/DisplayViewToggle'
 
 const Essays = ({ data, location }) => {
   const { allMarkdownRemark } = data

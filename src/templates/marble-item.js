@@ -5,8 +5,8 @@ import CollectionLayout from '@ndlib/gatsby-theme-marble/src/components/Pages/Ma
 import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Pages/MarbleItem/ItemLayout'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
-import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Internal/ReturnToSearch'
+import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
+import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/ReturnToSearch'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
