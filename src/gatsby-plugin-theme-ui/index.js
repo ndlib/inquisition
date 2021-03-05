@@ -12,13 +12,24 @@ export default merge({}, theme, {
     },
   },
   links: {
-    topnav: {
-      color: 'white',
-      py: '15px',
-      px: '25px',
-      textDecoration: 'none',
-      fontWeight: '600',
-      fontFamily: 'heading',
+    header: {
+      '& a': {
+        color: 'white',
+        py: '25px',
+        px: '25px',
+        textDecoration: 'none',
+        fontWeight: '600',
+        fontFamily: 'heading',
+      },
+    },
+    vertical: {
+      '& div': {
+        px: '10px',
+      },
+      '& a': {
+        display: 'block',
+        py: '5px',
+      },
     },
   },
   card: {
@@ -32,14 +43,11 @@ export default merge({}, theme, {
       },
     },
   },
-
+  ClicableNDLogo: {
+    primary: 'red',
+  },
   // ae9142
   styles: {
-    NDBrandNavigationBar: {
-      backgroundColor: 'brandBar',
-      opacity: '0.9',
-      color: 'white',
-    },
     Footer: {
       backgroundColor: 'gray.3',
     },
