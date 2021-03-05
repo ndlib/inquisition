@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Footer from './'
-import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Internal/Menu'
 
 test('Footer renders some divs with markdown text', () => {
   const wrapper = shallow(<Footer location={{ location: '' }}><div id='test'>Children</div></Footer>)

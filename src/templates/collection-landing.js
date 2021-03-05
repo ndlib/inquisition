@@ -7,10 +7,10 @@ import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Internal/Seo'
-import Card from 'components/Shared/Card'
+import Card from 'components/Internal/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Internal/DisplayViewToggle'
-import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Internal/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
