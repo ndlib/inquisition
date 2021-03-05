@@ -14,7 +14,6 @@ module.exports = {
   },
   ndLogo: {
     width: '180px',
-    display: ['none', 'block', 'block'],
   },
   ndWordmark: {
     width: '301x',

@@ -1,19 +1,18 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, NavLink, Box, Grid, Image, Flex } from 'theme-ui'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { jsx, Grid, Flex } from 'theme-ui'
+import { useStaticQuery, graphql } from 'gatsby'
 import typy from 'typy'
 import PropTypes from 'prop-types'
-import ndLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/ND_mark_white.svg'
 import WordMark from 'components/Layout/PageWrapper/NavigationHeader/WordMark'
+import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import sx from './sx'
-import theme from '../../../gatsby-plugin-theme-ui'
-import { StaticImage } from 'gatsby-plugin-image'
+import ClickableNDLogoWhite from '../ClickableNDLogoWhite'
 
 export const menuQuery = graphql`
   query {
-    menusJson(id: {eq: "top"}) {
+    menusJson(id: {eq: "header"}) {
       id
       label
       items {
@@ -25,12 +24,10 @@ export const menuQuery = graphql`
   }
 `
 
-export const NDBrandNavigation = ({ location, children, logoTop, variant }) => {
+export const NDBrandNavigation = ({ location, children, variant, topLeftLogo }) => {
   const { menusJson } = useStaticQuery(menuQuery)
   const menu = typy(menusJson, 'items').safeArray
-  if (theme.styles.NDBrandNavigationBar.backgroundColor) {
-    sx.triangleTopright.borderTopColor = theme.styles.NDBrandNavigationBar.backgroundColor
-  }
+
   return (
     <header sx={{ variant: variant }}>
       <WordMark />
@@ -38,33 +35,15 @@ export const NDBrandNavigation = ({ location, children, logoTop, variant }) => {
       <div sx={{ display: ['none', 'block', 'block'] }} >
         <Grid columns={[2, '80% 20%']} gap={0} sx={{ height: '100px', position: 'absolute', top: 0, width: '100%' }}>
           <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.9', color: 'white' }}>
-            <Flex sx={{ alignItems: 'center', height: '50px', paddingLeft: '10px' }}>
-              <Image
-                sx={{ width: '180px' }}
-                src={logoTop}
-                alt='Rare Books & Special Collections, Hesburgh Libraries'
-              />
+            <Flex sx={{ height: '50px', paddingLeft: '50px', paddingTop: '2px' }}>
+              {topLeftLogo}
             </Flex>
-            <Flex as='nav' sx={{ alignItems: 'end', height: '50px', justifyContent: 'end' }}>
-              {menu.map(l => {
-                return (
-                  <Link
-                    sx={{ variant: 'links.topnav' }}
-                    to={l.link}
-                    key={l.id}
-                  >{l.label}
-                  </Link>)
-              })}
+            <Flex sx={{ height: '50px', justifyContent: 'center', alignItems: 'center' }}>
+              <Menu variant='header' items={menu} />
             </Flex>
           </Grid>
-          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.9' }}>
-            <a href='https://nd.edu'>
-              <Image
-                src={ndLogo}
-                sx={sx.ndLogo}
-                alt='University of Notre Dame'
-              />
-            </a>
+          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.9', '& img': { width: '180px' } }}>
+            <ClickableNDLogoWhite />
           </Flex>
         </Grid>
         <div sx={sx.triangleTopright} />
@@ -76,12 +55,13 @@ export const NDBrandNavigation = ({ location, children, logoTop, variant }) => {
 NDBrandNavigation.propTpyes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
-  logoTop: PropTypes.string,
   variant: PropTypes.string,
+  topLeftLogo: PropTypes.object,
 }
 
 NDBrandNavigation.defaultProps = {
   variant: 'NDBrandNavigation.primary',
+  topLeftLogo: null,
 }
 
 export default NDBrandNavigation

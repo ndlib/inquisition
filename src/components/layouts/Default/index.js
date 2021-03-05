@@ -9,10 +9,10 @@ import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
 import FooterWrapper from '../../sharedComponents/FooterWrapper'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
-import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Internal/SearchBox'
-import headerLogo from '@ndlib/gatsby-theme-marble/src/assets/logos/rbsc-logo.svg'
+import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import sx from './sx'
+import ClickableRBSCLogoWhite from '../../sharedComponents/ClickableRBSCLogoWhite'
 
 export const query = graphql`
   query {
@@ -40,7 +40,7 @@ export const Layout = ({
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
-        <NDBrandNavigation location={location} logoTop={headerLogo}>
+        <NDBrandNavigation location={location} topLeftLogo={<ClickableRBSCLogoWhite />}>
           <div sx={sx.headerWrapper}>
             <GatsbyImage image={image} alt='' loading='eager' />
             <div>

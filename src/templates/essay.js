@@ -14,7 +14,11 @@ import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  const { markdownRemark } = data
+  const { markdownRemark, allMarkdownRemark } = data
+
+  const menuItems = allMarkdownRemark.edges.map(l => {
+    return { id: l.node.frontmatter.essayTitle, label: l.node.frontmatter.essayTitle, link: l.node.frontmatter.slug }
+  })
 
   const featuredItems = markdownRemark.frontmatter.featuredItems.map((item) => {
     return (<Card
@@ -22,7 +26,6 @@ export const EssayPage = ({ data, location }) => {
       label={item.title}
       image={item.thumbnail}
       target={item.link}
-      variant='card.secondary'
     />
     )
   })
@@ -55,7 +58,7 @@ export const EssayPage = ({ data, location }) => {
         </Box>
         <Box>
           <section>
-            <Menu menu='essays' />
+            <Menu variant='vertical' items={menuItems} label='More Essays' />
           </section>
           <section>
             <h2>Featured Sources</h2>
@@ -99,6 +102,18 @@ export const query = graphql`
           title
           link
           thumbnail
+        }
+      }
+    }
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            essayTitle
+            marbleId
+            slug
+          }
         }
       }
     }

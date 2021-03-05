@@ -14,13 +14,12 @@ export const MarbleItemPage = ({ data, location }) => {
   const { marbleItem, allMarbleFile } = data
 
   return (
-    <Layout location={location}>
+    <Layout location={location} title={marbleItem.title}>
       <Seo
         data={data}
         location={location}
       />
       <ReturnToSearch location={location} />
-      <h1>{marbleItem.title}</h1>
       {
         marbleItem.display === 'collection' ? (
           <CollectionLayout
