@@ -11,6 +11,11 @@ export default merge({}, theme, {
       bg: 'primary',
     },
   },
+  text: {
+    default: {
+      color: 'blue',
+    },
+  },
   links: {
     header: {
       '& a': {
