@@ -9,8 +9,9 @@ import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
-import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Shared/DisplayViewToggle'
+import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
+import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -52,9 +53,9 @@ export const EssayPage = ({ data, location }) => {
           </section>
           <section>
             <h2>Featured Sources</h2>
-            <DisplayViewToggle defaultDisplay='list'>
+            <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
               {featuredItems}
-            </DisplayViewToggle>
+            </CardGroup>
           </section>
 
           <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Box, Grid, Flex } from 'theme-ui'
+import { jsx, Box, Grid, Flex, Heading, Text } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
@@ -64,16 +64,16 @@ const Home = ({ data, location }) => {
           </Grid>
         </section>
         <section>
-          <h2 sx={additionalResourcesHeader}>Additional Resources</h2>
-          <p>The bibliographic descriptions and essays found on this site were prepared by Robin Vose, Associate Professor, Department of History at St. Thomas University, Fredericton, New Brunswick, Canada.</p>
+          <Heading sx={additionalResourcesHeader}>Additional Resources</Heading>
+          <Text>The bibliographic descriptions and essays found on this site were prepared by Robin Vose, Associate Professor, Department of History at St. Thomas University, Fredericton, New Brunswick, Canada.</Text>
           <Link to='/about'>About the Collection and this Digital Project</Link>
-          <h3>Additional Resources about the Inquisition</h3>
+          <Heading as='h3'>Additional Resources about the Inquisition</Heading>
           <ul>
             <li><Link to='/about'>A Brief History of the Inquisitions</Link></li>
             <li><Link to='/about'>A Timeline of the Inquisitions</Link></li>
             <li><Link to='/about'>Inquisitors-General of the Spanish Inquisition</Link></li>
           </ul>
-          <h3>External Resources</h3>
+          <Heading as='h3'>External Resources</Heading>
           <ul>
             <li><Link to='/about'>Visiting the Collection and Contact Information</Link></li>
             <li><Link to='/about'>Access to Materials</Link></li>

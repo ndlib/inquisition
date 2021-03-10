@@ -9,13 +9,14 @@ import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import Layout from '../components/layouts/Default'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
-import DisplayViewToggle from '@ndlib/gatsby-theme-marble/src/components/Shared/DisplayViewToggle'
+import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
+import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 const Essays = ({ data, location }) => {
   const { allMarkdownRemark } = data
   const browseLinks = allMarkdownRemark.edges.map(item => {
     return (<Card
-      key={item.node.frontmatter.marbleId}
+      key={item.node.frontmatter.essayTitle}
       label={item.node.frontmatter.essayTitle}
       image={item.node.frontmatter.thumbnail}
       target={item.node.frontmatter.slug + '/essay'}
@@ -34,9 +35,9 @@ const Essays = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <section>
-          <DisplayViewToggle defaultDisplay='list'>
+          <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='essays-page'>
             {browseLinks}
-          </DisplayViewToggle>
+          </CardGroup>
         </section>
       </I18nextProvider>
     </Layout>
