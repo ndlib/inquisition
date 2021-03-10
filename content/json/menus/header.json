@@ -10,12 +10,12 @@
     {
       "id": "top-browse",
       "label": "Browse",
-      "link": "/browse"
+      "link": "/search"
     },
     {
       "id": "top-essays",
-      "label": "Essays",
-      "link": "/essays"
+      "label": "Themes",
+      "link": "/browse"
     },
     {
       "id": "top-about",

@@ -34,7 +34,7 @@ export const NDBrandNavigation = ({ location, children, variant, topLeftLogo }) 
       {children}
       <div sx={{ display: ['none', 'block', 'block'] }} >
         <Grid columns={[2, '80% 20%']} gap={0} sx={{ height: '100px', position: 'absolute', top: 0, width: '100%' }}>
-          <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.9', color: 'white' }}>
+          <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.95', color: 'white' }}>
             <Flex sx={{ height: '50px', paddingLeft: '50px', paddingTop: '2px' }}>
               {topLeftLogo}
             </Flex>
@@ -42,7 +42,7 @@ export const NDBrandNavigation = ({ location, children, variant, topLeftLogo }) 
               <Menu variant='header' items={menu} />
             </Flex>
           </Grid>
-          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.9', '& img': { width: '180px' } }}>
+          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.95', '& img': { width: '180px' } }}>
             <ClickableNDLogoWhite />
           </Flex>
         </Grid>

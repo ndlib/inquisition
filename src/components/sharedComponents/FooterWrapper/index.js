@@ -31,13 +31,19 @@ export const FooterWrapper = ({ location, children }) => {
     <footer sx={theme.styles.Footer}>
       <Grid columns={[3, '33% 34% 33%']}>
         <Box>
-          {children}
+          <div sx={{ margin: '40px' }}>
+            {children}
+          </div>
         </Box>
-        <Box>
-          <Menu variant='footer' items={menu} />
+        <Box sx={{ margin: '40px' }}>
+          <div sx={{ margin: '40px' }}>
+            <Menu variant='footer' items={menu} />
+          </div>
         </Box>
-        <Box sx={{ '& img': { width: '180px' } }}>
-          <ClickableNDLogoWhite />
+        <Box sx={{ margin: '40px' }}>
+          <div sx={{ margin: '40px' }}>
+            <ClickableNDLogoWhite />
+          </div>
         </Box>
       </Grid>
     </footer>

@@ -27,6 +27,16 @@ export default merge({}, theme, {
         fontFamily: 'heading',
       },
     },
+    footer: {
+      '& a': {
+        color: 'white',
+        py: '25px',
+        px: '25px',
+        textDecoration: 'none',
+        fontWeight: '600',
+        fontFamily: 'heading',
+      },
+    },
     vertical: {
       '& div': {
         px: '10px',
@@ -55,6 +65,10 @@ export default merge({}, theme, {
   styles: {
     Footer: {
       backgroundColor: 'gray.3',
+      img: {
+        margin: '0px',
+      },
+
     },
     Main: {
       margin: ['1rem', '1rem auto', '1rem auto'],
