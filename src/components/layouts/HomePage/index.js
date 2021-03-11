@@ -37,7 +37,7 @@ export const Layout = ({
 }) => {
   const { file } = useStaticQuery(query)
   const image = getImage(file)
-  console.log(image)
+  // save backgroundColor "#d8c8c8"
   return (
     <div sx={theme.styles.Layout}>
       <App location={location}>
