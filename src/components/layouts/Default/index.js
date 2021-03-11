@@ -69,7 +69,18 @@ export const Layout = ({
           </main>
         </BaseStyles>
         <FooterWrapper location={location}>
-          <div>Footer!</div>
+          <div>
+            <ClickableRBSCLogoWhite />
+            <p>
+              <address>
+          © 2020 University of Notre Dame <br />
+            Notre Dame, IN 46556 USA
+              </address>
+
+              <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
+              <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
+            </p>
+          </div>
         </FooterWrapper>
       </App>
 
