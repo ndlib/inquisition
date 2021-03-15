@@ -42,7 +42,7 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid columns={[2, '67% 33%']}>
+      <Grid columns={['100% 0%', '67% 33%', '67% 33%']}>
         <Box>
           <section>
             <p>
