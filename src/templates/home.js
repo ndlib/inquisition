@@ -44,29 +44,29 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <section>
-          <Grid columns={[2, '840px 200px']} gap={20}>
-            <Box sx={{ }}>
+          <Flex sx={{ flexWrap: 'wrap' }}>
+            <div sx={{ width: ['100%', '810px'], px: '20px' }}>
               <p dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
               <Flex sx={buttonSx}>
                 <Link to='/search'>Browse the Collection</Link>
               </Flex>
-            </Box>
-            <Box sx={{}}>
+            </div>
+            <div sx={{ width: '200px', display: ['none', 'block', 'block'] }}>
               <GatsbyImage image={collectionImage} alt='' loading='eager' />
-            </Box >
-          </Grid>
-          <Grid columns={[2, '200px 800px']} gap={30} sx={{ py: '25px' }}>
-            <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
+            </div>
+          </Flex>
+          <Flex sx={{ py: '25px', flexWrap: 'wrap' }}>
+            <div sx={{ alignItems: 'center', textAlign: 'center', width: ['100%', '200px'] }}>
               <GatsbyImage image={essaysImage} alt='' loading='lazy' />
-            </Box >
-            <Box>
+            </div>
+            <div sx={{ px: '20px', width: ['100%', '810px'] }}>
               <h2>Themeatic Inquistion Resources</h2>
               <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
               <div sx={buttonSx}>
                 <Link to='/browse'>Browse Inquisition Themes</Link>
               </div>
-            </Box>
-          </Grid>
+            </div>
+          </Flex>
         </section>
         <section>
           <Box sx={{ backgroundColor: 'gray.0' }}>
