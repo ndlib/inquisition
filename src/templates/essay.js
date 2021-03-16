@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
-import Card from 'components/Shared/Card'
+import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 

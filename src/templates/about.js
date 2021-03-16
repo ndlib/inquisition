@@ -32,14 +32,7 @@ export const EssayPage = ({ data, location }) => {
             <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           </section>
         </Box>
-        <Box>
-          <section>
-            <Link to='/search'>See all {data.markdownRemark.frontmatter.title} in the collection.</Link>
-          </section>
-          <section>
-            <h2>Featured Sources</h2>
-          </section>
-        </Box>
+        <Box />
       </Grid>
     </Layout>
   )
