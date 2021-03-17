@@ -13,6 +13,7 @@ import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
+  console.log(data)
   const { debug } = queryString.parse(location.search)
   const { markdownRemark, allMarkdownRemark } = data
 

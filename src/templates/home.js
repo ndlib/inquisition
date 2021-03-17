@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Box, Grid, Flex, Heading, Text } from 'theme-ui'
+import { jsx, Box, Grid, Flex } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
@@ -14,6 +14,8 @@ import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGrou
 import { DISPLAY_GRID } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 const Home = ({ data, location }) => {
+  console.log(data)
+
   const { markdownRemark, collectionFile, essaysFile } = data
   const collectionImage = getImage(collectionFile)
   const essaysImage = getImage(essaysFile)

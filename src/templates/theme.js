@@ -7,13 +7,13 @@ import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
-import Card from 'components/Shared/Card'
+import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
-export const EssayPage = ({ data, location }) => {
+export const ThemeTemplate = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { markdownRemark, allMarkdownRemark } = data
@@ -69,12 +69,12 @@ export const EssayPage = ({ data, location }) => {
     </Layout>
   )
 }
-EssayPage.propTypes = {
+ThemeTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
 
-export default EssayPage
+export default ThemeTemplate
 
 export const query = graphql`
   query($id: String!) {
