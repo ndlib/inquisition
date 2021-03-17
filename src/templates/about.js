@@ -26,9 +26,6 @@ export const EssayPage = ({ data, location }) => {
       <Grid columns={[2, '67% 33%']}>
         <Box>
           <section>
-            <div>{data.markdownRemark.frontmatter.summary}</div>
-          </section>
-          <section>
             <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           </section>
         </Box>
@@ -51,10 +48,6 @@ export const query = graphql`
       html
       frontmatter {
         title
-        slug
-        summary
-        author
-        citationYear
       }
     }
   }

@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const nextPostId = index === essays.length - 1 ? null : essays[index + 1].id
       // Define a template for blog post
       if (!essay.frontmatter.template) {
-        essay.frontmatter.template = 'collection-landing.js'
+        essay.frontmatter.template = 'theme.js'
       }
       const essayTemplate = path.resolve(`./src/templates/${essay.frontmatter.template}`)
 
