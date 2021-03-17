@@ -3,7 +3,7 @@
 import React from 'react'
 import { jsx, Grid, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import queryString from 'query-string'
 import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
@@ -32,14 +32,7 @@ export const EssayPage = ({ data, location }) => {
             <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           </section>
         </Box>
-        <Box>
-          <section>
-            <Link to='/search'>See all {data.markdownRemark.frontmatter.title} in the collection.</Link>
-          </section>
-          <section>
-            <h2>Featured Sources</h2>
-          </section>
-        </Box>
+        <Box />
       </Grid>
     </Layout>
   )

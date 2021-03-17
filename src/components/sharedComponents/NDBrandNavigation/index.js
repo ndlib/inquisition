@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Flex } from 'theme-ui'
+import { jsx, Grid, Flex, Box } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
 import typy from 'typy'
 import PropTypes from 'prop-types'
@@ -34,15 +34,13 @@ export const NDBrandNavigation = ({ location, children, variant, topLeftLogo }) 
       {children}
       <div sx={{ display: ['none', 'block', 'block'] }} >
         <Grid columns={[2, '80% 20%']} gap={0} sx={{ height: '100px', position: 'absolute', top: 0, width: '100%' }}>
-          <Grid columns={[2, '1fr 1fr']} gap={15} sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.95', color: 'white' }}>
-            <Flex sx={{ height: '50px', paddingLeft: '50px', paddingTop: '2px' }}>
+          <Box sx={{ height: '50px', backgroundColor: 'brandBar', opacity: '0.95', color: 'white', justifyContent: 'center' }}>
+            <Flex sx={{ height: '50px', width: '100%', paddingRight: '50px', paddingLeft: '10px', paddingTop: '2px', alignItems: 'center', justifyContent: 'space-between' }}>
               {topLeftLogo}
-            </Flex>
-            <Flex sx={{ height: '50px', justifyContent: 'center', alignItems: 'center' }}>
               <Menu variant='header' items={menu} />
             </Flex>
-          </Grid>
-          <Flex sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.95', '& img': { width: '180px' } }}>
+          </Box>
+          <Flex sx={{ width: '320', justifyContent: 'center', alignItems: 'center', backgroundColor: 'brandBar', opacity: '0.95', '& img': { width: '180px' } }}>
             <ClickableNDLogoWhite />
           </Flex>
         </Grid>
