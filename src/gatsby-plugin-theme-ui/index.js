@@ -1,5 +1,6 @@
 import merge from 'lodash.merge'
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
+
 export default merge({}, theme, {
   colors: {
     primary: '#981B1E',
@@ -9,11 +10,6 @@ export default merge({}, theme, {
   buttons: {
     primary: {
       bg: 'primary',
-    },
-  },
-  text: {
-    default: {
-      color: 'blue',
     },
   },
   links: {
@@ -58,9 +54,6 @@ export default merge({}, theme, {
       },
     },
   },
-  ClicableNDLogo: {
-    primary: 'red',
-  },
   // ae9142
   styles: {
     Footer: {
@@ -77,6 +70,7 @@ export default merge({}, theme, {
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
     },
     a: {
+      color: 'primary',
       wordBreak: 'break-word',
     },
     h1: {
