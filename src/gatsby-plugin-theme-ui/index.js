@@ -43,7 +43,7 @@ export default merge({}, theme, {
       },
     },
   },
-  card: {
+  cards: {
     primary: {
       '& h2': {
         color: 'primary',
