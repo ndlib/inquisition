@@ -1,7 +1,9 @@
 import merge from 'lodash.merge'
+import bootstrapTheme from '@theme-ui/preset-bootstrap'
+
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
-export default merge({}, theme, {
+export default merge({}, bootstrapTheme, theme, {
   colors: {
     primary: '#981B1E',
     secondary: '#6A4422',
