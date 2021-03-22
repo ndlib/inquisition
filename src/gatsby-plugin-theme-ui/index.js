@@ -1,6 +1,9 @@
 import merge from 'lodash.merge'
+import bootstrapTheme from '@theme-ui/preset-bootstrap'
+
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
-export default merge({}, theme, {
+
+export default merge({}, bootstrapTheme, theme, {
   colors: {
     primary: '#981B1E',
     secondary: '#6A4422',
@@ -9,11 +12,6 @@ export default merge({}, theme, {
   buttons: {
     primary: {
       bg: 'primary',
-    },
-  },
-  text: {
-    default: {
-      color: 'blue',
     },
   },
   links: {
@@ -47,7 +45,7 @@ export default merge({}, theme, {
       },
     },
   },
-  card: {
+  cards: {
     primary: {
       '& h2': {
         color: 'primary',
@@ -57,9 +55,6 @@ export default merge({}, theme, {
         color: 'gray.4',
       },
     },
-  },
-  ClicableNDLogo: {
-    primary: 'red',
   },
   // ae9142
   styles: {
@@ -77,6 +72,7 @@ export default merge({}, theme, {
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
     },
     a: {
+      color: 'primary',
       wordBreak: 'break-word',
     },
     h1: {

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, BaseStyles, Flex } from 'theme-ui'
+import { jsx, BaseStyles, Flex, Container } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
@@ -39,7 +39,7 @@ export const Layout = ({
   const image = getImage(file)
   // save backgroundColor "#d8c8c8"
   return (
-    <div sx={theme.styles.Layout}>
+    <Container>
       <App location={location}>
         <NDBrandNavigation location={location} topLeftLogo={<ClickableRBSCLogoWhite />}>
           <div sx={sx.headerWrapper}>
@@ -81,7 +81,7 @@ export const Layout = ({
           </div>
         </FooterWrapper>
       </App>
-    </div>
+    </Container>
   )
 }
 

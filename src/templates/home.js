@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Box, Grid, Flex, Heading, Text } from 'theme-ui'
+import { jsx, Box, Grid, Flex, Text } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
@@ -77,29 +77,24 @@ const Home = ({ data, location }) => {
           </Box>
         </section>
         <section>
-          <Grid columns={[2, '50% 50%']} gap={20}>
-            <Box>
-              <h2>Additional Resources</h2>
-              <ul sx={{ '& li': { py: '3px' } }}>
-                <li><Link to='/about'>A Brief History of the Inquisitions</Link></li>
-                <li><Link to='/about'>A Timeline of the Inquisitions</Link></li>
-                <li><Link to='/about'>Inquisitors-General of the Spanish Inquisition</Link></li>
-                <li><Link to='/about'>Introduction to Inquisitorial Manuals</Link></li>
-                <li><Link to='/about'>Introduction to inquisition trial transcipts and records</Link></li>
-                <li><Link to='/about'>Introduction to the next section titile</Link></li>
-                <li><Link to='/about'>Introduction to the next section titile</Link></li>
-                <li><Link to='/about'>Introduction to the next section titile</Link></li>
-              </ul>
-            </Box>
-            <Box>
-              <h2>Rarebooks & Special Collections</h2>
-              <ul sx={{ '& li': { py: '3px' } }}>
-                <li><Link to='/about'>Visiting the Collection and Contact Information</Link></li>
-                <li><Link to='/about'>Access to Materials</Link></li>
-                <li><Link to='/about'>Hours, Location & Contact Information</Link></li>
-              </ul>
-            </Box>
-          </Grid>
+
+          <h2>Additional Resources</h2>
+          <ul sx={{ '& li': { py: '3px' } }}>
+            <li><Link to='/about'>A Brief History of the Inquisitions</Link></li>
+            <li><Link to='/about'>A Timeline of the Inquisitions</Link></li>
+            <li><Link to='/about'>Inquisitors-General of the Spanish Inquisition</Link></li>
+            <li><Link to='/about'>Introduction to Inquisitorial Manuals</Link></li>
+            <li><Link to='/about'>Introduction to inquisition trial transcipts and records</Link></li>
+            <li><Link to='/about'>Introduction to the next section titile</Link></li>
+            <li><Link to='/about'>Introduction to the next section titile</Link></li>
+            <li><Link to='/about'>Introduction to the next section titile</Link></li>
+          </ul>
+
+          <p>
+                For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
+                please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
+          </p>
+
         </section>
       </I18nextProvider>
     </Layout>
