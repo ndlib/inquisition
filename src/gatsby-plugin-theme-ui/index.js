@@ -3,15 +3,27 @@ import bootstrapTheme from '@theme-ui/preset-bootstrap'
 
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
-export default merge({}, bootstrapTheme, theme, {
+export default merge({}, theme, bootstrapTheme, {
   colors: {
-    primary: '#981B1E',
-    secondary: '#6A4422',
+    primary: '#6A4422',
+    secondary: '#981B1E',
     brandBar: '#6A4422',
   },
   buttons: {
     primary: {
       bg: 'primary',
+    },
+  },
+  text: {
+    default: {
+      fontFamily: 'body',
+      fontSize: 3,
+      lineHeight: 'body',
+      fontWeight: 'body',
+      color: 'text',
+    },
+    heading: {
+      color: 'primary',
     },
   },
   links: {
@@ -72,20 +84,8 @@ export default merge({}, bootstrapTheme, theme, {
       width: ['calc(100% - 2rem)', '1040px', '1040px'],
     },
     a: {
-      color: 'primary',
+      color: 'secondary',
       wordBreak: 'break-word',
-    },
-    h1: {
-      color: 'secondary',
-      fontWeight: '400',
-    },
-    h2: {
-      color: 'secondary',
-      fontWeight: '400',
-    },
-    h3: {
-      color: 'secondary',
-      fontWeight: '400',
     },
   },
   fonts: {
