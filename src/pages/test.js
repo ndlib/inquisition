@@ -107,7 +107,7 @@ const Test = ({ location }) => {
           }}>
             <Heading as='h1' sx={{
               color: 'gray.1',
-              mb: '0',
+              mb: 0,
               pb: 0,
               fontFamily: 'title',
               fontSize: '8',
@@ -116,10 +116,10 @@ const Test = ({ location }) => {
               color: 'white',
               my: 0,
               py: 0,
-              marginLeft: '115px',
+              marginLeft: '120px',
               fontFamily: 'serif',
               fontSize: '2',
-              top: '-15px',
+              top: '-13px',
               position: 'relative',
             }}>Hesburgh Libraries Rare Books & Special Collections</p>
           </div>
@@ -220,7 +220,7 @@ const Test = ({ location }) => {
             }}
             >
             manuscript and print sources for the study of Inquisition history
-              <br /><Link to='/' sx={{ color: 'secondary', pl: '10rem', pt: '5rem', display: 'block' }}>Browse Collection</Link>
+              <br /><Button variant='secondaryMuted' to='/' sx={{ color: 'secondary', ml: '10rem', mt: '5rem', display: 'block' }}>Browse Collection</Button>
             </p>
             <div sx={{
               gridRow: 'title-start/header-end',

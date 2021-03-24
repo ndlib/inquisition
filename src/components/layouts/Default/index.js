@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, BaseStyles, Container } from 'theme-ui'
+import { jsx, BaseStyles, Container, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
@@ -46,7 +46,7 @@ export const Layout = ({
             <div>
               <div sx={sx.titleContainer}>
                 <div sx={sx.titleBox}>
-                  <h1 sx={sx.title}>Inquisitio</h1>
+                  <Heading variant='pageTitle' >Inquisitio</Heading>
                   <blockquote sx={sx.headingBlockquote}>
                 manuscript and print sources for the study of Inquisition history
                   </blockquote>
