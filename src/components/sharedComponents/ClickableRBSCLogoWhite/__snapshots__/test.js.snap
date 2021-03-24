@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rbsc logo renders correctly 1`] = `
+<div
+  className="css-udbkbz-ClickableRBSCLogoWhite"
+>
+  <a
+    href="https://rarebooks.library.nd.edu/"
+  >
+    <img
+      alt="Rare Books & Special Collections, Hesburgh Libraries, University of Notre Dame"
+      className="css-9taffg"
+      height={100}
+      src="test-file-stub"
+      width={100}
+    />
+  </a>
+</div>
+`;
