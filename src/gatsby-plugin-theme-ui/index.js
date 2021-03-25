@@ -8,18 +8,41 @@ export default merge({}, theme, bootstrapTheme, {
     primary: '#6A4422',
     secondary: '#981B1E',
     brandBar: '#6A4422',
-    secondaryMuted: '#F2E3E3',
+    muted: '#F2E3E3',
   },
   buttons: {
     primary: {
+      color: 'white',
       bg: 'primary',
+      '&:hover': {
+        transform: 'scale(1.02)',
+      },
+      '& a': {
+        color: 'text',
+        textDecoration: 'none',
+      },
     },
     secondary: {
       bg: 'secondary',
+      color: 'white',
+      '&:hover': {
+        transform: 'scale(1.02)',
+      },
+      '& a': {
+        color: 'white',
+        textDecoration: 'none',
+      },
     },
-    secondaryMuted: {
-      color: 'gray.10',
-      bg: 'secondaryMuted',
+    muted: {
+      color: 'text',
+      bg: 'muted',
+      '&:hover': {
+        transform: 'scale(1.02)',
+      },
+      '& a': {
+        color: 'text',
+        textDecoration: 'none',
+      },
     },
   },
   text: {

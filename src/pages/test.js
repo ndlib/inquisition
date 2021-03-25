@@ -220,7 +220,7 @@ const Test = ({ location }) => {
             }}
             >
             manuscript and print sources for the study of Inquisition history
-              <br /><Button variant='secondaryMuted' to='/' sx={{ color: 'secondary', ml: '10rem', mt: '5rem', display: 'block' }}>Browse Collection</Button>
+              <br /><Button variant='muted' to='/' sx={{ ml: '10rem', mt: '5rem', display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>
             </p>
             <div sx={{
               gridRow: 'title-start/header-end',
