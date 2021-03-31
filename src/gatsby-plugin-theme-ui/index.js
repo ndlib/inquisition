@@ -3,46 +3,86 @@ import bootstrapTheme from '@theme-ui/preset-bootstrap'
 
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
+const buttonShared = {
+  fontSize: 3,
+  px: '1.5rem',
+  borderRadius: '.6em',
+  bg: 'primary',
+  '&:hover': {
+    transform: 'scale(1.02)',
+  },
+  '& a': {
+    textDecoration: 'none',
+  },
+}
+
 export default merge({}, theme, bootstrapTheme, {
   colors: {
     primary: '#6A4422',
     secondary: '#981B1E',
     brandBar: '#6A4422',
+    light: '#F2E3E3',
+    dark: '#603e1f',
     muted: '#F2E3E3',
   },
   buttons: {
     primary: {
+      ...buttonShared,
       color: 'white',
       bg: 'primary',
-      '&:hover': {
-        transform: 'scale(1.02)',
-      },
       '& a': {
-        color: 'text',
-        textDecoration: 'none',
+        ...buttonShared['& a'],
+        color: 'white',
       },
     },
     secondary: {
+      ...buttonShared,
       bg: 'secondary',
       color: 'white',
-      '&:hover': {
-        transform: 'scale(1.02)',
-      },
       '& a': {
+        ...buttonShared['& a'],
         color: 'white',
-        textDecoration: 'none',
       },
     },
-    muted: {
+    light: {
+      ...buttonShared,
       color: 'text',
-      bg: 'muted',
-      '&:hover': {
-        transform: 'scale(1.02)',
-      },
+      bg: 'light',
       '& a': {
+        ...buttonShared['& a'],
         color: 'text',
-        textDecoration: 'none',
       },
+    },
+    inverse: {
+      ...buttonShared,
+      color: 'text',
+      bg: 'white',
+      '& a': {
+        ...buttonShared['& a'],
+        color: 'white',
+      },
+    },
+  },
+  sections: {
+    default: {
+      bg: 'white',
+      gridTemplateColumns: '25% auto',
+      maxWidth: '65rem',
+    },
+    fullBleed: {
+      bg: 'light',
+      gridTemplateColumns: 'calc(300px + 5vw) auto',
+      marginBottom: '7rem',
+    },
+    textonly: {
+      marginBottom: '7rem',
+    },
+  },
+  sectionsContent: {
+    default: {
+    },
+    fullBleed: {
+      padding: '2rem',
     },
   },
   text: {
@@ -98,6 +138,7 @@ export default merge({}, theme, bootstrapTheme, {
       '& h2': {
         color: 'secondary',
         fontFamily: 'title',
+        fontSize: '4',
       },
       '& figcaption div': {
         color: 'gray.9',
