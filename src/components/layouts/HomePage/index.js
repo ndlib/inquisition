@@ -8,7 +8,7 @@ import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
 import App from '../../siteapp'
-import FooterWrapper from '../../sharedComponents/FooterWrapper'
+import MarbleBrandFooter from '../../sharedComponents/MarbleBrandFooter'
 import theme from '../../../gatsby-plugin-theme-ui'
 import sx from './sx'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -66,20 +66,7 @@ export const Layout = ({
             {children}
           </main>
         </BaseStyles>
-        <FooterWrapper location={location}>
-          <div>
-            <ClickableRBSCLogoWhite />
-            <p>
-              <address>
-            © 2020 University of Notre Dame <br />
-              Notre Dame, IN 46556 USA
-              </address>
-
-              <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
-              <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
-            </p>
-          </div>
-        </FooterWrapper>
+        <MarbleBrandFooter logo={(<ClickableRBSCLogoWhite />)} />
       </App>
     </Container>
   )

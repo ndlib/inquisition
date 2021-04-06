@@ -63,26 +63,74 @@ export default merge({}, theme, bootstrapTheme, {
       },
     },
   },
+  pageHeaders: {
+    default: {
+
+    },
+    homepage: {
+
+    },
+  },
   sections: {
     default: {
       bg: 'white',
-      gridTemplateColumns: '25% auto',
       maxWidth: '65rem',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      '& div.sectionContent': {
+        maxWidth: '65rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        alignSelf: 'center',
+        py: '2rem',
+      },
+      '& div.sectionImage': {
+      },
     },
     fullBleed: {
+      bg: 'white',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      mx: '5vw',
+      pt: '2rem',
+      '& div.sectionImage': {
+        m: '-2rem 0 -2rem 5vw',
+      },
+      '& div.sectionContent': {
+        maxWidth: '65rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        alignSelf: 'center',
+        py: '2rem',
+      },
+    },
+    fullBleedLight: {
+      '::before': {
+        content: '""',
+        display: 'block',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: '100%',
+        width: '100vw',
+        zIndex: -1,
+        bg: 'inherit',
+      },
       bg: 'light',
-      gridTemplateColumns: 'calc(300px + 5vw) auto',
-      marginBottom: '7rem',
-    },
-    textonly: {
-      marginBottom: '7rem',
-    },
-  },
-  sectionsContent: {
-    default: {
-    },
-    fullBleed: {
-      padding: '2rem',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      px: '5vw',
+      '& div.sectionImage': {
+        m: '-1rem 0 -1rem 0',
+      },
+      '& div.sectionContent': {
+        maxWidth: '65rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        alignSelf: 'center',
+        py: '2rem',
+        width: 'auto',
+      },
     },
   },
   text: {
@@ -96,10 +144,29 @@ export default merge({}, theme, bootstrapTheme, {
     heading: {
       color: 'primary',
     },
+    lede: {
+      fontSize: 4,
+    },
     pageTitle: {
       color: 'primary',
-      margin: '1px 20px',
       fontFamily: 'title',
+      fontWeight: '600',
+      mt: '4rem',
+      '::after': {
+        content: '""',
+        marginLeft: '-0.5em',
+        marginTop: '0.2em',
+        marginBottom: '0.7em',
+        width: '1.5em',
+        height: '0.1em',
+        minHeight: '5px',
+        bg: 'secondary',
+        display: 'block',
+      },
+    },
+    sectionTitle: {
+      fontSize: 7,
+      color: 'primary',
     },
   },
   links: {
@@ -129,7 +196,8 @@ export default merge({}, theme, bootstrapTheme, {
       },
       '& a': {
         display: 'block',
-        py: '5px',
+        py: '1px',
+        color: 'secondary',
       },
     },
   },
@@ -148,11 +216,15 @@ export default merge({}, theme, bootstrapTheme, {
   // ae9142
   styles: {
     Footer: {
-      backgroundColor: 'gray.3',
+      px: '5vw',
+      py: '3rem',
+      backgroundColor: 'primary',
+      '& p': {
+        fontSize: 3,
+      },
       img: {
         margin: '0px',
       },
-
     },
     Main: {
       margin: ['1rem', '1rem auto', '1rem auto'],

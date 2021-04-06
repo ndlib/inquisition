@@ -2,13 +2,22 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import PropTypes from 'prop-types'
-import { jsx, Grid, Box } from 'theme-ui'
+import { jsx, Flex, Box } from 'theme-ui'
 
-export const NDBrandSection = ({ location, variant, children }) => {
+export const NDBrandSection = ({ location, variant, image, children, ...props }) => {
+  const sectionSx = {}
+  const imageTag = (image) ? (<Flex className='sectionImage' sx={{ width: '25%' }}>{image}</Flex>) : null
+  if (image) {
+    sectionSx['width'] = '75%'
+  }
+
   return (
-    <Grid as='section' variant={`sections.${variant}`} sx={{ gridGap: '2rem', marginLeft: 'auto', marginRight: 'auto' }}>
-      {children}
-    </Grid>
+    <Flex as='section' variant={`sections.${variant}`} {...props}>
+      {imageTag}
+      <Box as='div' className='sectionContent' sx={sectionSx}>
+        {children}
+      </Box>
+    </Flex>
   )
 }
 
@@ -16,6 +25,7 @@ NDBrandSection.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.string.isRequired,
   location: PropTypes.object.isRequired,
+  image: PropTypes.object,
 }
 
 NDBrandSection.defaultProps = {
