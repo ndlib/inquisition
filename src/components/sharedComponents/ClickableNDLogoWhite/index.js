@@ -9,7 +9,7 @@ const ClickableNDLogoWhite = ({ variant, width, height }) => {
   return (
     <div sx={{ variant: variant }}>
       <a href='https://nd.edu' title='University of Notre Dame'>
-        <Image src={ndLogo} width={width} height={height} alt='University of Notre Dame' />
+        <Image src='https://static.nd.edu/images/marks/gold-white/ndmark.svg' width={width} height={height} alt='University of Notre Dame' />
       </a>
     </div>
   )
@@ -23,8 +23,8 @@ ClickableNDLogoWhite.propTpyes = {
 
 ClickableNDLogoWhite.defaultProps = {
   variant: 'ClickableNDLogoWhite.primary',
-  width: 180,
-  height: 42.2,
+  width: 200,
+  height: 48,
 }
 
 export default ClickableNDLogoWhite

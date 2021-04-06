@@ -1,12 +1,12 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, BaseStyles, Container } from 'theme-ui'
+import { jsx, BaseStyles, Container, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { withI18nTranslation } from 'i18n/withI18nTranslation'
 import NDBrandNavigation from '../../sharedComponents/NDBrandNavigation'
-import FooterWrapper from '../../sharedComponents/FooterWrapper'
+import MarbleBrandFooter from '../../sharedComponents/MarbleBrandFooter'
 import App from '../../siteapp'
 import theme from '../../../gatsby-plugin-theme-ui'
 import SearchBox from '@ndlib/gatsby-theme-marble/src/components/Shared/SearchBox'
@@ -46,7 +46,7 @@ export const Layout = ({
             <div>
               <div sx={sx.titleContainer}>
                 <div sx={sx.titleBox}>
-                  <h1 sx={sx.title}>Inquisitio</h1>
+                  <Heading variant='pageTitle' >Inquisitio</Heading>
                   <blockquote sx={sx.headingBlockquote}>
                 manuscript and print sources for the study of Inquisition history
                   </blockquote>
@@ -68,20 +68,7 @@ export const Layout = ({
             </article>
           </main>
         </BaseStyles>
-        <FooterWrapper location={location}>
-          <div>
-            <ClickableRBSCLogoWhite />
-            <p>
-              <address>
-          © 2020 University of Notre Dame <br />
-            Notre Dame, IN 46556 USA
-              </address>
-
-              <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
-              <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
-            </p>
-          </div>
-        </FooterWrapper>
+        <MarbleBrandFooter logo={(<ClickableRBSCLogoWhite />)} />
       </App>
     </Container>
   )
