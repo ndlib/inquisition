@@ -2,7 +2,4 @@ coverage
 public
 node_modules
 .cache
-<<<<<<< Updated upstream
-=======
 .env.development
->>>>>>> Stashed changes

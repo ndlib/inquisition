@@ -7,14 +7,13 @@ const eV = '.env.' + activeEnv
 require('dotenv').config({
   path: eV,
 })
-console.log(process.env)
 
 const searchUrl = process.env.SEARCH_URL || ''
 const searchIndex = process.env.SEARCH_INDEX || ''
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
 const skipMetadataPrune = process.env.SKIP_METADATA_PRUNE || ''
 const onlySearchChildnodes = process.env.ONLY_SEARCH_CHILDNODES || ''
-console.log(process.env.TESTY)
+
 console.table([
   { variable: 'SEARCH_INDEX:', value: searchIndex },
   { variable: 'SEARCH_URL:', value: searchUrl },
