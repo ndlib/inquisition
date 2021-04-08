@@ -24,6 +24,7 @@ console.table([
 module.exports = {
   siteMetadata: {
     title: 'Inquisitio',
+    subTitle: 'Hesburgh Libraries Rare Books & Special Collections',
     author: 'University of Notre Dame Hesburgh Libraries Rare Books & Special Collections',
     description: 'Manuscript and print sources for the study of Inquisition history.',
     siteUrl: 'https://inquisition.library.nd.edu/',

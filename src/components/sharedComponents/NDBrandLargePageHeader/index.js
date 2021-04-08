@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { jsx, Flex, Heading } from 'theme-ui'
 
-export const NDPageHeader = ({ location, variant, image, lede, title, button }) => {
+export const NDBrandLargePageHeader = ({ location, variant, image, lede, title, button }) => {
   const gutterWidth = '5vw'
 
   return (
@@ -50,7 +50,7 @@ export const NDPageHeader = ({ location, variant, image, lede, title, button }) 
   )
 }
 
-NDPageHeader.propTypes = {
+NDBrandLargePageHeader.propTypes = {
   variant: PropTypes.string.isRequired,
   location: PropTypes.object.isRequired,
   image: PropTypes.object,
@@ -59,8 +59,8 @@ NDPageHeader.propTypes = {
   lede: PropTypes.string,
 }
 
-NDPageHeader.defaultProps = {
+NDBrandLargePageHeader.defaultProps = {
   variant: 'default',
 }
 
-export default NDPageHeader
+export default NDBrandLargePageHeader

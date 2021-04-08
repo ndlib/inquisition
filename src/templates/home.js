@@ -1,12 +1,14 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Box, Grid, Flex, Text } from 'theme-ui'
+import { jsx, Heading, Button } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
-import Layout from '../components/layouts/HomePage'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandLargePageHeader from '../components/sharedComponents/NDBrandLargePageHeader'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -14,9 +16,9 @@ import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGrou
 import { DISPLAY_GRID } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 const Home = ({ data, location }) => {
-  const { markdownRemark, collectionFile, essaysFile } = data
-  const collectionImage = getImage(collectionFile)
+  const { file, markdownRemark, collectionFile, essaysFile } = data
   const essaysImage = getImage(essaysFile)
+  const image = getImage(file)
 
   const buttonSx = {
     margin: '0 auto',
@@ -34,52 +36,44 @@ const Home = ({ data, location }) => {
   })
 
   return (
-    <Layout
-      location={location}
-      title={data.site.siteMetadata.title}
-    >
+    <NDBrandLayout location={location} pageHeader={<NDBrandLargePageHeader
+      variant='homepage'
+      title='Inquisitio'
+      lede='manuscript and print sources for the study of Inquisition history'
+      image={(<GatsbyImage image={image} alt=''loading='eager' />)}
+      button={(<Button variant='light' to='/' sx={{ display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>)}
+    />}>
+
       <Seo
         data={data}
         location={location}
       />
       <I18nextProvider i18n={i18next}>
-        <section>
-          <Flex sx={{ flexWrap: 'wrap' }}>
-            <div sx={{ width: ['100%', '810px'], px: '20px' }}>
-              <p dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
-              <Flex sx={buttonSx}>
-                <Link to='/search'>Browse the Collection</Link>
-              </Flex>
-            </div>
-            <div sx={{ width: '200px', display: ['none', 'block', 'block'] }}>
-              <GatsbyImage image={collectionImage} alt='' loading='eager' />
-            </div>
-          </Flex>
-          <Flex sx={{ py: '25px', flexWrap: 'wrap' }}>
-            <div sx={{ alignItems: 'center', textAlign: 'center', width: ['100%', '200px'] }}>
-              <GatsbyImage image={essaysImage} alt='' loading='lazy' />
-            </div>
-            <div sx={{ px: '20px', width: ['100%', '810px'] }}>
-              <h2>Themeatic Inquistion Resources</h2>
-              <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-              <div sx={buttonSx}>
-                <Link to='/browse'>Browse Inquisition Themes</Link>
-              </div>
-            </div>
-          </Flex>
-        </section>
-        <section>
-          <Box sx={{ backgroundColor: 'gray.0' }}>
-            <h2 sx={{ paddingTop: '10px', paddingLeft: '10px' }}>Featured Items</h2>
-            <CardGroup defaultDisplay={DISPLAY_GRID} toggleGroup='essays-page' allowToggle={false}>
-              {featuredItems}
-            </CardGroup>
-          </Box>
-        </section>
-        <section>
+        <NDBrandSection>
+          <p dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+        </NDBrandSection>
+        <NDBrandSection variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
+          <Heading as='h2' variant='sectionTitle'>
+                  Themeatic Inquistion Resources
+          </Heading>
+          <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
 
-          <h2>Additional Resources</h2>
-          <ul sx={{ '& li': { py: '3px' } }}>
+          <Button variant='primary' to='/'><Link to='/search'>Browse Themes</Link></Button>
+        </NDBrandSection>
+        <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { maxWidth: 'inherit' } }} >
+          <Heading as='h2' variant='sectionTitle'>
+                Featured Items
+          </Heading>
+          <CardGroup defaultDisplay={DISPLAY_GRID} toggleGroup='essays-page' allowToggle={false}>
+            {featuredItems}
+          </CardGroup>
+        </NDBrandSection>
+
+        <NDBrandSection>
+          <Heading as='h2' variant='sectionTitle'>
+          Additional Resources
+          </Heading>
+          <ul sx={{ '& li': { py: '3px' }, variant: 'links.vertical' }}>
             <li><Link to='/about'>A Brief History of the Inquisitions</Link></li>
             <li><Link to='/about'>A Timeline of the Inquisitions</Link></li>
             <li><Link to='/about'>Inquisitors-General of the Spanish Inquisition</Link></li>
@@ -89,15 +83,13 @@ const Home = ({ data, location }) => {
             <li><Link to='/about'>Introduction to the next section titile</Link></li>
             <li><Link to='/about'>Introduction to the next section titile</Link></li>
           </ul>
-
           <p>
-                For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
-                please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
+                    For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
+                    please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
           </p>
-
-        </section>
+        </NDBrandSection>
       </I18nextProvider>
-    </Layout>
+    </NDBrandLayout>
   )
 }
 
@@ -139,6 +131,17 @@ export const query = graphql`
           thumbnail
         }
       }
+    }
+    file(relativePath: { eq: "banner.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        gatsbyImageData(
+          width: 1600
+          height: 700
+          placeholder: DOMINANT_COLOR
+          formats: [AUTO, WEBP, AVIF]
+        )      }
     }
     collectionFile: file(relativePath: { eq: "collection.jpg" }) {
       childImageSharp {

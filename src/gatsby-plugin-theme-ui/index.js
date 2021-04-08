@@ -3,6 +3,9 @@ import bootstrapTheme from '@theme-ui/preset-bootstrap'
 
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
+const light = '#F2E3E3'
+const secondary = '#981B1E'
+
 const buttonShared = {
   fontSize: 3,
   px: '1.5rem',
@@ -19,9 +22,9 @@ const buttonShared = {
 export default merge({}, theme, bootstrapTheme, {
   colors: {
     primary: '#6A4422',
-    secondary: '#981B1E',
+    secondary: secondary,
     brandBar: '#6A4422',
-    light: '#F2E3E3',
+    light: light,
     dark: '#603e1f',
     muted: '#F2E3E3',
   },
@@ -171,13 +174,47 @@ export default merge({}, theme, bootstrapTheme, {
   },
   links: {
     header: {
-      '& a': {
-        color: 'white',
-        py: '25px',
-        px: '25px',
+      position: 'relative',
+      display: 'flex',
+      margin: '0 0 -2.7rem',
+      justifyContent: 'flex-end',
+      '& div': {
+        display: 'flex',
+        opacity: '1',
+        transition: 'all 1s',
+        my: '5px',
+        background: 'white',
+      },
+      '& input': {
+        width: '300px',
+        py: '1.25rem',
+      },
+      '& a, button': {
+        display: 'flex',
+        alignItems: 'center',
+        position: 'relative',
+        height: '100%',
+        padding: '1.25rem 1.375rem',
+        opacity: '1',
+        lineHeight: '1.2',
         textDecoration: 'none',
-        fontWeight: '600',
-        fontFamily: 'heading',
+        color: 'text',
+        borderTop: '0.25rem solid transparent',
+        borderBottom: '0.25rem solid transparent',
+        transition: 'all 325ms ease-in-out',
+        bg: 'white',
+        '&:hover': {
+          background: light,
+          borderBottom: `0.25rem solid ${secondary}`,
+          transform: 'none',
+          cursor: 'pointer',
+        },
+        '&.selected': {
+          background: light,
+          borderBottom: `0.25rem solid ${secondary}`,
+          transform: 'none',
+          cursor: 'pointer',
+        },
       },
     },
     footer: {

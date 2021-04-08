@@ -5,22 +5,38 @@
     {
       "id": "top-home",
       "label": "Home",
-      "link": "/"
+      "link": "/",
+      "icon": "home",
+      "selectedPatterns": [
+        "^[/]$",
+        "^/university"
+      ]
     },
     {
       "id": "top-browse",
       "label": "Browse",
-      "link": "/search"
+      "link": "/search",
+      "selectedPatterns": [
+        "^/browse",
+        "^/search",
+        "^/item"
+      ]
     },
     {
       "id": "top-essays",
       "label": "Themes",
-      "link": "/browse"
+      "link": "/themes",
+      "selectedPatterns": [
+        "^/themes"
+      ]
     },
     {
       "id": "top-about",
       "label": "About",
-      "link": "/about"
+      "link": "/about",
+      "selectedPatterns": [
+        "^/about"
+      ]
     }
   ]
 }
