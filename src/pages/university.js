@@ -6,7 +6,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
-import NDBrandLargePageHeader from '../components/sharedComponents/NDBrandPageHeader'
+import NDBrandLargePageHeader from '../components/sharedComponents/NDBrandLargePageHeader'
 
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'

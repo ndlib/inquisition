@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import queryString from 'query-string'
-import SkipToMain from '@ndlib/gatsby-theme-marble/src/components/Layout/PageWrapper/SkipToMain'
+import SkipToMain from '@ndlib/gatsby-theme-marble/src/components/Shared/SkipToMain'
 
 const App = ({
   children,
