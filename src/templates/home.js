@@ -38,10 +38,10 @@ const Home = ({ data, location }) => {
   return (
     <NDBrandLayout location={location} pageHeader={<NDBrandLargePageHeader
       variant='homepage'
-      title='Inquisitio'
-      lede='manuscript and print sources for the study of Inquisition history'
+      title='Manuscript and print sources for the study of Inquisition history'
+      lede="The materials featured on this website are from the University of Notre Dame's Harley Inquisition Collection"
       image={(<GatsbyImage image={image} alt=''loading='eager' />)}
-      button={(<Button variant='light' to='/' sx={{ display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>)}
+      button={(<Button variant='primary' to='/' sx={{ display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>)}
     />}>
 
       <Seo

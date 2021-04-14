@@ -152,8 +152,7 @@ export default merge({}, theme, bootstrapTheme, {
     },
     pageTitle: {
       color: 'primary',
-      fontFamily: 'title',
-      fontWeight: '600',
+      fontWeight: '100',
       mt: '4rem',
       '::after': {
         content: '""',
