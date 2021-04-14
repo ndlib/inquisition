@@ -2,4 +2,4 @@ coverage
 public
 node_modules
 .cache
-.env.production
+.env.development
