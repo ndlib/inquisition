@@ -16,14 +16,9 @@ import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGrou
 import { DISPLAY_GRID } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 const Home = ({ data, location }) => {
-  const { file, markdownRemark, collectionFile, essaysFile } = data
+  const { file, markdownRemark, essaysFile } = data
   const essaysImage = getImage(essaysFile)
   const image = getImage(file)
-
-  const buttonSx = {
-    margin: '0 auto',
-    width: '100%',
-  }
 
   const featuredItems = markdownRemark.frontmatter.featuredItems.map((item) => {
     return (<Card
@@ -110,7 +105,6 @@ export const query = graphql`
     }
     markdownRemark(frontmatter: {slug: {eq: "/"}}) {
       id
-      excerpt(pruneLength: 160)
       html
       frontmatter {
         title
