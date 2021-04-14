@@ -1,6 +1,6 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import typy from 'typy'
@@ -26,21 +26,19 @@ export const menuQuery = graphql`
 export const FooterWrapper = ({ location, logo }) => {
   const { menusJson } = useStaticQuery(menuQuery)
   const menu = typy(menusJson, 'items').safeArray
-
   return (
     <Flex as='footer' sx={theme.styles.Footer}>
       <Flex sx={{ width: '25%', justifyContent: 'center' }}>
         <div>
           {logo}
-          <p>
-            <address>
+          <address sx={{ py: '1rem' }}>
         © 2020 University of Notre Dame <br />
           Notre Dame, IN 46556 USA
-            </address>
+          </address>
 
-            <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
-            <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
-          </p>
+          <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
+          <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
+
         </div>
       </Flex>
       <Flex sx={{ justifyContent: 'center', width: '50%' }}>

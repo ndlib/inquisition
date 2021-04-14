@@ -1,12 +1,14 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
-import Layout from '../components/layouts/Default'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
@@ -23,22 +25,38 @@ const Browse = ({ data, location }) => {
     >{item.node.frontmatter.summary}</Card>)
   })
   return (
-    <Layout
+    <NDBrandLayout
       location={location}
-      title='Browse'
+      pageHeader={<div sx={{
+        height: '100px',
+        '::before': {
+          content: '""',
+          display: 'block',
+          position: 'absolute',
+          top: '0',
+          bottom: '0',
+          left: '0',
+          right: '0',
+          zIndex:'-1',
+          backgroundImage: 'url(https://conductor.nd.edu/stylesheets/themes/ndt/v3/images/hdr-main-building-800.jpg)',
+          backgroundRepeat: 'repeat',
+        },
+      }} />}
     >
       <Seo
         data={data}
         location={location}
       />
+
       <I18nextProvider i18n={i18next}>
-        <section>
+        <NDBrandSection>
+          <Heading as='h2'>Themes</Heading>
           <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='browse-page'>
             {browseLinks}
           </CardGroup>
-        </section>
+        </NDBrandSection>
       </I18nextProvider>
-    </Layout>
+    </NDBrandLayout>
   )
 }
 

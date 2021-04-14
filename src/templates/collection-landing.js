@@ -1,11 +1,13 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box, Flex } from 'theme-ui'
+import { jsx, Grid, Box, Flex, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
-import Layout from '../components/layouts/Default'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
@@ -32,7 +34,7 @@ export const EssayPage = ({ data, location }) => {
   })
 
   return (
-    <Layout location={location} title={markdownRemark.frontmatter.title}>
+    <NDBrandLayout location={location} title={markdownRemark.frontmatter.title}>
       <Seo
         data={data}
         location={location}
@@ -43,30 +45,28 @@ export const EssayPage = ({ data, location }) => {
         ) : null
       }
       <Grid columns={['100% 0%', '67% 33%', '67% 33%']}>
-        <Box>
-          <section>
-            <p>
-              {markdownRemark.frontmatter.summary}
-            </p>
+        <NDBrandSection>
+          <Heading as='h1'>{markdownRemark.frontmatter.title}</Heading>
+          <p>
+            {markdownRemark.frontmatter.summary}
+          </p>
 
-            <Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link>
-          </section>
-          <section>
-            <h2>Featured Sources</h2>
-            <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
-              {featuredItems}
-            </CardGroup>
-          </section>
+          <Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link>
 
+          <Heading as='h2'>Featured Sources</Heading>
+          <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
+            {featuredItems}
+          </CardGroup>
           <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
             <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
           </Flex>
-        </Box>
+
+        </NDBrandSection>
         <Box>
           <Menu variant='vertical' items={menuItems} label='Categories' />
         </Box>
       </Grid>
-    </Layout>
+    </NDBrandLayout>
   )
 }
 EssayPage.propTypes = {

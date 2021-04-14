@@ -1,11 +1,12 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box } from 'theme-ui'
+import { jsx, Grid, Box, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
-import Layout from '../components/layouts/Default'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 export const EssayPage = ({ data, location }) => {
@@ -13,7 +14,7 @@ export const EssayPage = ({ data, location }) => {
   const { debug } = queryString.parse(location.search)
 
   return (
-    <Layout location={location} title={data.markdownRemark.frontmatter.title}>
+    <NDBrandLayout location={location}>
       <Seo
         data={data}
         location={location}
@@ -23,18 +24,16 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid columns={[2, '67% 33%']}>
-        <Box>
-          <section>
-            <div>{data.markdownRemark.frontmatter.summary}</div>
-          </section>
-          <section>
-            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-          </section>
-        </Box>
-        <Box />
-      </Grid>
-    </Layout>
+      <NDBrandSection>
+        <Heading as='h1'>{data.markdownRemark.frontmatter.title}</Heading>
+        <section>
+          <div>{data.markdownRemark.frontmatter.summary}</div>
+        </section>
+        <section>
+          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        </section>
+      </NDBrandSection>
+    </NDBrandLayout>
   )
 }
 EssayPage.propTypes = {
