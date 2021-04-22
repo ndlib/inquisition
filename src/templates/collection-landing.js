@@ -52,7 +52,7 @@ export const EssayPage = ({ data, location }) => {
           <Menu variant='vertical' items={menuItems} label='Themes' />
           <Menu variant='vertical' items={menu} label='Inquisitions History' />
         </Box>
-        <NDBrandSection sx={{ pl: '2rem' }}>
+        <NDBrandSection sx={{ pl: '2rem', mr: '5vw' }}>
           <p>
             {markdownRemark.frontmatter.summary}
           </p>
