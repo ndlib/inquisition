@@ -14,11 +14,13 @@ import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
+import typy from 'typy'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  const { markdownRemark, allMarkdownRemark } = data
+  const { markdownRemark, allMarkdownRemark, menusJson } = data
+  const menu = typy(menusJson, 'items').safeArray
 
   const menuItems = allMarkdownRemark.edges.map(l => {
     return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug }
@@ -63,7 +65,8 @@ export const EssayPage = ({ data, location }) => {
 
         </NDBrandSection>
         <Box>
-          <Menu variant='vertical' items={menuItems} label='Categories' />
+          <Menu variant='vertical' items={menuItems} label='Themes' />
+          <Menu variant='vertical' items={menu} label='Inquisitions History' />
         </Box>
       </Grid>
     </NDBrandLayout>
@@ -108,6 +111,17 @@ export const query = graphql`
             slug
           }
         }
+      }
+    }
+    menusJson(id: {eq: "historyEssays"}) {
+      id
+      label
+      items {
+        id
+        label
+        link
+        icon
+        selectedPatterns
       }
     }
   }

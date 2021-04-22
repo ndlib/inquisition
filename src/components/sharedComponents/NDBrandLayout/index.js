@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import App from '../../siteapp'
 import MarbleBrandFooter from '../MarbleBrandFooter'
 import NDBrandHeader from '../NDBrandHeader'
+import NDBrandSection from '../NDBrandSection'
 import ClickableRBSCLogoWhite from '../ClickableRBSCLogoWhite'
 
 const gutterWidth = '5vw'
@@ -20,17 +21,36 @@ const NDBrandLayout = ({ location, children, pageHeader }) => {
       <App location={location}>
         <NDBrandHeader location={location} />
         <div id='content' sx={{
-          gridTemplateColumns: `[screen-start] ${gutterWidth} [container-start sidebar-start] var(--sidebar-width) [sidebar-end content-start] minmax(0, 1fr) [content-end container-end] ${gutterWidth} [screen-end]`,
+          gridTemplateColumns: `[screen-start] ${gutterWidth} [container-start sidebar-start] 22vw [sidebar-end content-start] minmax(0, 1fr) [content-end container-end] ${gutterWidth} [screen-end]`,
+          gridTemplateRows: `[header-start] auto [header-end content-start] 1fr [content-end]`,
         }}>
-          <div id='page-header' sx={{ gridColumn: 'screen', gridRow: 'header' }}>
+          <div id='page-header'>
             {pageHeader}
           </div>
           <main sx={{
             gridColumn: 'container',
             gridRow: 'content',
+            position: 'relative',
+            '&:before': {
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: '0',
+              bottom: '0',
+              left: '70vw',
+              width: '100vw',
+              zIndex: '-1',
+              background: '#fff',
+            },
           }}>
             {children}
           </main>
+          <NDBrandSection variant='fullBleedLight'>
+            <p>
+                    For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
+                    please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
+            </p>
+          </NDBrandSection>
           <MarbleBrandFooter logo={(<ClickableRBSCLogoWhite />)} />
         </div>
       </App>

@@ -8,6 +8,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
@@ -27,21 +28,7 @@ const Browse = ({ data, location }) => {
   return (
     <NDBrandLayout
       location={location}
-      pageHeader={<div sx={{
-        height: '100px',
-        '::before': {
-          content: '""',
-          display: 'block',
-          position: 'absolute',
-          top: '0',
-          bottom: '0',
-          left: '0',
-          right: '0',
-          zIndex:'-1',
-          backgroundImage: 'url(https://conductor.nd.edu/stylesheets/themes/ndt/v3/images/hdr-main-building-800.jpg)',
-          backgroundRepeat: 'repeat',
-        },
-      }} />}
+      pageHeader={<NDBrandEmptyPageHeader location={location} />}
     >
       <Seo
         data={data}
@@ -50,7 +37,7 @@ const Browse = ({ data, location }) => {
 
       <I18nextProvider i18n={i18next}>
         <NDBrandSection>
-          <Heading as='h2'>Themes</Heading>
+          <Heading as='h1' variant='pageTitle'>Themes</Heading>
           <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='browse-page'>
             {browseLinks}
           </CardGroup>

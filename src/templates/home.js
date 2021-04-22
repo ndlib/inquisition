@@ -63,26 +63,6 @@ const Home = ({ data, location }) => {
             {featuredItems}
           </CardGroup>
         </NDBrandSection>
-
-        <NDBrandSection>
-          <Heading as='h2' variant='sectionTitle'>
-          Additional Resources
-          </Heading>
-          <ul sx={{ '& li': { py: '3px' }, variant: 'links.vertical' }}>
-            <li><Link to='/about'>A Brief History of the Inquisitions</Link></li>
-            <li><Link to='/about'>A Timeline of the Inquisitions</Link></li>
-            <li><Link to='/about'>Inquisitors-General of the Spanish Inquisition</Link></li>
-            <li><Link to='/about'>Introduction to Inquisitorial Manuals</Link></li>
-            <li><Link to='/about'>Introduction to inquisition trial transcipts and records</Link></li>
-            <li><Link to='/about'>Introduction to the next section titile</Link></li>
-            <li><Link to='/about'>Introduction to the next section titile</Link></li>
-            <li><Link to='/about'>Introduction to the next section titile</Link></li>
-          </ul>
-          <p>
-                    For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
-                    please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
-          </p>
-        </NDBrandSection>
       </I18nextProvider>
     </NDBrandLayout>
   )
