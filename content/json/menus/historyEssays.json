@@ -1,0 +1,21 @@
+{
+  "id": "historyEssays",
+  "label": "Inquisitions History",
+  "items": [
+    {
+      "id": "history-brief",
+      "label": "A Brief History of the Inquisitions",
+      "link": "/visit"
+    },
+    {
+      "id": "history-timeline",
+      "label": "A Timeline of the Inquisitions",
+      "link": "/collection"
+    },
+    {
+      "id": "history-general",
+      "label": "Inquisitors-General of the Spanish Inquisition",
+      "link": "/collection"
+    }
+  ]
+}
