@@ -7,6 +7,7 @@ import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandTitleHeader from '../components/sharedComponents/NDBrandTitleHeader'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
@@ -36,7 +37,7 @@ export const EssayPage = ({ data, location }) => {
   })
 
   return (
-    <NDBrandLayout location={location} title={markdownRemark.frontmatter.title}>
+    <NDBrandLayout location={location} pageHeader={<NDBrandTitleHeader location={location} title={markdownRemark.frontmatter.title} />}>
       <Seo
         data={data}
         location={location}
@@ -46,14 +47,18 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid columns={['100% 0%', '67% 33%', '67% 33%']}>
-        <NDBrandSection>
-          <Heading as='h1'>{markdownRemark.frontmatter.title}</Heading>
+      <Grid columns={['100% 0%', '33% 67%', '33% 67%']}>
+        <Box sx={{ mt: '5rem', ml: '5vw' }}>
+          <Menu variant='vertical' items={menuItems} label='Themes' />
+          <Menu variant='vertical' items={menu} label='Inquisitions History' />
+        </Box>
+        <NDBrandSection sx={{ pl: '2rem' }}>
           <p>
             {markdownRemark.frontmatter.summary}
           </p>
-
-          <Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link>
+          <p>
+            <Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link>
+          </p>
 
           <Heading as='h2'>Featured Sources</Heading>
           <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
@@ -62,12 +67,7 @@ export const EssayPage = ({ data, location }) => {
           <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
             <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
           </Flex>
-
         </NDBrandSection>
-        <Box>
-          <Menu variant='vertical' items={menuItems} label='Themes' />
-          <Menu variant='vertical' items={menu} label='Inquisitions History' />
-        </Box>
       </Grid>
     </NDBrandLayout>
   )
