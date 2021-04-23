@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box, Flex, Heading } from 'theme-ui'
+import { jsx, Grid, Box, Flex, Heading, Button } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
@@ -57,7 +57,7 @@ export const EssayPage = ({ data, location }) => {
             {markdownRemark.frontmatter.summary}
           </p>
           <p>
-            <Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link>
+            <Button><Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link></Button>
           </p>
 
           <Heading as='h2'>Featured Sources</Heading>
