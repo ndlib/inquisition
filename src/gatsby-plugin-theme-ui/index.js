@@ -147,6 +147,10 @@ export default merge({}, theme, bootstrapTheme, {
     heading: {
       color: 'primary',
     },
+    menuHeading: {
+      color: 'primary',
+      py: '1em',
+    },
     lede: {
       fontSize: 4,
     },
@@ -227,15 +231,14 @@ export default merge({}, theme, bootstrapTheme, {
       },
     },
     vertical: {
-      color: 'primary',
       '& div': {
         px: '.5rem',
       },
       '& a': {
+        padding: '0.7em 1em',
         display: 'block',
         color: 'secondary',
         textDecoration: 'none',
-        padding: '0.7em 1em',
         '&:hover': {
           bg: light,
         },
