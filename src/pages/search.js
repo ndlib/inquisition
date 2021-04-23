@@ -59,7 +59,7 @@ const Search = ({ location }) => {
               sort='default'
             />
           </Box>
-          <NDBrandSection variant='fullBleed'>
+          <NDBrandSection>
             <SearchFilterBox />
 
             <SearchResults defaultDisplay='list' />
