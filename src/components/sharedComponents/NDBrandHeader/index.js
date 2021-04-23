@@ -33,7 +33,7 @@ query {
   }
 `
 
-export const NDBrandHeader = ({ location, ...props }) => {
+export const NDBrandHeader = ({ location }) => {
   const { site, menusJson } = useStaticQuery(query)
   const menu = typy(menusJson, 'items').safeArray
 

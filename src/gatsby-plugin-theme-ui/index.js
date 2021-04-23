@@ -228,12 +228,16 @@ export default merge({}, theme, bootstrapTheme, {
     },
     vertical: {
       '& div': {
-        px: '10px',
+        px: '.5rem',
       },
       '& a': {
         display: 'block',
-        py: '1px',
         color: 'secondary',
+        textDecoration: 'none',
+        padding: '0.7em 1em',
+        '&:hover': {
+          bg: light,
+        },
       },
     },
   },
