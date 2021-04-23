@@ -227,6 +227,7 @@ export default merge({}, theme, bootstrapTheme, {
       },
     },
     vertical: {
+      color: 'primary',
       '& div': {
         px: '.5rem',
       },
