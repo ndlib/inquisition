@@ -13,6 +13,7 @@ const buttonShared = {
   bg: 'primary',
   '&:hover': {
     transform: 'scale(1.02)',
+    cursor: 'pointer',
   },
   '& a': {
     textDecoration: 'none',
@@ -231,6 +232,9 @@ export default merge({}, theme, bootstrapTheme, {
       },
     },
     vertical: {
+      '& h3': {
+        color: 'primary',
+      },
       '& div': {
         px: '.5rem',
       },

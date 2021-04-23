@@ -52,22 +52,28 @@ export const EssayPage = ({ data, location }) => {
           <Menu variant='vertical' items={menuItems} label='Themes' />
           <Menu variant='vertical' items={menu} label='Inquisitions History' />
         </Box>
-        <NDBrandSection sx={{ pl: '2rem' }}>
-          <p>
-            {markdownRemark.frontmatter.summary}
-          </p>
-          <p>
-            <Button><Link to={markdownRemark.frontmatter.slug + '/essay'}>{`Read Essay: "${markdownRemark.frontmatter.essayTitle}"`}</Link></Button>
-          </p>
-
-          <Heading as='h2'>Featured Sources</Heading>
-          <CardGroup defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
-            {featuredItems}
-          </CardGroup>
-          <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
-            <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
-          </Flex>
-        </NDBrandSection>
+        <div>
+          <NDBrandSection sx={{ pl: '2rem' }}>
+            <p>
+              {markdownRemark.frontmatter.summary}
+            </p>
+            <p>
+              <Button><Link to={markdownRemark.frontmatter.slug + '/essay'}>{markdownRemark.frontmatter.essayTitle}</Link></Button>
+            </p>
+          </NDBrandSection>
+          <NDBrandSection sx={{ pl: '2rem' }}>
+            <Flex sx={{ width: '100%', justifyContent: 'space-between' }}>
+              <Heading as='h2'>Featured Sources</Heading>
+              <Link sx={{ color: 'secondary', textDecoration: 'none' }} to='/search'>See All Sources</Link>
+            </Flex>
+            <CardGroup allowToggle={false} defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
+              {featuredItems}
+            </CardGroup>
+            <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
+              <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
+            </Flex>
+          </NDBrandSection>
+        </div>
       </Grid>
     </NDBrandLayout>
   )
