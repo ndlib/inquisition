@@ -47,12 +47,12 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid columns={['100% 0%', '33% 67%', '33% 67%']}>
-        <Box sx={{ mt: '5rem', ml: '5vw' }}>
+      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
+        <Box sx={{ mt: '5rem' }}>
           <Menu variant='vertical' items={menuItems} label='Themes' />
           <Menu variant='vertical' items={menu} label='Inquisitions History' />
         </Box>
-        <NDBrandSection sx={{ pl: '2rem', mr: '5vw' }}>
+        <NDBrandSection sx={{ pl: '2rem' }}>
           <p>
             {markdownRemark.frontmatter.summary}
           </p>
