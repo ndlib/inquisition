@@ -42,8 +42,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             id
             frontmatter {
-              slug
               template
+              slug
             }
           }
         }
@@ -59,46 +59,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const essays = result.data.allMarkdownRemark.nodes
+  const pages = result.data.allMarkdownRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  if (essays.length > 0) {
-    essays.forEach((essay, index) => {
-      const previousPostId = index === 0 ? null : essays[index - 1].id
-      const nextPostId = index === essays.length - 1 ? null : essays[index + 1].id
+  if (pages.length > 0) {
+    pages.forEach((page, index) => {
+      const previousPostId = index === 0 ? null : pages[index - 1].id
+      const nextPostId = index === pages.length - 1 ? null : pages[index + 1].id
       // Define a template for blog post
-      if (!essay.frontmatter.template) {
-        essay.frontmatter.template = 'collection-landing.js'
-      }
-      const essayTemplate = path.resolve(`./src/templates/${essay.frontmatter.template}`)
+      console.log(page)
+      const pageTemplate = path.resolve(`./src/templates/${page.frontmatter.template}`)
 
       createPage({
-        path: essay.frontmatter.slug,
-        component: essayTemplate,
+        path: page.frontmatter.slug,
+        component: pageTemplate,
         context: {
-          id: essay.id,
-          slug: essay.frontmatter.slug,
+          id: page.id,
+          slug: page.frontmatter.slug,
           previousPostId,
           nextPostId,
         },
       })
-
-      if (essay.frontmatter.template === 'collection-landing.js') {
-        // add an essay route
-        createPage({
-          path: essay.frontmatter.slug + '/essay',
-          component: path.resolve(`./src/templates/essay.js`),
-          context: {
-            id: essay.id,
-            slug: essay.frontmatter.slug + '/essay',
-            previousPostId,
-            nextPostId,
-          },
-        })
-      }
     })
   }
 }

@@ -1,6 +1,7 @@
 {
   "id": "header",
   "label": "",
+  "link": "/",
   "items": [
     {
       "id": "top-home",
@@ -27,7 +28,7 @@
       "label": "Themes",
       "link": "/themes",
       "selectedPatterns": [
-        "^/themes"
+        "^/theme.*$"
       ]
     },
     {

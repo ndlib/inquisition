@@ -53,7 +53,7 @@ const Home = ({ data, location }) => {
           </Heading>
           <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
 
-          <Button variant='primary' to='/'><Link to='/search'>Browse Themes</Link></Button>
+          <Button variant='primary' to='/'><Link to='/themes'>Browse Themes</Link></Button>
         </NDBrandSection>
         <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { maxWidth: 'inherit' } }} >
           <Heading as='h2' variant='sectionTitle'>

@@ -68,7 +68,7 @@ export const query = graphql`
           html
           frontmatter {
             essayTitle
-            pullQuote
+            summary
             thumbnail
             slug
             summary

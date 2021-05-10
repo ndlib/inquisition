@@ -1,17 +1,17 @@
 ---
-title: "I. Inquisitorial Manuals"
+title: "Introduction to inquisitorial manuals"
 type: "essay"
+template: "essay.js"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
-marbleTitle: "I. Inquisitorial Manuals"
-essayTitle: "Introduction to inquisitorial manuals"
 thumbnail: "https://image-iiif.library.nd.edu/iiif/2/002468275%2FBOO_002468275_000001/full/!250,250/0/default.jpg"
-slug: "inquisition-manuals"
-summary: "Inquisition practice through the ages was supposed to be governed by rules, policies, and complex legal and theological principles. Both theory and practice could vary over time, however, and many different types of manuals, guidebooks and brief procedural notices were circulated as tribunals and individual inquisitors continually strove to improve on their procedures. Closer examination of such texts reveals much about the institutions themselves, their members, and their ideological underpinnings."
-pullQuote: "Conducting an inquisition was a complicated business. First inquisitors had to have some sense of their underlying theological justification and legal authority, both of which might well be challenged by hostile local forces. Then they had to be able to identify the various and often subtle types of heretical or otherwise sinful behavior which fell under their jurisdiction. Finally they had to know how to proceed in the practical exercise of their functions"
+slug: "theme-inquisition-manuals-introduction"
+summary: "Conducting an inquisition was a complicated business. First inquisitors had to have some sense of their underlying theological justification and legal authority, both of which might well be challenged by hostile local forces. Then they had to be able to identify the various and often subtle types of heretical or otherwise sinful behavior which fell under their jurisdiction. Finally they had to know how to proceed in the practical exercise of their functions."
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
 sort: 1
+themeSlug: 'theme-inquisition-manuals'
+themeTitle: 'I. Inquisitorial Manuals'
 featuredItems:
   - title: "Orden que comunmente se guarda en el Santo Oficio de la Inquisicion, acerca del processar en las causas que en el se tratan; conforme à lo que está proveido por las instrucciones antiguas y nuevas."
     link: /item/aspace_7e85bf4e9549b2a635169a95403e573a

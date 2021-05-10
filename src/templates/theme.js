@@ -7,25 +7,20 @@ import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
-import NDBrandTitleHeader from '../components/sharedComponents/NDBrandTitleHeader'
+import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
+import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
 import InquisitionButtonLink from '../components/InquisitionButtonLink'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
-import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
-import typy from 'typy'
 
-export const EssayPage = ({ data, location }) => {
+export const ThemePage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  const { markdownRemark, allMarkdownRemark, menusJson } = data
-  const menu = typy(menusJson, 'items').safeArray
-
-  const menuItems = allMarkdownRemark.edges.map(l => {
-    return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug }
-  })
+  const { markdownRemark } = data
 
   const featuredItems = markdownRemark.frontmatter.featuredItems.map((item) => {
     return (<Card
@@ -37,7 +32,8 @@ export const EssayPage = ({ data, location }) => {
   })
 
   return (
-    <NDBrandLayout location={location} pageHeader={<NDBrandTitleHeader location={location} title={markdownRemark.frontmatter.title} />}>
+    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}
+    >
       <Seo
         data={data}
         location={location}
@@ -49,16 +45,20 @@ export const EssayPage = ({ data, location }) => {
       }
       <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
         <Box sx={{ mt: '5rem' }}>
-          <Menu variant='vertical' items={menuItems} label='Themes' />
-          <Menu variant='vertical' items={menu} label='Inquisitions History' />
+          <InquisitionLeftNav location={location} />
         </Box>
         <div>
           <NDBrandSection sx={{ pl: '2rem' }}>
+            <NDBrandBreadcrumbs
+              currentPageTitle={markdownRemark.frontmatter.title}
+              breadcrumbs={[
+                { url: '/themes', title: 'Themes' },
+              ]}
+            />
+            <Heading as='h1' variant='pageTitle'>{markdownRemark.frontmatter.title}</Heading>
+            <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
             <p>
-              {markdownRemark.frontmatter.summary}
-            </p>
-            <p>
-              <Button><Link to={markdownRemark.frontmatter.slug + '/essay'}>{markdownRemark.frontmatter.essayTitle}</Link></Button>
+              <Button><Link to={'/' + markdownRemark.frontmatter.essayId}>{'Essay: ' + markdownRemark.frontmatter.essayTitle}</Link></Button>
             </p>
           </NDBrandSection>
           <NDBrandSection sx={{ pl: '2rem' }}>
@@ -78,12 +78,12 @@ export const EssayPage = ({ data, location }) => {
     </NDBrandLayout>
   )
 }
-EssayPage.propTypes = {
+ThemePage.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
 
-export default EssayPage
+export default ThemePage
 
 export const query = graphql`
   query($id: String!) {
@@ -93,6 +93,7 @@ export const query = graphql`
       frontmatter {
         title
         essayTitle
+        essayId
         slug
         thumbnail
         marbleId
@@ -105,29 +106,6 @@ export const query = graphql`
           link
           thumbnail
         }
-      }
-    }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            marbleId
-            slug
-          }
-        }
-      }
-    }
-    menusJson(id: {eq: "historyEssays"}) {
-      id
-      label
-      items {
-        id
-        label
-        link
-        icon
-        selectedPatterns
       }
     }
   }

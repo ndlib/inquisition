@@ -5,7 +5,10 @@
     {
       "id": "history-brief",
       "label": "A Brief History of the Inquisitions",
-      "link": "/visit"
+      "link": "/essay-brief-history",
+      "selectedPatterns": [
+        "^/essay-brief-history"
+      ]
     },
     {
       "id": "history-timeline",

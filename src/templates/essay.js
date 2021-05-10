@@ -1,24 +1,23 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Box, Grid, Flex } from 'theme-ui'
+import { jsx, Box, Grid, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
-import Layout from '../components/layouts/Default'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
+import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import InquisitionLeftNav from '../components/InquisitionLeftNav'
+
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
-import InquisitionButtonLink from '../components/InquisitionButtonLink'
-import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
-  const { markdownRemark, allMarkdownRemark } = data
-
-  const menuItems = allMarkdownRemark.edges.map(l => {
-    return { id: l.node.frontmatter.essayTitle, label: l.node.frontmatter.essayTitle, link: l.node.frontmatter.slug }
-  })
+  const { markdownRemark } = data
 
   const featuredItems = markdownRemark.frontmatter.featuredItems.map((item) => {
     return (<Card
@@ -29,9 +28,14 @@ export const EssayPage = ({ data, location }) => {
     />
     )
   })
+  const breadcrumbs = []
+  if (markdownRemark.frontmatter.themeSlug) {
+    breadcrumbs.push({ url: '/themes', title: 'Themes' })
+    breadcrumbs.push({ url: '/' + markdownRemark.frontmatter.themeSlug, title: markdownRemark.frontmatter.themeTitle })
+  }
 
   return (
-    <Layout location={location} title={markdownRemark.frontmatter.essayTitle}>
+    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
       <Seo
         data={data}
         location={location}
@@ -41,12 +45,18 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid columns={[2, '67% 33%']}>
+      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
+        <Box sx={{ mt: '5rem' }}>
+          <InquisitionLeftNav location={location} />
+        </Box>
         <Box>
-          <section>
+          <NDBrandSection sx={{ pl: '2rem' }}>
+            <NDBrandBreadcrumbs
+              currentPageTitle={markdownRemark.frontmatter.title}
+              breadcrumbs={breadcrumbs}
+            />
+            <Heading as='h1' variant='pageTitle'>{markdownRemark.frontmatter.title}</Heading>
             <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-          </section>
-          <section>
             <hr />
             <p>To cite this essay: </p>
             <p>
@@ -54,27 +64,10 @@ export const EssayPage = ({ data, location }) => {
               <em>Hesburgh Libraries of Notre Dame, Department of Rare Books and Special Collections</em>. University of Notre Dame,
               {markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{markdownRemark.frontmatter.slug}&gt;
             </p>
-          </section>
-        </Box>
-        <Box>
-          <section>
-            <Menu variant='vertical' items={menuItems} label='More Essays' />
-          </section>
-          <section>
-            <h2>Featured Sources</h2>
-            {featuredItems}
-          </section>
-          <section>
-            <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
-              <InquisitionButtonLink
-                target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}
-                title={`View all sources`} />
-            </Flex>
-          </section>
-
+          </NDBrandSection>
         </Box>
       </Grid>
-    </Layout>
+    </NDBrandLayout>
   )
 }
 EssayPage.propTypes = {
@@ -98,6 +91,8 @@ export const query = graphql`
         summary
         author
         citationYear
+        themeTitle
+        themeSlug
         featuredItems {
           title
           link
@@ -105,16 +100,27 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "essay"}}}, sort: {fields: frontmatter___sort}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "theme"}}}, sort: {fields: frontmatter___sort}) {
       edges {
         node {
           id
           frontmatter {
-            essayTitle
+            title
             marbleId
             slug
           }
         }
+      }
+    }
+    menusJson(id: {eq: "historyEssays"}) {
+      id
+      label
+      items {
+        id
+        label
+        link
+        icon
+        selectedPatterns
       }
     }
   }

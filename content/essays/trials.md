@@ -1,17 +1,18 @@
 ---
-title: "II. Trials and Sentencing"
+title: "Introduction to inquisition trial transcripts and records"
 type: "essay"
+template: "essay.js"
 marbleId: "aspace_93b838c49d595bd0e9a87bcab723def2"
 marbleTitle: "II. Trials and Sentencing"
-essayTitle: "Introduction to inquisition trial transcripts and records"
 thumbnail: "https://image-iiif.library.nd.edu/iiif/2/MSNCW8007_EAD%2F8007-000a.150/full/!250,250/0/default.webp"
-slug: "trials-sentencing"
-summary: "Thousands of trial transcripts and related documents have been preserved to record the day-to-day judicial work of the various inquisition tribunals. Though most remain in unique manuscript copies held by major national or ecclesiastical collections in countries of origin as Spain, Portugal, Italy and Mexico, exemplars of several documentary types are also available in the McDevitt Collection."
-pullQuote: "Among the most fascinating and disquieting episodes in inquisition history are the tens of thousands of trials in which accused individuals or reos faced questioning, sometimes torture, and ultimately sentencing (when found guilty) at the hands of inquisitorial functionaries."
+slug: "theme-trials-and-sentencing-introduction"
+summary: "Among the most fascinating and disquieting episodes in inquisition history are the tens of thousands of trials in which accused individuals or reos faced questioning, sometimes torture, and ultimately sentencing (when found guilty) at the hands of inquisitorial functionaries."
 date: "2017-09-18T23:19:51.246Z"
 author: "Vose, Robin"
 citationYear: "2010"
 sort: 2
+themeSlug: 'theme-trials-and-sentencing'
+themeTitle: 'II. Trials and Sentencing'
 featuredItems:
   - title: "Relación de los méritos del proceso de Ana Méndez, doncella portuguesa, hija de Jorge Rodriguez. Requerida por el Santo Oficio de la Ynquisición de Cuenca."
     link: /item/aspace_7e85bf4e9549b2a635169a95403e573a

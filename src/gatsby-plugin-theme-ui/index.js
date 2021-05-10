@@ -158,7 +158,8 @@ export default merge({}, theme, bootstrapTheme, {
     pageTitle: {
       color: 'primary',
       fontWeight: '100',
-      ml: '1.5rem',
+      fontSize: 7,
+      ml: '0',
       '::after': {
         content: '""',
         marginLeft: '-0.5em',
@@ -234,17 +235,28 @@ export default merge({}, theme, bootstrapTheme, {
     vertical: {
       '& h3': {
         color: 'primary',
+        p: '0',
       },
       '& div': {
         px: '.5rem',
+        pb: '1rem',
+        '& a': {
+          padding: '0.7em 1em',
+          '&.selected': {
+            fontWeight: '700',
+          },
+        },
       },
       '& a': {
-        padding: '0.7em 1em',
+        py: '1rem',
         display: 'block',
         color: 'secondary',
         textDecoration: 'none',
         '&:hover': {
           bg: light,
+        },
+        '&.selected': {
+          fontWeight: '700',
         },
       },
     },
