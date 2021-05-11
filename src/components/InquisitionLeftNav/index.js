@@ -40,12 +40,17 @@ export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
   const { allMarkdownRemark, menusJson } = data
   const menu = typy(menusJson, 'items').safeArray
   const menuItems = allMarkdownRemark.edges.map(l => {
-    return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug, selectedPatterns: ['^/' + l.node.frontmatter.slug] }
+    const selectedPatterns = ['^/' + l.node.frontmatter.slug]
+    if (currentMenuCategory === l.node.frontmatter.title) {
+      selectedPatterns.push(['^' + location.pathname])
+      console.log(selectedPatterns)
+    }
+    return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug, selectedPatterns: selectedPatterns }
   })
 
   return (
     <div>
-      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)} />
+      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)} />
       <Menu variant='vertical' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match(/^\/essay.*/)} />
     </div>
   )

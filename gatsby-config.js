@@ -12,6 +12,19 @@ module.exports = {
       },
     },
     {
+      resolve: '@ndlib/gatsby-source-appsync-marble',
+      options: {
+        url: configuration.siteMetadata.sourceGraphQlUrl,
+        key: configuration.siteMetadata.graphQlKey,
+        website: 'inquisition',
+        // updateFixtures: true,
+        useFixtures: configuration.siteMetadata.useFixtures,
+        // debug: true,
+        // logIds: true,
+        mergeItems: [],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: path.join(__dirname, '/content/essays'),

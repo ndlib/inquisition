@@ -28,6 +28,7 @@ module.exports = {
     author: 'University of Notre Dame Hesburgh Libraries Rare Books & Special Collections',
     description: 'Manuscript and print sources for the study of Inquisition history.',
     siteUrl: 'https://inquisition.library.nd.edu/',
+    useFixtures: false,
     languages: {
       default: 'en',
       allowed: ['en'],

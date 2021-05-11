@@ -19,7 +19,6 @@ export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { marbleItem, allMarbleFile } = data
-
   return (
     <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
       <Seo
@@ -28,9 +27,9 @@ export const MarbleItemPage = ({ data, location }) => {
       />
       <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
         <Box sx={{ mt: '5rem' }}>
-          <InquisitionLeftNav location={location} currentPageTitle={typy(marbleItem, 'marbleParent.title').safeString} />
+          <InquisitionLeftNav location={location} currentMenuCategory={typy(marbleItem, 'marbleParent.title').safeString} />
         </Box>
-        <NDBrandSection sx={{ pl: '2rem' }}>
+        <NDBrandSection sx={{ pl: '2rem', mr: 0, maxWidth: '68vw' }}>
 
           <ReturnToSearch location={location} />
           <Heading as='h1' variant='pageTitle'>{marbleItem.title}</Heading>
