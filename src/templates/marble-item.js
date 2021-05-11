@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box } from 'theme-ui'
+import { jsx, Grid, Box, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/MarbleItem/ItemLayout'
@@ -29,10 +29,10 @@ export const MarbleItemPage = ({ data, location }) => {
         <Box sx={{ mt: '5rem' }}>
           <InquisitionLeftNav location={location} />
         </Box>
-        <div>
+        <NDBrandSection sx={{ pl: '2rem' }}>
 
           <ReturnToSearch location={location} />
-
+          <Heading as='h1' variant='pageTitle'>{marbleItem.title}</Heading>
           <ItemLayout
             location={location}
             marbleItem={marbleItem}
@@ -43,7 +43,7 @@ export const MarbleItemPage = ({ data, location }) => {
               <pre>{JSON.stringify(data, null, 2)}</pre>
             ) : null
           }
-        </div>
+        </NDBrandSection>
       </Grid>
     </NDBrandLayout>
   )
