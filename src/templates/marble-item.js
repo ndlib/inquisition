@@ -1,12 +1,18 @@
+/** @jsx jsx */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { jsx, Grid, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import CollectionLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/MarbleItem/CollectionLayout'
 import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/MarbleItem/ItemLayout'
 import queryString from 'query-string'
-import Layout from '../components/layouts/Default'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/ReturnToSearch'
+import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
+import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -14,32 +20,32 @@ export const MarbleItemPage = ({ data, location }) => {
   const { marbleItem, allMarbleFile } = data
 
   return (
-    <Layout location={location} title={marbleItem.title}>
+    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
       <Seo
         data={data}
         location={location}
       />
-      <ReturnToSearch location={location} />
-      {
-        marbleItem.display === 'collection' ? (
-          <CollectionLayout
-            location={location}
-            marbleItem={marbleItem}
-          />
-        ) : (
+      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
+        <Box sx={{ mt: '5rem' }}>
+          <InquisitionLeftNav location={location} />
+        </Box>
+        <div>
+
+          <ReturnToSearch location={location} />
+
           <ItemLayout
             location={location}
             marbleItem={marbleItem}
             allMarbleFile={allMarbleFile}
           />
-        )
-      }
-      {
-        debug ? (
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        ) : null
-      }
-    </Layout>
+          {
+            debug ? (
+              <pre>{JSON.stringify(data, null, 2)}</pre>
+            ) : null
+          }
+        </div>
+      </Grid>
+    </NDBrandLayout>
   )
 }
 MarbleItemPage.propTypes = {
