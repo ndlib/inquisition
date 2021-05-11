@@ -39,15 +39,14 @@ export const InquisitionLeftNav = ({ location }) => {
   const data = useStaticQuery(query)
   const { allMarkdownRemark, menusJson } = data
   const menu = typy(menusJson, 'items').safeArray
-  console.log(allMarkdownRemark)
   const menuItems = allMarkdownRemark.edges.map(l => {
     return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug, selectedPatterns: ['^/' + l.node.frontmatter.slug] }
   })
 
   return (
     <div>
-      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={location.pathname.match('^/theme.*') ? 'selected' : ''} to='/themes'>Themes</Link>} expand={location.pathname.match('^/theme.*')} />
-      <Menu variant='vertical' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match('^/essay.*') ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match('^/essay.*')} />
+      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={location.pathname.match(/^\/theme.*/)} />
+      <Menu variant='vertical' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match(/^\/essay.*/)} />
     </div>
   )
 }

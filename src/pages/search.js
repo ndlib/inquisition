@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box } from 'theme-ui'
+import { jsx, Grid, Box, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import SearchBase from 'components/Shared/SearchBase'
 import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
@@ -10,14 +10,15 @@ import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefi
 import { TagFilterConfig } from 'searchkit'
 import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
-import NDBrandTitleHeader from '../components/sharedComponents/NDBrandTitleHeader'
+import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
+import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 const Search = ({ location }) => {
   return (
     <SearchBase>
-      <NDBrandLayout location={location} pageHeader={<NDBrandTitleHeader location={location} title='Browse Collection' />}>
+      <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
         <Seo
           data={{}}
           location={location}
@@ -60,6 +61,12 @@ const Search = ({ location }) => {
             />
           </Box>
           <NDBrandSection>
+            <NDBrandBreadcrumbs
+              currentPageTitle='Browse Collection'
+              breadcrumbs={[]}
+            />
+            <Heading as='h1' variant='pageTitle'>Browse Collection</Heading>
+
             <SearchFilterBox />
 
             <SearchResults defaultDisplay='list' />
