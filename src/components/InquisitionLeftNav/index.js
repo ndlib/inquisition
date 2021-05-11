@@ -43,7 +43,6 @@ export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
     const selectedPatterns = ['^/' + l.node.frontmatter.slug]
     if (currentMenuCategory === l.node.frontmatter.title) {
       selectedPatterns.push(['^' + location.pathname])
-      console.log(selectedPatterns)
     }
     return { id: l.node.frontmatter.title, label: l.node.frontmatter.title, link: l.node.frontmatter.slug, selectedPatterns: selectedPatterns }
   })

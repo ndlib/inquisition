@@ -25,11 +25,9 @@ export const MarbleItemPage = ({ data, location }) => {
         data={data}
         location={location}
       />
-      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
-        <Box sx={{ mt: '5rem' }}>
-          <InquisitionLeftNav location={location} currentMenuCategory={typy(marbleItem, 'marbleParent.title').safeString} />
-        </Box>
-        <NDBrandSection sx={{ pl: '2rem', mr: 0, maxWidth: '68vw' }}>
+      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '5vw 85vw', '5vw 85vw']}>
+        <Box sx={{ mt: '5rem' }} />
+        <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { ml: '2rem', maxWidth: '85vw' } }}>
 
           <ReturnToSearch location={location} />
           <Heading as='h1' variant='pageTitle'>{marbleItem.title}</Heading>
