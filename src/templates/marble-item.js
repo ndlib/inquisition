@@ -13,6 +13,7 @@ import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
+import typy from 'typy'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
@@ -27,7 +28,7 @@ export const MarbleItemPage = ({ data, location }) => {
       />
       <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
         <Box sx={{ mt: '5rem' }}>
-          <InquisitionLeftNav location={location} />
+          <InquisitionLeftNav location={location} currentPageTitle={typy(marbleItem, 'marbleParent.title').safeString} />
         </Box>
         <NDBrandSection sx={{ pl: '2rem' }}>
 

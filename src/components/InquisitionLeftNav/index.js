@@ -35,7 +35,7 @@ query {
   }
 `
 
-export const InquisitionLeftNav = ({ location }) => {
+export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
   const data = useStaticQuery(query)
   const { allMarkdownRemark, menusJson } = data
   const menu = typy(menusJson, 'items').safeArray
@@ -45,7 +45,7 @@ export const InquisitionLeftNav = ({ location }) => {
 
   return (
     <div>
-      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={location.pathname.match(/^\/theme.*/)} />
+      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)} />
       <Menu variant='vertical' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match(/^\/essay.*/)} />
     </div>
   )
@@ -53,10 +53,11 @@ export const InquisitionLeftNav = ({ location }) => {
 
 InquisitionLeftNav.propTypes = {
   location: PropTypes.object.isRequired,
+  currentMenuCategory: PropTypes.bool,
 }
 
 InquisitionLeftNav.defaultProps = {
-  variant: 'default',
+  currentMenuCategory: false,
 }
 
 export default InquisitionLeftNav
