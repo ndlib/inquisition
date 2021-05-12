@@ -4,14 +4,10 @@ import React, { useState, useEffect } from 'react'
 import { jsx, Container } from 'theme-ui'
 import PropTypes from 'prop-types'
 import App from '../../siteapp'
-import MarbleBrandFooter from '../MarbleBrandFooter'
-import NDBrandHeader from '../NDBrandHeader'
-import NDBrandSection from '../NDBrandSection'
-import ClickableRBSCLogoWhite from '../ClickableRBSCLogoWhite'
 
 const gutterWidth = '5vw'
 
-const NDBrandLayout = ({ location, children, pageHeader }) => {
+const NDBrandLayout = ({ location, children, pageHeader, siteHeader, siteFooter }) => {
   return (
     <Container sx={{
       display: 'grid',
@@ -19,7 +15,7 @@ const NDBrandLayout = ({ location, children, pageHeader }) => {
       gridTemplateRows: '[header-start] auto [header-end main-start] minmax(auto, 1fr) [main-end footer-start] auto [footer-end]',
     }}>
       <App location={location}>
-        <NDBrandHeader location={location} />
+        {siteHeader}
         <div id='content' sx={{
           gridTemplateColumns: `[screen-start] ${gutterWidth} [container-start sidebar-start] 22vw [sidebar-end content-start] minmax(0, 1fr) [content-end container-end] ${gutterWidth} [screen-end]`,
           gridTemplateRows: `[header-start] auto [header-end content-start] 1fr [content-end]`,
@@ -45,13 +41,7 @@ const NDBrandLayout = ({ location, children, pageHeader }) => {
           }}>
             {children}
           </main>
-          <NDBrandSection variant='fullBleedLight'>
-            <p>
-                    For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
-                    please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
-            </p>
-          </NDBrandSection>
-          <MarbleBrandFooter logo={(<ClickableRBSCLogoWhite />)} />
+          {siteFooter}
         </div>
       </App>
     </Container>
@@ -62,5 +52,7 @@ NDBrandLayout.propTypes = {
   location: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
   pageHeader: PropTypes.object,
+  siteHeader: PropTypes.object,
+  siteFooter: PropTypes.object,
 }
 export default NDBrandLayout

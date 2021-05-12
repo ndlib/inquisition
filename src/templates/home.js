@@ -3,10 +3,11 @@
 import React from 'react'
 import { jsx, Heading, Button } from 'theme-ui'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from 'components/Shared/Link'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandLargePageHeader from '../components/sharedComponents/NDBrandLargePageHeader'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
@@ -31,7 +32,8 @@ const Home = ({ data, location }) => {
   })
 
   return (
-    <NDBrandLayout location={location} pageHeader={<NDBrandLargePageHeader
+    <InquisitionLayout location={location} pageHeader={<NDBrandLargePageHeader
+      location={location}
       variant='homepage'
       title='Manuscript and print sources for the study of Inquisition history'
       lede="The materials featured on this website are from the University of Notre Dame's Harley Inquisition Collection"
@@ -44,10 +46,10 @@ const Home = ({ data, location }) => {
         location={location}
       />
       <I18nextProvider i18n={i18next}>
-        <NDBrandSection>
+        <NDBrandSection location={location}>
           <p dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
         </NDBrandSection>
-        <NDBrandSection variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
+        <NDBrandSection location={location} variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
           <Heading as='h2' variant='sectionTitle'>
                   Themeatic Inquistion Resources
           </Heading>
@@ -55,7 +57,7 @@ const Home = ({ data, location }) => {
 
           <Button variant='primary' to='/'><Link to='/themes'>Browse Themes</Link></Button>
         </NDBrandSection>
-        <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { maxWidth: 'inherit' } }} >
+        <NDBrandSection location={location} variant='fullBleed' sx={{ '& div.sectionContent': { maxWidth: 'inherit' } }} >
           <Heading as='h2' variant='sectionTitle'>
                 Featured Items
           </Heading>
@@ -64,7 +66,7 @@ const Home = ({ data, location }) => {
           </CardGroup>
         </NDBrandSection>
       </I18nextProvider>
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 

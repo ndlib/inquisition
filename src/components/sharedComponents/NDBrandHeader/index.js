@@ -32,15 +32,23 @@ query {
     }
   }
 `
-
-export const NDBrandHeader = ({ location }) => {
+/*
+* Builds and ND Webtheme header.
+* Needs:  a json menu file with a header navigation in it. content/json/menus/header.json usually
+* Reads the site title and subtitle out of siteMetadata
+* Params:
+* location - Gatsby Location Object.
+* variant - used to set a configurable variant in the theme file.
+*           Defaults to default
+*/
+export const NDBrandHeader = ({ location, variant }) => {
   const { site, menusJson } = useStaticQuery(query)
   const menu = typy(menusJson, 'items').safeArray
 
   const [showSearch, setShowSearch] = useState(false)
 
   return (
-    <Box as='header' sx={{
+    <Box as='header' variant={'header.' + variant} sx={{
       gridRow: 'header',
       padding: '2.5rem 0 0',
       display: 'grid',
@@ -113,7 +121,6 @@ export const NDBrandHeader = ({ location }) => {
 }
 
 NDBrandHeader.propTypes = {
-  children: PropTypes.node.isRequired,
   variant: PropTypes.string.isRequired,
   location: PropTypes.object.isRequired,
   image: PropTypes.object,

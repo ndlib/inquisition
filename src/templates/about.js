@@ -5,7 +5,7 @@ import { jsx, Grid, Box, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
@@ -14,7 +14,7 @@ export const EssayPage = ({ data, location }) => {
   const { debug } = queryString.parse(location.search)
 
   return (
-    <NDBrandLayout location={location}>
+    <InquisitionLayout location={location}>
       <Seo
         data={data}
         location={location}
@@ -33,7 +33,7 @@ export const EssayPage = ({ data, location }) => {
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
         </section>
       </NDBrandSection>
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 EssayPage.propTypes = {

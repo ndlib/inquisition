@@ -1,79 +1,18 @@
 import merge from 'lodash.merge'
-import bootstrapTheme from '@theme-ui/preset-bootstrap'
 
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
 const light = '#F2E3E3'
 const secondary = '#981B1E'
 
-const buttonShared = {
-  fontSize: 3,
-  px: '1.5rem',
-  borderRadius: '.6em',
-  bg: 'primary',
-  '&:hover': {
-    transform: 'scale(1.02)',
-    cursor: 'pointer',
-  },
-  '& a': {
-    textDecoration: 'none',
-  },
-}
+console.log(theme)
 
-export default merge({}, theme, bootstrapTheme, {
+export default merge({}, theme, {
   colors: {
     primary: '#6A4422',
     secondary: secondary,
-    brandBar: '#6A4422',
     light: light,
     dark: '#603e1f',
-    muted: '#F2E3E3',
-  },
-  buttons: {
-    primary: {
-      ...buttonShared,
-      color: 'white',
-      bg: 'primary',
-      '& a': {
-        ...buttonShared['& a'],
-        color: 'white',
-      },
-    },
-    secondary: {
-      ...buttonShared,
-      bg: 'secondary',
-      color: 'white',
-      '& a': {
-        ...buttonShared['& a'],
-        color: 'white',
-      },
-    },
-    light: {
-      ...buttonShared,
-      color: 'text',
-      bg: 'light',
-      '& a': {
-        ...buttonShared['& a'],
-        color: 'text',
-      },
-    },
-    inverse: {
-      ...buttonShared,
-      color: 'text',
-      bg: 'white',
-      '& a': {
-        ...buttonShared['& a'],
-        color: 'white',
-      },
-    },
-  },
-  pageHeaders: {
-    default: {
-
-    },
-    homepage: {
-
-    },
   },
   sections: {
     default: {
@@ -138,16 +77,6 @@ export default merge({}, theme, bootstrapTheme, {
     },
   },
   text: {
-    default: {
-      fontFamily: 'body',
-      fontSize: 3,
-      lineHeight: 'body',
-      fontWeight: 'body',
-      color: 'text',
-    },
-    heading: {
-      color: 'primary',
-    },
     menuHeading: {
       color: 'primary',
       py: '1em',
@@ -178,50 +107,6 @@ export default merge({}, theme, bootstrapTheme, {
     },
   },
   links: {
-    header: {
-      position: 'relative',
-      display: 'flex',
-      margin: '0 0 -2.7rem',
-      justifyContent: 'flex-end',
-      '& div': {
-        display: 'flex',
-        opacity: '1',
-        transition: 'all 1s',
-        my: '5px',
-        background: 'white',
-      },
-      '& input': {
-        width: '300px',
-        py: '1.25rem',
-      },
-      '& a, button': {
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative',
-        height: '100%',
-        padding: '1.25rem 1.375rem',
-        opacity: '1',
-        lineHeight: '1.2',
-        textDecoration: 'none',
-        color: 'text',
-        borderTop: '0.25rem solid transparent',
-        borderBottom: '0.25rem solid transparent',
-        transition: 'all 325ms ease-in-out',
-        bg: 'white',
-        '&:hover': {
-          background: light,
-          borderBottom: `0.25rem solid ${secondary}`,
-          transform: 'none',
-          cursor: 'pointer',
-        },
-        '&.selected': {
-          background: light,
-          borderBottom: `0.25rem solid ${secondary}`,
-          transform: 'none',
-          cursor: 'pointer',
-        },
-      },
-    },
     footer: {
       '& a': {
         color: 'white',
@@ -250,7 +135,7 @@ export default merge({}, theme, bootstrapTheme, {
       '& a': {
         py: '1rem',
         display: 'block',
-        color: 'secondary',
+        color: 'primary',
         textDecoration: 'none',
         '&:hover': {
           bg: light,
@@ -262,16 +147,6 @@ export default merge({}, theme, bootstrapTheme, {
     },
   },
   cards: {
-    primary: {
-      '& h2': {
-        color: 'secondary',
-        fontFamily: 'title',
-        fontSize: '4',
-      },
-      '& figcaption div': {
-        color: 'gray.9',
-      },
-    },
   },
   // ae9142
   styles: {

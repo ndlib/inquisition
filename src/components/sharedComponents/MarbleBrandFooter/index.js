@@ -42,7 +42,7 @@ export const FooterWrapper = ({ location, logo }) => {
         </div>
       </Flex>
       <Flex sx={{ justifyContent: 'center', width: '50%' }}>
-        <Menu variant='footer' items={menu} />
+        <Menu variant='footer' location={location} items={menu} />
       </Flex>
       <Flex sx={{ width: '25%', justifyContent: 'center' }}>
         <ClickableNDLogoWhite />

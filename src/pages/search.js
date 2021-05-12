@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box, Heading } from 'theme-ui'
+import { jsx, Grid, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
 import SearchBase from 'components/Shared/SearchBase'
 import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
@@ -10,7 +10,7 @@ import SearchRefinementListFilter from 'components/Shared/SearchTools/SearchRefi
 import { TagFilterConfig } from 'searchkit'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import { I18nextProvider } from 'react-i18next'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
@@ -21,7 +21,7 @@ const Search = ({ location }) => {
   return (
     <SearchBase>
       <I18nextProvider i18n={i18next}>
-        <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+        <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
           <Seo
             data={{}}
             location={location}
@@ -79,7 +79,7 @@ const Search = ({ location }) => {
               <SearchResults defaultDisplay='list' />
             </NDBrandSection>
           </Grid>
-        </NDBrandLayout>
+        </InquisitionLayout>
       </I18nextProvider>
     </SearchBase>
 

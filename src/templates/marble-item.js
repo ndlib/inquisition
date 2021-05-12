@@ -8,19 +8,17 @@ import ItemLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/MarbleI
 import queryString from 'query-string'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/ReturnToSearch'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
-import InquisitionLeftNav from '../components/InquisitionLeftNav'
-import typy from 'typy'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { marbleItem, allMarbleFile } = data
   return (
-    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+    <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
       <Seo
         data={data}
         location={location}
@@ -43,7 +41,7 @@ export const MarbleItemPage = ({ data, location }) => {
           }
         </NDBrandSection>
       </Grid>
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 MarbleItemPage.propTypes = {

@@ -5,7 +5,7 @@ import { jsx, Box, Grid, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
@@ -35,7 +35,7 @@ export const EssayPage = ({ data, location }) => {
   }
 
   return (
-    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+    <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
       <Seo
         data={data}
         location={location}
@@ -67,7 +67,7 @@ export const EssayPage = ({ data, location }) => {
           </NDBrandSection>
         </Box>
       </Grid>
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 EssayPage.propTypes = {

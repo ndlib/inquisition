@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
+import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '../components/sharedComponents/NDBrandSection'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
@@ -28,7 +28,7 @@ const Browse = ({ data, location }) => {
     ><div dangerouslySetInnerHTML={{ __html: item.node.html }} /></Card>)
   })
   return (
-    <NDBrandLayout
+    <InquisitionLayout
       location={location}
       pageHeader={<NDBrandEmptyPageHeader location={location} />}
     >
@@ -53,7 +53,7 @@ const Browse = ({ data, location }) => {
         </Grid>
       </I18nextProvider>
 
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 
