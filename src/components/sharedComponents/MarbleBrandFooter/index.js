@@ -7,7 +7,7 @@ import typy from 'typy'
 import { jsx, Flex, Box } from 'theme-ui'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import theme from '../../../gatsby-plugin-theme-ui'
-import ClickableNDLogoWhite from '../ClickableNDLogoWhite'
+import ClickableNDLogoWhite from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Logos/ClickableNDLogoWhite'
 
 export const menuQuery = graphql`
   query {

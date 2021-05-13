@@ -2,16 +2,12 @@ import merge from 'lodash.merge'
 
 import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
-const light = '#F2E3E3'
-const secondary = '#981B1E'
-
-console.log(theme)
-
 export default merge({}, theme, {
   colors: {
     primary: '#6A4422',
-    secondary: secondary,
-    light: light,
+    secondary: '#981B1E',
+    light: '#F2E3E3',
+    lightDark: '#b76262',
     dark: '#603e1f',
   },
   sections: {
@@ -138,7 +134,7 @@ export default merge({}, theme, {
         color: 'primary',
         textDecoration: 'none',
         '&:hover': {
-          bg: light,
+          bg: 'var(--theme-ui-colors-light)',
         },
         '&.selected': {
           fontWeight: '700',
@@ -161,17 +157,8 @@ export default merge({}, theme, {
         margin: '0px',
       },
     },
-    Main: {
-      margin: ['1rem', '1rem auto', '1rem auto'],
-      backgroundColor: 'white',
-      minHeight: 'calc(100vh - 50px - 70px - 64px - 1.8rem*2)',
-      width: ['calc(100% - 2rem)', '1040px', '1040px'],
-      '& a': {
-        color: 'secondary',
-      },
-    },
     a: {
-      color: 'secondary',
+      color: 'primary',
       wordBreak: 'break-word',
     },
   },

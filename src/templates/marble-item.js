@@ -9,7 +9,7 @@ import queryString from 'query-string'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/ReturnToSearch'
 import InquisitionLayout from '../components/InquisitionLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
 

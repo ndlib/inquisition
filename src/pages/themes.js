@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import InquisitionLayout from '../components/InquisitionLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
@@ -38,7 +38,7 @@ const Browse = ({ data, location }) => {
       />
 
       <I18nextProvider i18n={i18next}>
-        <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
+        <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['0 100vw', '0 100vw', '22vw 68vw']}>
           <Box sx={{ mt: '5rem' }}>
             <InquisitionLeftNav location={location} />
           </Box>

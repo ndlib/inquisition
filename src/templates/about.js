@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
 export const EssayPage = ({ data, location }) => {

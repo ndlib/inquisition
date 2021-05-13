@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
@@ -43,7 +43,7 @@ export const ThemePage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
+      <Grid sx={{ ml: ['1vw', '5vw'], mr: '5vw' }} columns={['0 100vw', '0 100vw', '22vw 68vw']}>
         <Box sx={{ mt: '5rem' }}>
           <InquisitionLeftNav location={location} />
         </Box>
