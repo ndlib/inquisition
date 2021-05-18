@@ -8,7 +8,7 @@ import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
+import NDBrandEmptyPageHeader from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Hero/NoHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
@@ -30,6 +30,7 @@ export const EssayPage = ({ data, location }) => {
     />
     )
   })
+
   const breadcrumbs = []
   if (markdownRemark.frontmatter.themeSlug) {
     breadcrumbs.push({ url: '/themes', title: 'Themes' })
@@ -37,7 +38,10 @@ export const EssayPage = ({ data, location }) => {
   }
 
   return (
-    <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+    <InquisitionLayout
+      location={location}
+      pageHeader={<NDBrandEmptyPageHeader location={location} />}
+    >
       <Seo
         data={data}
         location={location}

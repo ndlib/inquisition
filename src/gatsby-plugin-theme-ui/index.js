@@ -12,23 +12,10 @@ export default merge({}, theme, {
     dark: '#603e1f',
   },
   links: {
-
   },
   cards: {
   },
-  // ae9142
   styles: {
-    Footer: {
-      px: '5vw',
-      py: '3rem',
-      backgroundColor: 'primary',
-      '& p': {
-        fontSize: 3,
-      },
-      img: {
-        margin: '0px',
-      },
-    },
   },
   fonts: {
     title: `

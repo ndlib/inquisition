@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import PropTypes from 'prop-types'
 import SearchBase from 'components/Shared/SearchBase'
 import SearchFilterBox from 'components/Shared/SearchTools/SearchFilterBox'
@@ -14,6 +14,7 @@ import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
+import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 
@@ -27,8 +28,8 @@ const Search = ({ location }) => {
             location={location}
             title='Search'
           />
-          <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
-            <Box sx={{ mt: '5rem' }}>
+          <NDBrandSectionLeftNav>
+            <NDBrandSection variant='sidebar'>
               <TagFilterConfig field='creator.keyword' title='Creator' id='creator' />
               <TagFilterConfig field='collection.keyword' title='Collection' id='collection' />
 
@@ -62,23 +63,17 @@ const Search = ({ location }) => {
                 operator='OR'
                 sort='default'
               />
-            </Box>
-            <NDBrandSection sx={{ pl: '2rem', minWidth: '60vw', '&.sectionContent': { minWidth: '60vw' } }}>
+            </NDBrandSection>
+            <NDBrandSection variant='fullBleedWithSidebar'>
               <NDBrandBreadcrumbs
                 currentPageTitle='Browse Collection'
                 breadcrumbs={[]}
               />
-              <div sx={{
-                '& form': {
-                  border: '1px black solid',
-                  borderRadius: '10px',
-                },
-              }}>
-                <SearchFilterBox />
-              </div>
+
+              <SearchFilterBox />
               <SearchResults defaultDisplay='list' />
             </NDBrandSection>
-          </Grid>
+          </NDBrandSectionLeftNav>
         </InquisitionLayout>
       </I18nextProvider>
     </SearchBase>

@@ -5,6 +5,7 @@ import { jsx, Paragraph } from 'theme-ui'
 import PropTypes from 'prop-types'
 import MarbleBrandFooter from '../sharedComponents/MarbleBrandFooter'
 import NDBrandHeader from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Header'
+import NDBrandEmptyPageHeader from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Hero/NoHeader'
 import NDBrandLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Layout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import ClickableRBSCLogoWhite from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Logos/ClickableRBSCLogoWhite'
@@ -22,7 +23,9 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
       document.querySelector('#gatsby-focus-wrapper').scrollTop = 0
     }
   })
-
+  if (!pageHeader) {
+    pageHeader = (<NDBrandEmptyPageHeader location={location} />)
+  }
   return (
     <div>
       <SkipToMain />

@@ -48,7 +48,7 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <NDBrandSection variant='fullBleed' location={location} sx={{ justifyContent: 'center' }}>
-          <Html sx={{ maxWidth: '65vw' }} html={markdownRemark.frontmatter.contentTop} />
+          <Html html={markdownRemark.frontmatter.contentTop} />
         </NDBrandSection>
         <NDBrandSection location={location} variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
           <Heading as='h2' variant='sectionTitle'>
@@ -60,7 +60,7 @@ const Home = ({ data, location }) => {
         </NDBrandSection>
         <NDBrandSection location={location} variant='fullBleed' sx={{ '& div.sectionContent': { maxWidth: 'inherit' } }} >
           <Heading as='h2' variant='sectionTitle'>
-                Featured Items
+            Featured Items
           </Heading>
           <CardGroup defaultDisplay={DISPLAY_GRID} toggleGroup='essays-page' allowToggle={false}>
             {featuredItems}

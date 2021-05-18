@@ -70,7 +70,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : pages[index - 1].id
       const nextPostId = index === pages.length - 1 ? null : pages[index + 1].id
       // Define a template for blog post
-      console.log(page)
       const pageTemplate = path.resolve(`./src/templates/${page.frontmatter.template}`)
 
       createPage({

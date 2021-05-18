@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import typy from 'typy'
 import { jsx, Flex } from 'theme-ui'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
-import theme from '../../../gatsby-plugin-theme-ui'
+import Link from '@ndlib/gatsby-theme-marble/src/components/Shared/Link'
 import ClickableNDLogoWhite from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Logos/ClickableNDLogoWhite'
 
 export const menuQuery = graphql`
@@ -26,8 +26,23 @@ export const menuQuery = graphql`
 export const FooterWrapper = ({ location, logo }) => {
   const { menusJson } = useStaticQuery(menuQuery)
   const menu = typy(menusJson, 'items').safeArray
+  const sx = {
+    px: '5vw',
+    py: '3rem',
+    color: 'white',
+    backgroundColor: 'primary',
+    '& p': {
+      fontSize: 3,
+    },
+    '& a': {
+      color: 'white',
+    },
+    img: {
+      margin: '0px',
+    },
+  }
   return (
-    <Flex as='footer' sx={theme.styles.Footer}>
+    <Flex as='footer' sx={sx}>
       <Flex sx={{ width: '25%', justifyContent: 'center' }}>
         <div>
           {logo}
@@ -35,10 +50,8 @@ export const FooterWrapper = ({ location, logo }) => {
         © 2020 University of Notre Dame <br />
           Notre Dame, IN 46556 USA
           </address>
-
-          <a href='https://library.nd.edu/contact-us#rbsc'>Contact Us</a> <br />
-          <a href='https://www.nd.edu/about/accessibility/'>Accessability</a>
-
+          <Link to='https://library.nd.edu/contact-us#rbsc'>Contact Us</Link> <br />
+          <Link to='https://www.nd.edu/about/accessibility/'>Accessability</Link>
         </div>
       </Flex>
       <Flex sx={{ justifyContent: 'center', width: '50%' }}>
