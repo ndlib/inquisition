@@ -60,7 +60,7 @@ export const ThemePage = ({ data, location }) => {
               <Button><Link to={'/' + markdownRemark.frontmatter.essayId}>{'Essay: ' + markdownRemark.frontmatter.essayTitle}</Link></Button>
             </p>
           </NDBrandSection>
-          <NDBrandSection sx={{ pl: '2rem' }}>
+          <NDBrandSection variant='defaultWithSidebar'>
             <Flex sx={{ width: '100%', justifyContent: 'space-between' }}>
               <Heading as='h2'>Featured Sources</Heading>
               <Link sx={{ color: 'secondary', textDecoration: 'none' }} to='/search'>See All Sources</Link>

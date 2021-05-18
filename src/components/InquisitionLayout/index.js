@@ -32,8 +32,8 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
         siteHeader={<NDBrandHeader location={location} />}
         siteFooter={
           <div>
-            <NDBrandSection location={location} variant='fullBleedLight'>
-              <Paragraph>
+            <NDBrandSection location={location} variant='fullBleedLight' sx={{ py: '3rem', mb: 0, justifyContent: 'center' }}>
+              <Paragraph sx={{ maxWidth: '65rem' }}>
                 For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
                 please email us at <Link to='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</Link> or visit <Link to='https://rarebooks.library.nd.edu/using/'>our website</Link>.
               </Paragraph>
@@ -41,7 +41,9 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
             <MarbleBrandFooter location={location} logo={(<ClickableRBSCLogoWhite />)} />
           </div>
         }
-      >{children}</NDBrandLayout>
+      >
+        {children}
+      </NDBrandLayout>
     </div>
   )
 }

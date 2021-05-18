@@ -47,12 +47,12 @@ const Home = ({ data, location }) => {
         location={location}
       />
       <I18nextProvider i18n={i18next}>
-        <NDBrandSection location={location}>
-          <Html html={markdownRemark.frontmatter.contentTop} />
+        <NDBrandSection variant='fullBleed' location={location} sx={{ justifyContent: 'center' }}>
+          <Html sx={{ maxWidth: '65vw' }} html={markdownRemark.frontmatter.contentTop} />
         </NDBrandSection>
         <NDBrandSection location={location} variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
           <Heading as='h2' variant='sectionTitle'>
-                  Themeatic Inquistion Resources
+            Themeatic Inquistion Resources
           </Heading>
           <Html html={markdownRemark.html} />
 
