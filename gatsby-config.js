@@ -37,6 +37,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-transformer-json',
     {
       resolve: '@ndlib/gatsby-source-appsync-marble',
       options: {
@@ -98,7 +99,7 @@ module.exports = {
         plugins: [],
       },
     },
-    'gatsby-transformer-json',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
