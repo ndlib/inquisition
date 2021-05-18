@@ -49,8 +49,8 @@ export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
 
   return (
     <div>
-      <Menu variant='vertical' location={location} items={menuItems} label={<Link className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)} />
-      <Menu variant='vertical' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match(/^\/essay.*/)} />
+      <Menu variant='leftNav' location={location} items={menuItems} label={<Link className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>} expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)} />
+      <Menu variant='leftNav' location={location} items={menu} label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>} expand={location.pathname.match(/^\/essay.*/)} />
     </div>
   )
 }

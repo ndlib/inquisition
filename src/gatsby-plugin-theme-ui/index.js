@@ -11,44 +11,7 @@ export default merge({}, theme, {
     dark: '#603e1f',
   },
   links: {
-    footer: {
-      '& a': {
-        color: 'white',
-        py: '25px',
-        px: '25px',
-        textDecoration: 'none',
-        fontWeight: '600',
-        fontFamily: 'heading',
-      },
-    },
-    vertical: {
-      '& h3': {
-        color: 'primary',
-        p: '0',
-      },
-      '& div': {
-        px: '.5rem',
-        pb: '1rem',
-        '& a': {
-          padding: '0.7em 1em',
-          '&.selected': {
-            fontWeight: '700',
-          },
-        },
-      },
-      '& a': {
-        py: '1rem',
-        display: 'block',
-        color: 'primary',
-        textDecoration: 'none',
-        '&:hover': {
-          bg: 'var(--theme-ui-colors-light)',
-        },
-        '&.selected': {
-          fontWeight: '700',
-        },
-      },
-    },
+
   },
   cards: {
   },
