@@ -13,7 +13,7 @@ import { I18nextProvider } from 'react-i18next'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
-import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 

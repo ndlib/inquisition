@@ -1,13 +1,14 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, Paragraph } from 'theme-ui'
 import PropTypes from 'prop-types'
 import MarbleBrandFooter from '../sharedComponents/MarbleBrandFooter'
 import NDBrandHeader from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Header'
 import NDBrandLayout from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Layout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import ClickableRBSCLogoWhite from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Logos/ClickableRBSCLogoWhite'
+import Link from '@ndlib/gatsby-theme-marble/src/components/Shared/Link'
 import queryString from 'query-string'
 import SkipToMain from '@ndlib/gatsby-theme-marble/src/components/Shared/SkipToMain'
 
@@ -32,10 +33,10 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
         siteFooter={
           <div>
             <NDBrandSection location={location} variant='fullBleedLight'>
-              <p>
-                      For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
-                      please email us at <a href='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</a> or visit <a href='https://rarebooks.library.nd.edu/using/'>our website</a>.
-              </p>
+              <Paragraph>
+                For more information about the collection, for appointments to view items for research purposes, or for rights and reproductions,
+                please email us at <Link to='mailto:rarebooks@nd.edu'>rarebooks@nd.edu</Link> or visit <Link to='https://rarebooks.library.nd.edu/using/'>our website</Link>.
+              </Paragraph>
             </NDBrandSection>
             <MarbleBrandFooter location={location} logo={(<ClickableRBSCLogoWhite />)} />
           </div>

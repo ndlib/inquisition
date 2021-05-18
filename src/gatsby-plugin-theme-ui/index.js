@@ -28,10 +28,6 @@ export default merge({}, theme, {
         margin: '0px',
       },
     },
-    a: {
-      color: 'primary',
-      wordBreak: 'break-word',
-    },
   },
   fonts: {
     title: `

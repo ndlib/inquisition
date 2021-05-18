@@ -14,6 +14,7 @@ import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
+import Html from '@ndlib/gatsby-theme-marble/src/components/Shared/Html'
 import { DISPLAY_GRID } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
 const Home = ({ data, location }) => {
@@ -47,13 +48,13 @@ const Home = ({ data, location }) => {
       />
       <I18nextProvider i18n={i18next}>
         <NDBrandSection location={location}>
-          <p dangerouslySetInnerHTML={{ __html: markdownRemark.frontmatter.contentTop }} />
+          <Html html={markdownRemark.frontmatter.contentTop} />
         </NDBrandSection>
         <NDBrandSection location={location} variant='fullBleedLight' sx={{ '& div.sectionImage': { flex: '0 0 370px' } }} image={(<GatsbyImage image={essaysImage} alt=''loading='lazy' objectFit='fill' />)}>
           <Heading as='h2' variant='sectionTitle'>
                   Themeatic Inquistion Resources
           </Heading>
-          <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+          <Html html={markdownRemark.html} />
 
           <Button variant='primary' to='/'><Link to='/themes'>Browse Themes</Link></Button>
         </NDBrandSection>

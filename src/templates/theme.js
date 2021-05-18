@@ -7,8 +7,9 @@ import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
+import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
-import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
@@ -43,12 +44,10 @@ export const ThemePage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid sx={{ ml: ['1vw', '5vw'], mr: '5vw' }} columns={['0 100vw', '0 100vw', '22vw 68vw']}>
-        <Box sx={{ mt: '5rem' }}>
-          <InquisitionLeftNav location={location} />
-        </Box>
-        <div>
-          <NDBrandSection sx={{ pl: '2rem' }}>
+      <NDBrandSectionLeftNav>
+        <InquisitionLeftNav location={location} />
+        <Box>
+          <NDBrandSection variant='defaultWithSidebar'>
             <NDBrandBreadcrumbs
               currentPageTitle={markdownRemark.frontmatter.title}
               breadcrumbs={[
@@ -73,8 +72,8 @@ export const ThemePage = ({ data, location }) => {
               <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
             </Flex>
           </NDBrandSection>
-        </div>
-      </Grid>
+        </Box>
+      </NDBrandSectionLeftNav>
     </InquisitionLayout>
   )
 }

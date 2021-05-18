@@ -11,7 +11,7 @@ import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/Ret
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
-import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
