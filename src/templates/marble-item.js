@@ -10,20 +10,22 @@ import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import ReturnToSearch from '@ndlib/gatsby-theme-marble/src/components/Shared/ReturnToSearch'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
+import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 
 export const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { marbleItem, allMarbleFile } = data
   return (
-    <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+    <InquisitionLayout
+      location={location}
+    >
       <Seo
         data={data}
         location={location}
       />
-      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '5vw 85vw', '5vw 85vw']}>
+      <NDBrandSectionLeftNav>
         <Box sx={{ mt: '5rem' }} />
         <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { ml: '2rem', maxWidth: '85vw' } }}>
 
@@ -40,7 +42,7 @@ export const MarbleItemPage = ({ data, location }) => {
             ) : null
           }
         </NDBrandSection>
-      </Grid>
+      </NDBrandSectionLeftNav>
     </InquisitionLayout>
   )
 }

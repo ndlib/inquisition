@@ -8,7 +8,6 @@ import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandEmptyPageHeader from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Hero/NoHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
@@ -40,7 +39,6 @@ export const EssayPage = ({ data, location }) => {
   return (
     <InquisitionLayout
       location={location}
-      pageHeader={<NDBrandEmptyPageHeader location={location} />}
     >
       <Seo
         data={data}

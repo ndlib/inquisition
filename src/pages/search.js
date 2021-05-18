@@ -12,7 +12,6 @@ import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import { I18nextProvider } from 'react-i18next'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 
@@ -22,7 +21,7 @@ const Search = ({ location }) => {
   return (
     <SearchBase>
       <I18nextProvider i18n={i18next}>
-        <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}>
+        <InquisitionLayout location={location}>
           <Seo
             data={{}}
             location={location}

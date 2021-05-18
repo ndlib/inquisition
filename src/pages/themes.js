@@ -8,8 +8,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
-import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Breadcrumbs'
 
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
@@ -34,7 +33,6 @@ const Browse = ({ data, location }) => {
   return (
     <InquisitionLayout
       location={location}
-      pageHeader={<NDBrandEmptyPageHeader location={location} />}
     >
       <Seo
         data={data}

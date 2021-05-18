@@ -9,7 +9,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from '@ndlib/gatsby-theme-marble/src/i18n'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandLargePageHeader from '../components/sharedComponents/NDBrandLargePageHeader'
+import NDBrandHeroDefault from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Hero/Default'
 import Card from '@ndlib/gatsby-theme-marble/src/components/Shared/Card'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -33,13 +33,13 @@ const Home = ({ data, location }) => {
   })
 
   return (
-    <InquisitionLayout location={location} pageHeader={<NDBrandLargePageHeader
+    <InquisitionLayout location={location} pageHeader={<NDBrandHeroDefault
       location={location}
       variant='homepage'
       title='Manuscript and print sources for the study of Inquisition history'
       lede="The materials featured on this website are from the University of Notre Dame's Harley Inquisition Collection"
       image={(<GatsbyImage image={image} alt=''loading='eager' />)}
-      button={(<Button variant='primary' to='/' sx={{ display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>)}
+      button={(<Button className='more' variant='primary' to='/' sx={{ display: 'block' }}><Link to='/search'>Browse Collection</Link></Button>)}
     />}>
 
       <Seo

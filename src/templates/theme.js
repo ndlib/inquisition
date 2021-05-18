@@ -8,13 +8,12 @@ import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
-import InquisitionButtonLink from '../components/InquisitionButtonLink'
+import Html from 'components/Shared/Html'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
@@ -33,8 +32,7 @@ export const ThemePage = ({ data, location }) => {
   })
 
   return (
-    <InquisitionLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}
-    >
+    <InquisitionLayout location={location}>
       <Seo
         data={data}
         location={location}
@@ -55,7 +53,7 @@ export const ThemePage = ({ data, location }) => {
               ]}
             />
             <Heading as='h1' variant='pageTitle'>{markdownRemark.frontmatter.title}</Heading>
-            <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+            <Html html={markdownRemark.html} />
             <p>
               <Button><Link to={'/' + markdownRemark.frontmatter.essayId}>{'Essay: ' + markdownRemark.frontmatter.essayTitle}</Link></Button>
             </p>
@@ -63,13 +61,13 @@ export const ThemePage = ({ data, location }) => {
           <NDBrandSection variant='defaultWithSidebar'>
             <Flex sx={{ width: '100%', justifyContent: 'space-between' }}>
               <Heading as='h2'>Featured Sources</Heading>
-              <Link sx={{ color: 'secondary', textDecoration: 'none' }} to='/search'>See All Sources</Link>
+              <Button variant='inverse' className='more'><Link to='/search'>See All Sources</Link></Button>
             </Flex>
             <CardGroup allowToggle={false} defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
               {featuredItems}
             </CardGroup>
             <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
-              <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
+              <Button variant='inverse' className='more'><Link to={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}>Search all sources</Link></Button>
             </Flex>
           </NDBrandSection>
         </Box>
