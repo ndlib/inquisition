@@ -1,27 +1,65 @@
 const path = require('path')
-const configuration = require('./content/configuration')
+const elasticQuery = require('./content/elastic/query')
+const elasticSettings = require('./content/elastic/settings')
+const elasticMappings = require('./content/elastic/mappings')
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+console.log('Using environment config:' + activeEnv)
+const eV = '.env.' + activeEnv
+require('dotenv').config({
+  path: eV,
+})
+
+const siteUrl = 'https://marble.nd.edu'
+const siteName = 'Inquisitio'
+const siteDescription = 'Manuscript and print sources for the study of Inquisition history.'
+const searchUrl = process.env.SEARCH_URL || ''
+const searchIndex = process.env.SEARCH_INDEX || ''
 const s3BucketName = process.env.S3_DEST_BUCKET || ''
+// const allowRobots = process.env.ALLOW_ROBOTS === 'true' || false
+const sourceGraphQlUrl = process.env.GRAPHQL_API_URL || ''
+const graphQlKey = process.env.GRAPHQL_API_KEY || ''
 
 module.exports = {
-  siteMetadata: configuration.siteMetadata,
-  plugins: [
-    {
-      resolve: 'gatsby-transformer-marbleitem',
-      options: {
-        skipMetadataPrune: true,
-      },
+  flags: {
+    DEV_SSR: true,
+    PRESERVE_WEBPACK_CACHE: false,
+  },
+  siteMetadata: {
+    title: 'Inquisitio',
+    subTitle: 'Hesburgh Libraries Rare Books & Special Collections',
+    author: 'University of Notre Dame Hesburgh Libraries Rare Books & Special Collections',
+    description: siteDescription,
+    siteUrl: siteUrl,
+    languages: {
+      default: 'en',
+      allowed: ['en'],
     },
+  },
+  plugins: [
     {
       resolve: '@ndlib/gatsby-source-appsync-marble',
       options: {
-        url: configuration.siteMetadata.sourceGraphQlUrl,
-        key: configuration.siteMetadata.graphQlKey,
-        website: 'inquisition',
+        url: sourceGraphQlUrl,
+        key: graphQlKey,
+        website: 'inquisitions',
         // updateFixtures: true,
-        useFixtures: configuration.siteMetadata.useFixtures,
+        // useFixtures: true,
         // debug: true,
         // logIds: true,
         mergeItems: [],
+      },
+    },
+    {
+      resolve: '@ndlib/gatsby-plugin-marble-elasticsearch',
+      options: {
+        url: searchUrl,
+        searchIndex: searchIndex,
+        region: 'us-east-1',
+        query: elasticQuery,
+        selector: (data) => data.allMarbleItem.nodes.map(node => node.searchData),
+        settings: elasticSettings,
+        mappings: elasticMappings,
       },
     },
     {
@@ -74,8 +112,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: configuration.siteMetadata.siteUrl,
-        sitemap: configuration.siteMetadata.siteUrl + '/sitemap.xml',
+        host: siteUrl,
+        sitemap: siteUrl + 'sitemap.xml',
         env: {
           development: {
             policy: [
@@ -93,9 +131,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Inquisitio',
-        short_name: 'Inquisitio',
-        description: 'Manuscript and print sources for the study of Inquisition history.',
+        name: siteName,
+        short_name: siteName,
+        description: siteDescription,
         start_url: '/',
         background_color: '#ae9142',
         theme_color: '#ae9142',
@@ -126,14 +164,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: path.join(__dirname, `content`, `images`),
+        name: 'images',
+        path: path.join(__dirname, 'content', 'images'),
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
   ],
 }
