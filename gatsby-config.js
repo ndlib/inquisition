@@ -43,11 +43,12 @@ module.exports = {
       options: {
         url: sourceGraphQlUrl,
         key: graphQlKey,
-        website: 'inquisitions',
+        // website: 'inquisitions',
         // updateFixtures: true,
         // useFixtures: true,
         // debug: true,
         // logIds: true,
+        itemList: [{ itemId: 'MSHLAT0090_EAD' }],
         mergeItems: [],
       },
     },
