@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require('path')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -48,13 +48,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `
+    `,
   )
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
+      'There was an error loading your blog posts',
+      result.errors,
     )
     return
   }
@@ -70,7 +70,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : pages[index - 1].id
       const nextPostId = index === pages.length - 1 ? null : pages[index + 1].id
       // Define a template for blog post
-      console.log(page)
       const pageTemplate = path.resolve(`./src/templates/${page.frontmatter.template}`)
 
       createPage({
