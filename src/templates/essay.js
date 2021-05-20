@@ -8,7 +8,7 @@ import queryString from 'query-string'
 import InquisitionLayout from '../components/InquisitionLayout'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
-import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/breadcrumbs'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
