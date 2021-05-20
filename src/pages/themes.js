@@ -40,7 +40,7 @@ const Browse = ({ data, location }) => {
       />
 
       <I18nextProvider i18n={i18next}>
-        <NDBrandSectionLeftNav>
+        <NDBrandSectionLeftNav location={location}>
           <InquisitionLeftNav location={location} />
           <NDBrandSection variant='fullBleedWithSidebar'>
             <NDBrandBreadcrumbs
@@ -52,7 +52,7 @@ const Browse = ({ data, location }) => {
               {browseLinks}
             </CardGroup>
           </NDBrandSection>
-        </NDBrandSectionLeftNav>
+        </NDBrandSectionLeftNav location={location}>
       </I18nextProvider>
 
     </InquisitionLayout>

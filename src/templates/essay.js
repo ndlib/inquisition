@@ -49,7 +49,7 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <NDBrandSectionLeftNav>
+      <NDBrandSectionLeftNav location={location}>
         <InquisitionLeftNav location={location} />
         <NDBrandSection variant='defaultWithSidebar'>
           <NDBrandBreadcrumbs
@@ -66,7 +66,7 @@ export const EssayPage = ({ data, location }) => {
             {markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{markdownRemark.frontmatter.slug}&gt;
           </Paragraph>
         </NDBrandSection>
-      </NDBrandSectionLeftNav>
+      </NDBrandSectionLeftNav location={location}>
     </InquisitionLayout>
   )
 }

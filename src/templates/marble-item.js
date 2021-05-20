@@ -25,7 +25,7 @@ export const MarbleItemPage = ({ data, location }) => {
         data={data}
         location={location}
       />
-      <NDBrandSectionLeftNav>
+      <NDBrandSectionLeftNav location={location}>
         <Box sx={{ mt: '5rem' }} />
         <NDBrandSection variant='fullBleed' sx={{ '& div.sectionContent': { ml: '2rem', maxWidth: '85vw' } }}>
 
@@ -42,7 +42,7 @@ export const MarbleItemPage = ({ data, location }) => {
             ) : null
           }
         </NDBrandSection>
-      </NDBrandSectionLeftNav>
+      </NDBrandSectionLeftNav location={location}>
     </InquisitionLayout>
   )
 }

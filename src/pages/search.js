@@ -27,7 +27,7 @@ const Search = ({ location }) => {
             location={location}
             title='Search'
           />
-          <NDBrandSectionLeftNav>
+          <NDBrandSectionLeftNav location={location}>
             <NDBrandSection variant='sidebar'>
               <TagFilterConfig field='creator.keyword' title='Creator' id='creator' />
               <TagFilterConfig field='collection.keyword' title='Collection' id='collection' />
@@ -72,7 +72,7 @@ const Search = ({ location }) => {
               <SearchFilterBox />
               <SearchResults defaultDisplay='list' />
             </NDBrandSection>
-          </NDBrandSectionLeftNav>
+          </NDBrandSectionLeftNav location={location}>
         </InquisitionLayout>
       </I18nextProvider>
     </SearchBase>

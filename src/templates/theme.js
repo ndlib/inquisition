@@ -42,7 +42,7 @@ export const ThemePage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <NDBrandSectionLeftNav>
+      <NDBrandSectionLeftNav location={location}>
         <InquisitionLeftNav location={location} />
         <Box>
           <NDBrandSection variant='defaultWithSidebar'>
@@ -71,7 +71,7 @@ export const ThemePage = ({ data, location }) => {
             </Flex>
           </NDBrandSection>
         </Box>
-      </NDBrandSectionLeftNav>
+      </NDBrandSectionLeftNav location={location}>
     </InquisitionLayout>
   )
 }
