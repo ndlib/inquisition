@@ -66,7 +66,7 @@ export const EssayPage = ({ data, location }) => {
             {markdownRemark.frontmatter.citationYear}.&lt;https://inquisition.library.nd.edu/{markdownRemark.frontmatter.slug}&gt;
           </Paragraph>
         </NDBrandSection>
-      </NDBrandSectionLeftNav location={location}>
+      </NDBrandSectionLeftNav>
     </InquisitionLayout>
   )
 }

@@ -71,7 +71,7 @@ export const ThemePage = ({ data, location }) => {
             </Flex>
           </NDBrandSection>
         </Box>
-      </NDBrandSectionLeftNav location={location}>
+      </NDBrandSectionLeftNav>
     </InquisitionLayout>
   )
 }

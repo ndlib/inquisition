@@ -72,7 +72,7 @@ const Search = ({ location }) => {
               <SearchFilterBox />
               <SearchResults defaultDisplay='list' />
             </NDBrandSection>
-          </NDBrandSectionLeftNav location={location}>
+          </NDBrandSectionLeftNav>
         </InquisitionLayout>
       </I18nextProvider>
     </SearchBase>

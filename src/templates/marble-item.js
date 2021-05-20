@@ -42,7 +42,7 @@ export const MarbleItemPage = ({ data, location }) => {
             ) : null
           }
         </NDBrandSection>
-      </NDBrandSectionLeftNav location={location}>
+      </NDBrandSectionLeftNav>
     </InquisitionLayout>
   )
 }

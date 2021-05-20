@@ -52,7 +52,7 @@ const Browse = ({ data, location }) => {
               {browseLinks}
             </CardGroup>
           </NDBrandSection>
-        </NDBrandSectionLeftNav location={location}>
+        </NDBrandSectionLeftNav>
       </I18nextProvider>
 
     </InquisitionLayout>
