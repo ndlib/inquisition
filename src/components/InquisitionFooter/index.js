@@ -56,7 +56,7 @@ export const FooterWrapper = ({ location }) => {
           <div>
             <ClickableRBSCLogoWhite />
             <address sx={{ py: '1rem' }}>
-          © 2020 University of Notre Dame <br />
+          © {new Date().getFullYear()} University of Notre Dame <br />
             Notre Dame, IN 46556 USA
             </address>
             <Link to='https://library.nd.edu/contact-us#rbsc'>Contact Us</Link> <br />
