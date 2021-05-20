@@ -1,19 +1,19 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box, Flex, Heading, Button } from 'theme-ui'
+import { jsx, Box, Flex, Heading, Button } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import queryString from 'query-string'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
-import NDBrandEmptyPageHeader from '../components/sharedComponents/NDBrandEmptyPageHeader'
-import NDBrandBreadcrumbs from '../components/sharedComponents/NDBrandBreadcrumbs'
+import InquisitionLayout from '../components/InquisitionLayout'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
+import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Breadcrumbs'
 import InquisitionLeftNav from '../components/InquisitionLeftNav'
 
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Card from 'components/Shared/Card'
-import InquisitionButtonLink from '../components/InquisitionButtonLink'
+import Html from 'components/Shared/Html'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
@@ -32,8 +32,7 @@ export const ThemePage = ({ data, location }) => {
   })
 
   return (
-    <NDBrandLayout location={location} pageHeader={<NDBrandEmptyPageHeader location={location} />}
-    >
+    <InquisitionLayout location={location}>
       <Seo
         data={data}
         location={location}
@@ -43,12 +42,10 @@ export const ThemePage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <Grid sx={{ ml: '5vw', mr: '5vw' }} columns={['100% 0%', '22vw 68vw', '22vw 68vw']}>
-        <Box sx={{ mt: '5rem' }}>
-          <InquisitionLeftNav location={location} />
-        </Box>
-        <div>
-          <NDBrandSection sx={{ pl: '2rem' }}>
+      <NDBrandSectionLeftNav location={location}>
+        <InquisitionLeftNav location={location} />
+        <Box>
+          <NDBrandSection variant='defaultWithSidebar'>
             <NDBrandBreadcrumbs
               currentPageTitle={markdownRemark.frontmatter.title}
               breadcrumbs={[
@@ -56,26 +53,26 @@ export const ThemePage = ({ data, location }) => {
               ]}
             />
             <Heading as='h1' variant='pageTitle'>{markdownRemark.frontmatter.title}</Heading>
-            <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+            <Html html={markdownRemark.html} />
             <p>
               <Button><Link to={'/' + markdownRemark.frontmatter.essayId}>{'Essay: ' + markdownRemark.frontmatter.essayTitle}</Link></Button>
             </p>
           </NDBrandSection>
-          <NDBrandSection sx={{ pl: '2rem' }}>
+          <NDBrandSection variant='defaultWithSidebar'>
             <Flex sx={{ width: '100%', justifyContent: 'space-between' }}>
               <Heading as='h2'>Featured Sources</Heading>
-              <Link sx={{ color: 'secondary', textDecoration: 'none' }} to='/search'>See All Sources</Link>
+              <Button variant='inverse' className='more'><Link to='/search'>See All Sources</Link></Button>
             </Flex>
             <CardGroup allowToggle={false} defaultDisplay={DISPLAY_LIST} toggleGroup='collection-landing'>
               {featuredItems}
             </CardGroup>
             <Flex sx={{ justifyContent: 'center', '& button': { marginTop: '25px' } }}>
-              <InquisitionButtonLink target={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`} title={`Search all sources`} />
+              <Button variant='inverse' className='more'><Link to={`/search?documentcategory[0]=${markdownRemark.frontmatter.marbleTitle}`}>Search all sources</Link></Button>
             </Flex>
           </NDBrandSection>
-        </div>
-      </Grid>
-    </NDBrandLayout>
+        </Box>
+      </NDBrandSectionLeftNav>
+    </InquisitionLayout>
   )
 }
 ThemePage.propTypes = {

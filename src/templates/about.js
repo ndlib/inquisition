@@ -1,20 +1,24 @@
 /** @jsx jsx */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { jsx, Grid, Box, Heading } from 'theme-ui'
+import { jsx, Heading } from 'theme-ui'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import queryString from 'query-string'
-import NDBrandLayout from '../components/sharedComponents/NDBrandLayout'
-import NDBrandSection from '../components/sharedComponents/NDBrandSection'
+import InquisitionLayout from '../components/InquisitionLayout'
+import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
+import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Breadcrumbs'
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
+import Html from '@ndlib/gatsby-theme-marble/src/components/Shared/Html'
 
 export const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
 
   return (
-    <NDBrandLayout location={location}>
+    <InquisitionLayout
+      location={location}
+    >
       <Seo
         data={data}
         location={location}
@@ -24,16 +28,20 @@ export const EssayPage = ({ data, location }) => {
           <pre>{JSON.stringify(data, null, 2)}</pre>
         ) : null
       }
-      <NDBrandSection>
-        <Heading as='h1'>{data.markdownRemark.frontmatter.title}</Heading>
+      <NDBrandSection sx={{ pl: '2rem' }}>
+        <NDBrandBreadcrumbs
+          currentPageTitle='About'
+          breadcrumbs={[]}
+        />
+        <Heading variant='pageTitle' as='h1'>{data.markdownRemark.frontmatter.title}</Heading>
         <section>
-          <div>{data.markdownRemark.frontmatter.summary}</div>
+          <Html html={data.markdownRemark.frontmatter.summary} />
         </section>
         <section>
-          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+          <Html html={data.markdownRemark.html} />
         </section>
       </NDBrandSection>
-    </NDBrandLayout>
+    </InquisitionLayout>
   )
 }
 EssayPage.propTypes = {
