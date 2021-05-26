@@ -17,7 +17,7 @@ import Html from 'components/Shared/Html'
 import CardGroup from '@ndlib/gatsby-theme-marble/src/components/Shared/CardGroup'
 import { DISPLAY_LIST } from '@ndlib/gatsby-theme-marble/src/store/actions/displayActions'
 
-export const ThemePage = ({ data, location }) => {
+const ThemePage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { markdownRemark } = data
