@@ -11,7 +11,7 @@ import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared
 import Seo from '@ndlib/gatsby-theme-marble/src/components/Shared/Seo'
 import Html from '@ndlib/gatsby-theme-marble/src/components/Shared/Html'
 
-export const EssayPage = ({ data, location }) => {
+const EssayPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
 

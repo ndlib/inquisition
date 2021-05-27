@@ -13,7 +13,7 @@ import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDB
 import NDBrandBreadcrumbs from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Breadcrumbs'
 import NDBrandSectionLeftNav from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section/LeftNav'
 
-export const MarbleItemPage = ({ data, location }) => {
+const MarbleItemPage = ({ data, location }) => {
   // use ?debug=true to render graphQL data at end of page
   const { debug } = queryString.parse(location.search)
   const { marbleItem, allMarbleFile } = data
