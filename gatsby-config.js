@@ -19,7 +19,7 @@ const s3BucketName = process.env.S3_DEST_BUCKET || ''
 // const allowRobots = process.env.ALLOW_ROBOTS === 'true' || false
 const sourceGraphQlUrl = process.env.GRAPHQL_API_URL || ''
 const graphQlKey = process.env.GRAPHQL_API_KEY || ''
-const iiifViewerUrl = process.env.IIIF_VIEWER_URL || null
+const iiifViewerUrl = process.env.IIIF_VIEWER_URL || 'https://viewer-iiif.library.nd.edu/marble/?manifest='
 
 module.exports = {
   flags: {
@@ -112,7 +112,7 @@ module.exports = {
     {
       resolve: '@ndlib/gatsby-theme-marble',
       options: {
-        iiifViewerUrl: 'https://viewer-iiif.library.nd.edu/marble/?manifest=',
+        iiifViewerUrl: iiifViewerUrl,
         searchUrl: searchUrl,
         searchIndex: searchIndex,
       },
