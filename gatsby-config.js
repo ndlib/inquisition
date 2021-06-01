@@ -112,7 +112,7 @@ module.exports = {
     {
       resolve: '@ndlib/gatsby-theme-marble',
       options: {
-        iiifViewerUrl: iiifViewerUrl,
+        iiifViewerUrl: 'https://viewer-iiif.library.nd.edu/marble/?manifest=',
         searchUrl: searchUrl,
         searchIndex: searchIndex,
       },
