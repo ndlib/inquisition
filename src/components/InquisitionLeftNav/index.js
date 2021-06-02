@@ -51,14 +51,14 @@ export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
   return (
     <NDBrandSection variant='sidebar' >
       <Menu
-        variant='leftNav'
+        variant='navLeft'
         location={location}
         items={menuItems}
         label={<Link className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>}
         expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)}
       />
       <Menu
-        variant='leftNav'
+        variant='navLeft'
         location={location}
         items={menu}
         label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>}
