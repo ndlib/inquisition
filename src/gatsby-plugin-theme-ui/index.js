@@ -15,8 +15,6 @@ export default merge({}, theme, {
   },
   cards: {
   },
-  styles: {
-  },
   fonts: {
     title: `
       'IM Fell English SC',

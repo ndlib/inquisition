@@ -2,10 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { jsx } from 'theme-ui'
 import Menu from '@ndlib/gatsby-theme-marble/src/components/Shared/Menu'
 import NDBrandSection from '@ndlib/gatsby-theme-marble/src/components/Shared/NDBrand/Section'
+import Link from '@ndlib/gatsby-theme-marble/src/components/Shared/Link'
 import typy from 'typy'
 
 export const query = graphql`
@@ -54,14 +55,14 @@ export const InquisitionLeftNav = ({ location, currentMenuCategory }) => {
         variant='navLeft'
         location={location}
         items={menuItems}
-        label={<Link className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>}
+        label={<Link variant='navLeft' className={currentMenuCategory || location.pathname.match(/^\/theme.*/) ? 'selected' : ''} to='/themes'>Themes</Link>}
         expand={currentMenuCategory || location.pathname.match(/^\/theme.*/)}
       />
       <Menu
         variant='navLeft'
         location={location}
         items={menu}
-        label={<Link to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>}
+        label={<Link variant='navLeft' to='/essay-brief-history' className={location.pathname.match(/^\/essay.*/) ? 'selected' : ''}>Inquisitions History</Link>}
         expand={location.pathname.match(/^\/essay.*/)}
       />
     </NDBrandSection>
