@@ -29,7 +29,6 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
       <NDBrandLayout
         location={location}
         pageHeader={pageHeader}
-        siteHeader={<NDBrandHeader location={location} />}
         siteFooter={<InquisitionFooter location={location} />}
       >
         {children}
