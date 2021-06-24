@@ -15,6 +15,14 @@ export default merge({}, theme, {
   },
   cards: {
   },
+  menus: {
+    navTop: {
+      '& div':{
+        minWidth: [0, 0, 0 '30.5rem'],
+      },
+    },
+  },
+
   fonts: {
     title: `
       'IM Fell English SC',
