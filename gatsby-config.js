@@ -11,12 +11,12 @@ require('dotenv').config({
   path: eV,
 })
 
-const siteUrl = 'https://marble.nd.edu'
+const siteUrl = 'https://inquisition-test.library.nd.edu/' // CHANGE BEFORE RELEASE
 const siteName = 'Inquisitio'
 const siteDescription = 'Manuscript and print sources for the study of Inquisition history.'
 const searchUrl = process.env.SEARCH_URL || ''
 const searchIndex = process.env.SEARCH_INDEX || ''
-const s3BucketName = process.env.S3_DEST_BUCKET || ''
+const s3BucketName = process.env.S3_DEST_BUCKET || 'ci-bucket'
 // const allowRobots = process.env.ALLOW_ROBOTS === 'true' || false
 const sourceGraphQlUrl = process.env.GRAPHQL_API_URL || ''
 const graphQlKey = process.env.GRAPHQL_API_KEY || ''
