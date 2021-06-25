@@ -4,8 +4,9 @@ import { theme } from '@ndlib/gatsby-theme-marble/src/gatsby-plugin-theme-ui'
 
 export default merge({}, theme, {
   colors: {
-    primary: '#6A4422',
+    primary: '#402914',
     primaryBright: '#925e2f',
+    primaryDark: '#925e2f',
     secondary: '#981B1E',
     light: '#F2E3E3',
     lightDark: '#b76262',
