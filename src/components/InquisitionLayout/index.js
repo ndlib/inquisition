@@ -23,6 +23,7 @@ const InquisitionLayout = ({ location, children, pageHeader }) => {
   if (!pageHeader) {
     pageHeader = (<NDBrandHeroBackgroundOnly location={location} />)
   }
+
   return (
     <div>
       <SkipToMain />
