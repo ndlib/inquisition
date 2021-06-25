@@ -18,7 +18,7 @@ export default merge({}, theme, {
   menus: {
     navTop: {
       '& div':{
-        minWidth: [0, 0, 0 '30.5rem'],
+        minWidth: ['100vw', '100vw', '100vw', '30.5rem'],
       },
     },
   },
