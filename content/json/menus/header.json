@@ -4,16 +4,6 @@
   "link": "/",
   "items": [
     {
-      "id": "top-home",
-      "label": "Home",
-      "link": "/",
-      "icon": "home",
-      "selectedPatterns": [
-        "^[/]$",
-        "^/university"
-      ]
-    },
-    {
       "id": "top-browse",
       "label": "Browse",
       "link": "/search",
